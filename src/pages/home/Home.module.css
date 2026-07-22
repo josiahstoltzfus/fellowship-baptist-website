@@ -1,0 +1,8 @@
+.test {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 72px;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: center;
+}

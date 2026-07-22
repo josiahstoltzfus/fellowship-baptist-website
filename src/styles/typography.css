@@ -1,0 +1,68 @@
+/* ========================================
+FONT DEFINITIONS
+======================================== */
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('../assets/fonts/CormorantGaramond-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* ========================================
+   TYPOGRAPHY
+   Font families, sizes, weights, and rhythm
+   ======================================== */
+
+    /* font families */
+    --font-family-heading: "Cormorant Garamond", serif;
+    --font-family-body: "Inter", sans-serif;
+
+    /* font sizes */
+    --font-size-display-xl: 4.5rem;
+    --font-size-display-lg: 4rem;
+
+    --font-size-heading-xl: 3.5rem;
+    --font-size-heading-lg: 3rem;
+    --font-size-heading-md: 2rem;
+    --font-size-heading-sm: 1.5rem;
+
+    --font-size-body-lg: 1.1875rem;
+    --font-size-body-md: 1.0625rem;
+    --font-size-body-sm: 0.875rem;
+
+    --font-size-label: 0.75rem;
+    --font-size-nav: 0.875rem;
+    --font-size-action: 0.75rem;
+
+    /* font weights */
+    --font-weight-regular: 400;
+    --font-weight-semibold: 600;
+
+    /* line heights */
+    --line-height-display: 1.1;
+    --line-height-heading: 1.2;
+    --line-height-body: 1.6;
+    --line-height-small: 1.4;
+}
+
+
+

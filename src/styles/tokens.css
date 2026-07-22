@@ -1,0 +1,113 @@
+:root {
+    /* ========================================
+    SPACING
+    ======================================== */
+
+    --space-2xs: 0.25rem;  /* 4px */
+    --space-xs: 0.5rem;    /* 8px */
+    --space-sm: 0.75rem;   /* 12px */
+    --space-md: 1rem;      /* 16px */
+    --space-lg: 1.5rem;    /* 24px */
+    --space-xl: 2rem;      /* 32px */
+    --space-2xl: 3rem;     /* 48px */
+    --space-3xl: 4rem;     /* 64px */
+    --space-4xl: 5rem;     /* 80px */
+    --space-5xl: 6rem;     /* 96px */
+    --space-6xl: 7.5rem;   /* 120px */
+    --space-7xl: 10rem;    /* 160px */
+
+    /* ========================================
+    LAYOUT
+    ======================================== */
+
+    /* canvas */
+    --layout-canvas-desktop: 90rem; /* 1440px */
+
+    /* content */
+    --layout-content-desktop: 70rem; /* 1120px */
+
+    /* page margins */
+    --layout-margin-desktop: 10rem; /* 160px */
+    --layout-margin-mobile: 1.5rem; /* 24px */
+
+    /* reading width */
+    --layout-reading-max: 45rem; /* 720px */
+
+    /* touch targets */
+    --layout-touch-min: 2.75rem; /* 44px */
+
+    /* opacity */
+    --opacity-action-hover: 0.86;
+
+    /* ========================================
+   COLOR PRIMITIVES
+   ======================================== */
+
+    --parchment-base: #f6f2e9;
+    --parchment-reflective: #ece5d5;
+    --parchment-muted: #d1ccb8;
+    --forest-900: #1a3026;
+    --ink-900: #131210;
+    --ink-divider: #333029;
+    --gold-500: #b29657;
+    --neutral-body: #47443b;
+    --neutral-placeholder: #7d8073;
+    --neutral-divider: #beb49f;
+
+    /* ========================================
+    COLORS
+    ======================================== */
+
+    /* surface */
+    --color-surface-base: var(--parchment-base);
+    --color-surface-reflective: var(--parchment-reflective);
+    --color-surface-emphasis: var(--forest-900);
+    --color-surface-footer: var(--ink-900);
+
+    /* text */
+    --color-text-primary: var(--ink-900);
+    --color-text-body: var(--neutral-body);
+    --color-text-inverse: var(--parchment-base);
+    --color-text-accent: var(--gold-500);
+    --color-text-footer: var(--parchment-muted);
+
+    /* border */
+    --color-border-default: var(--neutral-divider);
+    --color-border-footer: var(--ink-divider);
+
+    /* action primary */
+    --color-action-primary-background: var(--forest-900);
+    --color-action-primary-text: var(--parchment-base);
+
+    /* action secondary */
+    --color-action-secondary-background: var(--parchment-base);
+    --color-action-secondary-text: var(--ink-900);
+    --color-action-secondary-border: var(--ink-900);
+
+    /* action inverse */
+    --color-action-inverse-background: var(--color-surface-base);
+    --color-action-inverse-text: var(--color-text-primary);
+}
+
+.page {
+    width: 100%;
+    background: var(--color-surface-base);
+}
+
+.section {
+    width: 100%;
+    padding-block: var(--space-6xl);
+}
+
+.section--reflective {
+    background: var(--color-surface-reflective);
+}
+
+.container {
+    width: min(100% - (2 * var(--layout-margin-mobile))), var(--layout-content-desktop);
+    margin-inline: auto;
+}
+
+.reading-width {
+}
+
