@@ -1,0 +1,39 @@
+.item {
+    position: relative;
+}
+
+.menu {
+    position: absolute;
+
+    border: 1px solid var(--color-border-default);
+    background: var(--color-surface-base);
+
+    white-space: nowrap;
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.visible,
+.item:hover .menu,
+.item:focus-within .menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.link {
+    padding: 12px;
+
+    display: block;
+}
+
+.link:hover,
+.link:focus-visible {
+    background: var(--color-surface-reflective);
+}

@@ -1,0 +1,27 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    width: 100%;
+    height: var(--header-height-desktop);
+
+    background: var(--color-surface-base);
+}
+
+.header-content {
+    width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-header));
+
+    height: 100%;
+    margin-inline: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: var(--header-height-mobile);
+    }
+}

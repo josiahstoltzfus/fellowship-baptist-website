@@ -3,3 +3,6 @@ body {
     background: var(--color-surface-base);
 }
 
+body.menu-open {
+    overflow: hidden;
+}

@@ -1,0 +1,12 @@
+.nav-items {
+    color: var(--color-text-primary);
+
+    display: flex;
+    gap: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+    .nav-items {
+        display: none;
+    }
+}

@@ -1,20 +1,26 @@
 import './App.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import Home from "../pages/home/Home.tsx";
+import HomePage from "../pages/home/HomePage.tsx";
+import SiteLayout from "../components/layout/SiteLayout.tsx";
 
 const router = createBrowserRouter(
     [
         {
-         path: "/",
-         element: <Home/>,
+            element: <SiteLayout/>,
+            children: [
+                {
+                    path: "/",
+                    element: <HomePage/>,
+                }
+            ]
         }
     ]
 );
 
 function App() {
-  return (
-    <RouterProvider router={router}/>
-  );
+    return (
+        <RouterProvider router={router}/>
+    );
 }
 
 export default App;
