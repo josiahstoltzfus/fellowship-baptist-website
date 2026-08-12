@@ -1,19 +1,17 @@
-import styles from "./HomePage.module.css";
-import ActionLink from "../../components/actions/ActionLink";
+import HomeHero from "./components/HomeHero.tsx";
+import HomeHighlights from "./components/HomeHighlights.tsx";
+import GatheringInformation from "./components/GatheringInformation.tsx";
+import ChurchIntroduction from "./components/ChurchIntroduction.tsx";
+import ExploreFellowship from "./components/ExploreFellowship.tsx";
 
 export default function HomePage() {
     return(
-        <div className={styles.test}>
-            <h1 className={styles.h1}>Jesus Christ</h1>
-            <ActionLink href="https://www.google.com">
-                Plan Your Visit
-            </ActionLink>
-            <ActionLink href="https://www.google.com" variant="secondary">
-                Plan Your Visit
-            </ActionLink>
-            <ActionLink href="https://www.google.com" variant="inverse">
-                Plan Your Visit
-            </ActionLink>
+        <div>
+            <HomeHero />
+            <HomeHighlights />
+            <GatheringInformation />
+            <ChurchIntroduction/>
+            <ExploreFellowship/>
         </div>
     )
 }

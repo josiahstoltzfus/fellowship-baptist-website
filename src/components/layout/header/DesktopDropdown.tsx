@@ -1,6 +1,7 @@
 import styles from "./DesktopDropdown.module.css";
 import type {NavDropdownItem} from "./navigation.ts";
 import {useState} from "react";
+import {ChevronDown} from "lucide-react";
 
 type NavDropdownProps = {
     item: NavDropdownItem;
@@ -18,12 +19,14 @@ export default function DesktopDropdown({item}: NavDropdownProps) {
             <button
                 type="button"
                 onClick={toggleMenu}
+                className={`text-nav ${styles.button}`}
                 aria-expanded={open}>
-                {item.label}
+                <span>{item.label}</span>
+                <ChevronDown size={16} aria-hidden={"true"}/>
             </button>
             <ul className={`${styles.menu} ${open ? styles.visible : ""}`}>
                 {item.children.map((child) => (
-                    <li key={child.href}>
+                    <li key={child.href} className={styles["list-item"]}>
                         <a href={child.href} className={styles.link}>{child.label}</a>
                     </li>
                 ))}
