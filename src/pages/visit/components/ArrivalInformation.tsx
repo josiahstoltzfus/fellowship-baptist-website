@@ -24,7 +24,9 @@ export default function ArrivalInformation() {
 
                         <ActionLink href={"/"}>Get Directions</ActionLink>
                     </div>
-                    <figure className={styles.map}></figure>
+
+                    <figure className={`text-eyebrow ${styles.map}`}>Annotated map</figure>
+
                 </div>
             </div>
         </section>

@@ -1,5 +1,12 @@
-.introduction {
+.section {
     width: 100%;
+}
+
+.base {
+    background: var(--color-surface-base);
+}
+
+.reflective {
     background: var(--color-surface-reflective);
 }
 
@@ -9,8 +16,17 @@
 
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: var(--space-lg);
+}
+
+.left {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.center {
+    align-items: center;
+    text-align: center;
 }
 
 .eyebrow {
@@ -19,15 +35,13 @@
 
 .description {
     max-width: var(--layout-reading-max);
-    text-align: center;
+
+    color: var(--color-text-body);
 }
 
 @media (max-width: 768px) {
-    .content {
+    .center {
         align-items: flex-start;
-    }
-
-    .description {
-        text-align: start;
+        text-align: left;
     }
 }

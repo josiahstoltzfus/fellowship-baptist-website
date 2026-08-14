@@ -1,5 +1,13 @@
-.beginning {
+.section {
     width: 100%;
+}
+
+.base {
+    background: var(--color-surface-base);
+}
+
+.reflective {
+    background: var(--color-surface-reflective);
 }
 
 .content {
@@ -12,7 +20,17 @@
     gap: var(--space-4xl);
 }
 
+.content.left {
+    grid-template-areas: "media text"
+}
+
+.content.right {
+    grid-template-areas: "text media";
+}
+
 .media {
+    grid-area: media;
+
     width: 100%;
     aspect-ratio: 16 / 9;
 
@@ -26,11 +44,9 @@
     align-items: flex-end;
 }
 
-.image {
+.text {
+    grid-area: text;
 
-}
-
-.message {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
@@ -40,7 +56,7 @@
     color: var(--gold-500);
 }
 
-.description {
+.body {
     color: var(--color-text-body);
 
     display: flex;
@@ -49,9 +65,13 @@
 }
 
 @media (max-width: 768px) {
-    .content {
+    .content,
+    .content.left,
+    .content.right {
         grid-template-columns: 1fr;
-
+        grid-template-areas:
+            "media"
+            "text";
         gap: var(--space-xl);
     }
 }
