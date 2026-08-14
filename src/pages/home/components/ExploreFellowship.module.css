@@ -37,11 +37,13 @@
     border-inline-start: 1px solid var(--color-border-default);
 }
 
-.heading {}
-
-.description {}
+.eyebrow {
+    color: var(--gold-500);
+}
 
 .link {
+    color: var(--forest-900);
+
     display: flex;
     align-items: center;
     gap: var(--space-2xs);

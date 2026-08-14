@@ -1,6 +1,9 @@
 .action {
+    flex-shrink: 0;
     padding: 18px 24px;
     width: fit-content;
+
+    white-space: nowrap;
 }
 
 .primary {

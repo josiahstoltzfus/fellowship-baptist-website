@@ -8,14 +8,14 @@ export default function HomeHighlights() {
                     <p className={`text-eyebrow ${styles.title}`}>This Week</p>
 
                     <div className={`${styles["weekly-service"]}`}>
-                        <p className={`text-heading-small`}>Sunday Worship</p>
-                        <p className={`text-heading-small`}>11:00 AM</p>
+                        <p className={`text-subheading`}>Sunday Worship</p>
+                        <p className={`text-subheading`}>11:00 AM</p>
                     </div>
                 </div>
 
                 <div className={`${styles["featured-teaching"]}`}>
                     <p className={`text-eyebrow ${styles.title}`}>Featured Teaching</p>
-                    <p className={`text-subheading`}>152 Key Bible Verses</p>
+                    <p className={`text-section-title`}>152 Key Bible Verses</p>
                 </div>
 
             </div>

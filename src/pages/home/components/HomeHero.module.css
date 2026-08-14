@@ -1,6 +1,5 @@
 .hero {
     width: 100%;
-    padding-block-start: var(--space-2xl);
     min-height: 40.625rem; /* 650px */
 
     display: grid;
@@ -33,7 +32,9 @@
     object-fit: cover;
 }
 
-.eyebrow {}
+.eyebrow {
+    color: var(--gold-500);
+}
 
 .title {}
 

@@ -13,6 +13,10 @@
     gap: var(--space-lg);
 }
 
+.eyebrow {
+    color: var(--gold-500);
+}
+
 .description {
     max-width: var(--layout-reading-max);
     text-align: center;

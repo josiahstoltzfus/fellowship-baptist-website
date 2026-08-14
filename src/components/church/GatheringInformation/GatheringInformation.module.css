@@ -28,6 +28,10 @@
     justify-content: space-between;
 }
 
+.eyebrow {
+    color: var(--gold-500);
+}
+
 .location-details {
     display: flex;
     flex-direction: column;

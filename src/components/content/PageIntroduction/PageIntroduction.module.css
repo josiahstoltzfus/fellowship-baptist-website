@@ -1,0 +1,43 @@
+.introduction {
+    width: 100%;
+    background: var(--color-surface-emphasis);
+}
+
+.content {
+    width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-default));
+    margin-inline: auto;
+    padding-block: var(--space-4xl);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.eyebrow {
+    color: var(--gold-500);
+}
+
+.heading {
+    color: var(--color-text-inverse);
+}
+
+.description {
+    color: var(--color-text-inverse-muted);
+}
+
+.left .content {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.center .content {
+    align-items: center;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .center .content {
+        align-items: flex-start;
+        text-align: left;
+    }
+}

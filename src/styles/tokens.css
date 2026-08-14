@@ -59,6 +59,8 @@
     --neutral-placeholder: #7d8073;
     --neutral-divider: #beb49f;
 
+    --color-placeholder: #7D8073;
+
     /* ========================================
     COLORS
     ======================================== */
@@ -73,6 +75,7 @@
     --color-text-primary: var(--ink-900);
     --color-text-body: var(--neutral-body);
     --color-text-inverse: var(--parchment-base);
+    --color-text-inverse-muted: var(--parchment-muted);
     --color-text-accent: var(--gold-500);
     --color-text-footer: var(--parchment-muted);
 
