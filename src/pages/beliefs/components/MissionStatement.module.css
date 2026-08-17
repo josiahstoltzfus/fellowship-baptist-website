@@ -1,0 +1,53 @@
+.mission {
+    width: 100%;
+    background: var(--color-surface-reflective);
+}
+
+.content {
+    width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-default));
+    margin-inline: auto;
+
+    padding-block: var(--space-4xl);
+
+    display: flex;
+    gap: var(--space-4xl);
+}
+
+.introduction {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.eyebrow {
+    color: var(--gold-500);
+}
+
+.reference {
+    color: var(--forest-900);
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.description {
+    color: var(--color-text-body);
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .description {
+        padding-block-end: var(--space-md);
+
+        border-bottom: 1px solid var(--color-border-default);
+    }
+
+
+}

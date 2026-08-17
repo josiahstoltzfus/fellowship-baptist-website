@@ -7,7 +7,6 @@ type NavDropdownProps = {
     item: NavDropdownItem;
 }
 
-
 export default function MobileDropdown({item}: NavDropdownProps) {
     const [open, setOpen] = useState(false);
 

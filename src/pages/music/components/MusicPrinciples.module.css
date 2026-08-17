@@ -1,0 +1,67 @@
+.principles {
+    width: 100%;
+}
+
+.content {
+    width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-default));
+    margin-inline: auto;
+    padding-block: var(--space-4xl);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.description {
+    color: var(--color-text-body);
+}
+
+.introduction {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.eyebrow {
+    color: var(--gold-500);
+}
+
+.item {
+    padding-block: var(--space-xl);
+
+    border-top: 1px solid var(--color-border-default);
+
+    display: flex;
+}
+
+.item-heading {
+    flex: 0 0 21.875rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.body {
+    color: var(--color-text-body);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.scripture-references {}
+
+.verse-list {}
+
+
+@media (max-width: 768px) {
+    .item {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .item-heading {
+        flex: 0 0 auto;
+    }
+}
