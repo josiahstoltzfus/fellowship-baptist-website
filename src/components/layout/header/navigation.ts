@@ -2,6 +2,7 @@ export type NavLinkItem = {
     type: "link";
     label: string;
     href: string;
+    emphasis?: boolean;
 };
 
 export type NavDropdownItem = {
@@ -41,4 +42,5 @@ export const navigationItems: NavItem[] = [
     {type: "link", label: "Visit", href: "/visit" },
     {type: "link", label: "Sermons", href: "/sermons" },
     {type: "link", label: "Contact", href: "/contact" },
+    {type: "link", label: "Give", href: "/give", emphasis: true}
 ]

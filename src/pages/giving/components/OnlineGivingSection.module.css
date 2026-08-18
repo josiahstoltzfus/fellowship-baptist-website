@@ -1,0 +1,23 @@
+.giving {
+    width: 100%;
+}
+
+.content {
+    width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-default));
+    margin-inline: auto;
+
+    padding-block: var(--space-4xl);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.eyebrow {
+    color: var(--gold-500);
+}
+
+.description {
+    width: var(--layout-reading-max);
+    color: var(--color-text-body);
+}

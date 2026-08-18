@@ -8,6 +8,7 @@ import MeetThePastorPage from "../pages/pastor/MeetThePastorPage.tsx";
 import WhatWeBelievePage from "../pages/beliefs/WhatWeBelievePage.tsx";
 import ChurchMusicPage from "../pages/music/ChurchMusicPage.tsx";
 import ContactPage from "../pages/contact/ContactPage.tsx";
+import GivePage from "../pages/giving/GivePage.tsx";
 
 const router = createBrowserRouter(
     [
@@ -47,6 +48,10 @@ const router = createBrowserRouter(
                     path: "/contact",
                     element: <ContactPage/>
                 },
+                {
+                    path: "/give",
+                    element: <GivePage/>
+                }
             ]
         }
     ]

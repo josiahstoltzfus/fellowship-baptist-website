@@ -5,6 +5,16 @@
     gap: var(--space-xl);
 }
 
+.giving-link {
+    padding: var(--space-xs) var(--space-sm);
+    border: 1px solid var(--color-border-default);
+}
+
+.giving-link:hover,
+.giving-link:focus-visible {
+    background: var(--color-surface-reflective);
+}
+
 @media (max-width: 768px) {
     .nav-items {
         display: none;

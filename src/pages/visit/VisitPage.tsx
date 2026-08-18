@@ -10,8 +10,7 @@ export default function VisitPage() {
             <PageIntroduction
                 eyebrow="Before Sunday"
                 title="Plan your visit."
-                description="Everything you need to know before joining us for worship in Fountain Inn."
-                alignment="center"/>
+                description="Everything you need to know before joining us for worship in Fountain Inn."/>
             <GatheringInformation />
             <VisitExpectations />
             <ArrivalInformation />
