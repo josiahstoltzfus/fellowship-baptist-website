@@ -7,9 +7,8 @@ export default function OnlineGivingSection() {
             <div className={`${styles.content}`}>
                 <p className={`text-eyebrow ${styles.eyebrow}`}>Online Giving</p>
                 <h2 className={`text-section-title`}>Give through a secure provider.</h2>
-                <p className={`text-body ${styles.description}`}>The church website does not collect or store payment
+                <p className={`text-body ${styles.description}`}>Fellowship Baptist does not collect or store payment
                     details.
-                    <br/>
                     The button below opens the church’s approved giving provider.</p>
                 <ActionLink href="...">Continue to secure giving</ActionLink>
             </div>

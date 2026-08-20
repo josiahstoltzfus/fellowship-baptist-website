@@ -9,6 +9,8 @@ import WhatWeBelievePage from "../pages/beliefs/WhatWeBelievePage.tsx";
 import ChurchMusicPage from "../pages/music/ChurchMusicPage.tsx";
 import ContactPage from "../pages/contact/ContactPage.tsx";
 import GivePage from "../pages/giving/GivePage.tsx";
+import SermonsPage from "../pages/sermons/SermonsPage.tsx";
+import RecommendedPage from "../pages/recommended/RecommendedPage.tsx";
 
 const router = createBrowserRouter(
     [
@@ -42,6 +44,19 @@ const router = createBrowserRouter(
                             path: "church-music",
                             element: <ChurchMusicPage/>,
                         }
+                    ]
+                },
+                {
+                    path: "/resources",
+                    children: [
+                        {
+                            path: "sermons",
+                            element: <SermonsPage/>
+                        },
+                        {
+                            path: "recommended",
+                            element: <RecommendedPage/>
+                        },
                     ]
                 },
                 {

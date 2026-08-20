@@ -38,9 +38,25 @@ export const navigationItems: NavItem[] = [
                 label: "Principles of Church Music",
                 href: "/about/church-music",
             },
-        ]},
-    {type: "link", label: "Visit", href: "/visit" },
-    {type: "link", label: "Sermons", href: "/sermons" },
-    {type: "link", label: "Contact", href: "/contact" },
+        ]
+    },
+    {type: "link", label: "Visit", href: "/visit"},
+    {
+        type: "dropdown",
+        label: "Resources",
+        children: [
+            {
+                type: "link",
+                label: "Sermons & Teaching",
+                href: "/resources/sermons",
+            },
+            {
+                type: "link",
+                label: "Recommended Resources",
+                href: "/resources/recommended",
+            },
+        ]
+    },
+    {type: "link", label: "Contact", href: "/contact"},
     {type: "link", label: "Give", href: "/give", emphasis: true}
 ]

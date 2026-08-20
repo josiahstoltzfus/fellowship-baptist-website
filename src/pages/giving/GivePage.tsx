@@ -8,7 +8,7 @@ export default function GivePage() {
         <>
             <PageIntroduction
                 eyebrow="Supporting the Ministry"
-                title="Giving"
+                title="Giving."
                 description="A clear, secure way to support the work and ministry of Fellowship Baptist."
             />
             <OnlineGivingSection/>
