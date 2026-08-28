@@ -8,9 +8,11 @@ export default function VisitPage() {
     return (
         <>
             <PageIntroduction
-                eyebrow="Before Sunday"
-                title="Plan your visit."
-                description="Everything you need to know before joining us for worship in Fountain Inn."/>
+                eyebrow="Visiting Fellowship"
+                title="We invite you to come and see."
+                description="He saith unto them, Come and see. They came and saw where he dwelt, and abode with him that day: for it was about the tenth hour."
+                scripture="John 1:39"
+            />
             <GatheringInformation />
             <VisitExpectations />
             <ArrivalInformation />

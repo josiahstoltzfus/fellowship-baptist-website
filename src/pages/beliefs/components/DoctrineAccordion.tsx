@@ -13,51 +13,75 @@ export default function DoctrineAccordion() {
     return (
         <section className={`${styles.accordion}`}>
             <div className={`${styles.content}`}>
-            {doctrineArticles.map((article) => {
-                const isOpen = openId === article.id;
+                <header className={styles.introduction}>
+                    <p className={`text-eyebrow ${styles.eyebrow}`}>
+                        Core Doctrines
+                    </p>
 
-                return (
-                    <article key={article.id} className={`${styles.article}`}>
-                            <button
-                                type="button"
-                                className={`${styles.button}`}
-                                aria-expanded={isOpen}
-                                onClick={() => toggleArticle(article.id)}
-                            >
-                                <span className={`text-heading-small`}>{article.title}</span>
-                                <span aria-hidden="true">{isOpen ? <Minus size={16} aria-hidden="true"/> : <Plus size={16} aria-hidden="true"/>}</span>
-                            </button>
+                    <h2 className="text-section-title">
+                        What does our church believe?
+                    </h2>
 
-                            {isOpen && (
-                                <div className={`text-body ${styles.body}`}>
-                                    <p className={`text-eyebrow ${styles.eyebrow}`}>{article.articleLabel}</p>
+                    <p className={`text-lead ${styles.description}`}>
+                        As a Bible-believing church, we believe in the basic,
+                        traditional doctrines of the Christian faith, including
+                        a literal interpretation of the Scriptures. We seek to
+                        remain separate from religious groups that deny these
+                        doctrines.
+                    </p>
 
-                                    {article.paragraphs.map((paragraph, index) => (
-                                        <p key={index}>{paragraph}</p>
-                                    ))}
+                    <p className={`text-body-small ${styles.references}`}>
+                        2 Corinthians 6:14–18 · 2 Thessalonians 3:6 · Jude 3
+                    </p>
+                </header>
 
-                                    {article.scriptureReferences && (
-                                        <section className={styles["scripture-references"]}>
-                                            <h3 className={`text-eyebrow ${styles.eyebrow}`}>
-                                                Supporting Scripture
-                                            </h3>
+                <div className={`${styles.layout}`}>
+                    {doctrineArticles.map((article) => {
+                        const isOpen = openId === article.id;
 
-                                            <ul className={`${styles["verse-list"]}`}>
-                                                {article.scriptureReferences.map(
-                                                    (reference) => (
-                                                        <li className="text-body" key={reference}>
-                                                            {reference}
-                                                        </li>
-                                                    ))}
-                                            </ul>
-                                        </section>
-                                    )}
+                        return (
+                            <article key={article.id} className={`${styles.article}`}>
+                                <button
+                                    type="button"
+                                    className={`${styles.button}`}
+                                    aria-expanded={isOpen}
+                                    onClick={() => toggleArticle(article.id)}
+                                >
+                                    <span className={`text-heading-small`}>{article.title}</span>
+                                    <span aria-hidden="true">{isOpen ? <Minus size={16} aria-hidden="true"/> : <Plus size={16} aria-hidden="true"/>}</span>
+                                </button>
 
-                                </div>
-                            )}
-                    </article>
-                )
-            })}
+                                {isOpen && (
+                                    <div className={`text-body ${styles.body}`}>
+                                        <p className={`text-eyebrow ${styles.eyebrow}`}>{article.articleLabel}</p>
+
+                                        {article.paragraphs.map((paragraph, index) => (
+                                            <p key={index}>{paragraph}</p>
+                                        ))}
+
+                                        {article.scriptureReferences && (
+                                            <section className={styles["scripture-references"]}>
+                                                <h3 className={`text-eyebrow ${styles.eyebrow}`}>
+                                                    Supporting Scripture
+                                                </h3>
+
+                                                <ul className={`${styles["verse-list"]}`}>
+                                                    {article.scriptureReferences.map(
+                                                        (reference) => (
+                                                            <li className="text-body" key={reference}>
+                                                                {reference}
+                                                            </li>
+                                                        ))}
+                                                </ul>
+                                            </section>
+                                        )}
+
+                                    </div>
+                                )}
+                            </article>
+                        )
+                    })}
+                </div>
             </div>
         </section>
     )

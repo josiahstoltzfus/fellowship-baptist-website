@@ -21,13 +21,36 @@ export default function VisitExpectations() {
                 <ul className={`${styles.list}`}>
                     <li className={`${styles.item}`}>
                         <h3 className={`text-heading-small ${styles["item-heading"]}`}>
-                            Worship and preaching
+                            Our preaching
                         </h3>
 
-                        <p className={`text-body ${styles["item-description"]}`}>
-                            Expect Scripture-centered worship and clear, verse-by-verse preaching focused on Jesus
-                            Christ and practical spiritual growth.
-                        </p>
+                        <div className={styles["item-text"]}>
+                            <p className={`text-body ${styles["item-description"]}`}>
+                                Our verse by verse exposition of Scripture is always Biblical, Christ-centered, understandable,
+                                alive and practical in covering every important subject and doctrine in the Bible.  Our preaching
+                                feeds believers the milk, meat, and honey of God’s Word to meet people’s spiritual needs.
+                            </p>
+
+                            <p className={`text-body ${styles["item-description"]}`}>
+                                We use the King James Version of the Bible because it is the most literal (word-for-word) and absolutely reliable translation of Scripture.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li className={`${styles.item}`}>
+                        <h3 className={`text-heading-small ${styles["item-heading"]}`}>
+                            Our worship
+                        </h3>
+
+                        <div className={`${styles["item-text"]}`}>
+                            <p className={`text-body ${styles["item-description"]}`}>
+                                Our worship declares the Lord’s worth. True worship must be in spirit and in truth. Through our singing, we seek to glorify the Lord, edify believers, and rest in Christ’s all-sufficiency for our insufficiency.
+                            </p>
+
+                            <p className={`text-body ${styles["item-description"]}`}>
+                                According to Psalm 96, worship includes preaching (verses 3–6), offerings (verses 7–9), and testimony (verses 10–13).
+                            </p>
+                        </div>
                     </li>
 
                     <li className={`${styles.item}`}>
@@ -36,30 +59,7 @@ export default function VisitExpectations() {
                         </h3>
 
                         <p className={`text-body ${styles["item-description"]}`}>
-                            You are welcome to attend without fear of judgment. Many regular attendees dress
-                            traditionally, but final visitor-facing wording will be confirmed with the pastor.
-                        </p>
-                    </li>
-
-                    <li className={`${styles.item}`}>
-                        <h3 className={`text-heading-small ${styles["item-heading"]}`}>
-                            Children during worship
-                        </h3>
-
-                        <p className={`text-body ${styles["item-description"]}`}>
-                            The church intends to welcome families and provide care for children during the service.
-                            Nursery ages, supervision, location, and check-in details still need to be confirmed.
-                        </p>
-                    </li>
-
-                    <li className={`${styles.item}`}>
-                        <h3 className={`text-heading-small ${styles["item-heading"]}`}>
-                            Sunday school
-                        </h3>
-
-                        <p className={`text-body ${styles["item-description"]}`}>
-                            Sunday School begins at 10:00 AM. Class groupings and the experience for adults and children
-                            will be added once the church supplies the details.
+                            You are welcome to attend without fear of judgement.  We simply request modesty.
                         </p>
                     </li>
                 </ul>

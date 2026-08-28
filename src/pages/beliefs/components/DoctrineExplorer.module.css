@@ -9,6 +9,12 @@
     padding-block: var(--space-4xl);
 
     display: flex;
+    flex-direction: column;
+    gap: var(--space-4xl);
+}
+
+.layout {
+    display: flex;
     gap: var(--space-4xl);
 }
 
@@ -19,9 +25,21 @@
     flex-direction: column;
 }
 
+.introduction {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
 .eyebrow,
 .article-label {
     color: var(--gold-500);
+}
+
+.description {
+    max-width: var(--layout-reading-max);
+
+    color: var(--color-text-body);
 }
 
 .list {
@@ -45,6 +63,7 @@
 }
 
 .body {
+    max-width: var(--layout-reading-max);
     color: var(--color-text-body);
 
     display: flex;

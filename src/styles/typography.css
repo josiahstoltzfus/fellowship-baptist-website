@@ -128,6 +128,13 @@ FONT DEFINITIONS
         line-height: var(--line-height-body);
     }
 
+    .text-body-bold {
+        font-family: var(--font-family-sans), sans-serif;
+        font-size: var(--font-size-17);
+        font-weight: var(--font-weight-semibold);
+        line-height: var(--line-height-body);
+    }
+
     .text-body-small {
         font-family: var(--font-family-sans), sans-serif;
         font-size: var(--font-size-14);

@@ -22,6 +22,16 @@
 }
 
 .description {
+    max-width: var(--layout-reading-max);
+    color: var(--color-text-inverse-muted);
+}
+
+.commentary {
+    margin-block-start: var(--space-lg);
+
+    opacity: 0.8;
+
+    max-width: var(--layout-reading-max);
     color: var(--color-text-inverse-muted);
 }
 

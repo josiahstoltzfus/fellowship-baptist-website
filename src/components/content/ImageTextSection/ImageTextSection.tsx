@@ -6,6 +6,7 @@ type ImageTextSectionProps = {
     heading: string;
     children: ReactNode;
     imageAlt: string;
+    imageSrc?: string;
     imagePosition?: "left" | "right";
     surface?: "base" | "reflective";
 }
@@ -15,6 +16,7 @@ export default function ImageTextSection({
                                              heading,
                                              children,
                                              imageAlt,
+                                             imageSrc,
                                              imagePosition = "right",
                                              surface = "base"
                                          }: ImageTextSectionProps) {
@@ -22,7 +24,9 @@ export default function ImageTextSection({
         <section className={`${styles.section} ${styles[surface]}`}>
             <div className={`${styles.content} ${styles[imagePosition]}`}>
 
-                <figure className={`text-eyebrow ${styles.media}`}>{imageAlt}</figure>
+                <figure className={`text-eyebrow ${styles.media}`}>
+                    <img src={imageSrc} alt={imageAlt} />
+                </figure>
 
                 <div className={`${styles.text}`}>
                     <p className={`text-eyebrow ${styles.eyebrow}`}>{eyebrow}</p>

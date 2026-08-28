@@ -40,9 +40,16 @@ export default function GatheringInformation() {
                         <p>Fountain Inn, SC 29644</p>
                     </address>
 
-                    <div className={`text-body ${styles["contact-details"]}`}>
-                        <p>Phone number to be supplied</p>
-                        <p>Email to be supplied</p>
+                    <div className={`${styles["contact-details"]}`}>
+                        <p className={`${styles["contact-item"]}`}>
+                            <span className={`text-body-bold ${styles.label}`}>Phone:</span>
+                            <a href="tel:18647048440" className={`text-body ${styles["contact-link"]}`}>864-630-6821</a>
+                        </p>
+
+                        <p className={`${styles["contact-item"]}`}>
+                            <span className={`text-body-bold ${styles.label}`}>Email:</span>
+                            <a href="mailto:PastorJackLBoyer@spectrum.net" className={`text-body ${styles["contact-link"]}`}>PastorJackLBoyer@spectrum.net</a>
+                        </p>
                     </div>
                     <ActionLink href="/contact">Get Directions</ActionLink>
                 </div>

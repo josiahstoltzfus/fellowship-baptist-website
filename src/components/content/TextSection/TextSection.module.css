@@ -39,6 +39,23 @@
     color: var(--color-text-body);
 }
 
+.scripture {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.reference {
+    color: var(--gold-500);
+    font-style: normal;
+}
+
+.additional {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
 @media (max-width: 768px) {
     .center {
         align-items: flex-start;

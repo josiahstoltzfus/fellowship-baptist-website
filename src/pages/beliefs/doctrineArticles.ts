@@ -1,8 +1,14 @@
+export type ScripturePassage = {
+    reference: string;
+    text: string;
+}
+
 export type DoctrineArticle = {
     id: string;
     title: string;
     articleLabel: string;
     paragraphs: string[];
+    scripturePassages?: ScripturePassage[];
     scriptureReferences: string[];
 };
 

@@ -1,0 +1,9 @@
+.closing {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.signature {
+    color: var(--gold-500);
+}

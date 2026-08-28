@@ -8,34 +8,33 @@ export default function OurStoryPage() {
             <PageIntroduction
                 eyebrow="About Fellowship"
                 title="Our story."
-                description="How Fellowship Baptist began, the convictions that shaped it, and the purpose it continues to pursue today."/>
+                description="How Fellowship Baptist began, the convictions that shaped it, and the purpose it continues to pursue today."
+            />
 
             <ImageTextSection
                 eyebrow="Our Beginning"
-                heading="Rooted in God’s Word"
+                heading="How Fellowship Baptist Began"
                 imageAlt="Historical Photograph"
                 imagePosition="left"
                 surface="base">
-                <p className="text-body">The pastor’s approved history will explain when and why the church began, the
-                    people and convictions that shaped its early ministry, and the work it continues today.</p>
-                <p className="text-body">Additional paragraphs may preserve meaningful milestones or memories if enough
-                    material is supplied. This section should remain concise if the available history is brief.</p>
+                <p className="text-body">Fellowship Baptist began as a daughter church of Calvary Baptist Church of Simpsonville. Pastor Guy Altizer asked me to pastor the new work. He is with the Lord now, but he was a great man and a great friend.</p>
+                <p className="text-body">Today, Fellowship Baptist is a Fundamental Independent Baptist church that has been blessed with thirteen and a half acres of beautiful property.</p>
             </ImageTextSection>
 
             <ImageTextSection
                 eyebrow="The Church's Origin"
-                heading="Hear the story firsthand"
+                heading="Hear the Story Firsthand"
                 imageAlt="Origin Recording / Poster Image"
                 surface="reflective">
-                <p className="text-body">If the existing origin recording is appropriate for publication, it can preserve the pastor’s voice and complement the written history without duplicating it.</p>
+                <p className="text-body">The story of Fellowship Baptist is also a story of God’s provision. This video shares how the church began and how the Lord provided along the way.</p>
             </ImageTextSection>
 
             <PageConclusion
-                eyebrow="Continue"
-                heading="The convictions that continue to guide us."
-                description="Explore the beliefs that shape Fellowship Baptist's worship, teaching, and ministry today."
-                actionLabel="What We Believe"
+                eyebrow="Our Foundation"
+                heading="Rooted in God's Word."
+                description="Learn the biblical beliefs that guide Fellowship Baptist’s worship, teaching, and ministry."
                 href="/about/what-we-believe"
+                actionLabel="What we believe"
             />
         </>
     )

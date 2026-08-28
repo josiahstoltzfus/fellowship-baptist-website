@@ -1,31 +1,40 @@
+import styles from "./MeetThePastor.module.css";
 import PageIntroduction from "../../components/content/PageIntroduction/PageIntroduction.tsx";
 import ImageTextSection from "../../components/content/ImageTextSection/ImageTextSection.tsx";
 import PageConclusion from "../../components/content/PageConclusion/PageConclusion.tsx";
 import TextSection from "../../components/content/TextSection/TextSection.tsx";
+import pastor_image from "../../assets/images/pastor-image.jpg"
 
 export default function MeetThePastorPage() {
     return (
         <>
             <PageIntroduction
                 eyebrow="About Fellowship"
-                title="Meet the Pastor."
+                title="Meet the pastor."
                 description="Meet the pastor who serves Fellowship Baptist through the faithful teaching of God’s Word and care for its congregation."/>
 
             <ImageTextSection
                 eyebrow="Pastor of Fellowship Baptist"
-                heading="Pastor [Full Name]"
+                heading="Pastor Jack Boyer"
                 imageAlt="Pastor Portrait"
+                imageSrc={pastor_image}
                 imagePosition="left">
-                <p className="text-body">An approved biography can introduce the pastor’s calling, ministry background, and relationship with Fellowship Baptist.</p>
-                <p className="text-body">A second paragraph can describe his approach to preaching and pastoral ministry, along with his desire for people to grow closer to Christ through God’s Word.</p>
+                <p className="text-body">I would like to share my story to help you know me. My selfishness and sin choices were destroying my life and my marriage with a very sweet wife. She told my sister, “I don’t know what I am going to do with him."</p>
+                <p className="text-body">My sister sent her Pastor to visit us. I tried to get rid of him, but my wife had questions. God kept the pressure on, and I finally admitted I was lost and needed to be saved. I got a second chance. Really it was my last chance.</p>
+                <p className="text-body">Patty and I both received Jesus as our personal Savior and it surprised everyone, including me, when eight years later God called me to preach.</p>
+                <p className="text-body">So, when I say, we need Jesus and the truths of God’s Word to make life work, I know firsthand what that looks like. That is my ministry.</p>
             </ImageTextSection>
 
             <TextSection
                 eyebrow="A Word of Welcome"
-                heading="A brief personal welcome from the pastor can appear here if he would like to address visitors in his own words."
-                description="This should use the pastor’s approved wording rather than a message written on his behalf."
-                surface="reflective"
-            />
+                heading="The Lord Jesus Christ is a wonderful Savior!"
+                description="He desires to have the place in your life that He died on the Cross to give you. No one can do more than the Lord Jesus Christ to save, help, guide and bless our lives. We need Jesus and we need the principles found in God’s Word, that our Church shares each week."
+                surface="reflective">
+                <div className={styles.closing}>
+                    <p className={`text-subheading ${styles.invitation}`}>Come and see!</p>
+                    <p className={`text-eyebrow ${styles.signature}`}>Pastor Jack Boyer</p>
+                </div>
+            </TextSection>
 
             <PageConclusion
                 eyebrow="continue"

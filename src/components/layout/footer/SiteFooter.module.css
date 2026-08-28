@@ -63,6 +63,13 @@
     gap: var(--space-2xs);
 }
 
+.contact-link:hover,
+.directions:hover,
+.contact-link:focus,
+.directions:focus {
+    text-decoration: underline;
+}
+
 .section-heading {
     color: var(--gold-500);
 }

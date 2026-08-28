@@ -42,15 +42,15 @@ export default function SiteFooter() {
                             <p className={`text-body-small`}>Fountain Inn, SC</p>
                         </address>
 
-                        <a href="#" className={`text-action`}>Get Directions →</a>
+                        <a href="#" className={`text-action ${styles.directions}`}>Get Directions →</a>
                     </section>
 
                     <section className={`text-body-small ${styles["section"]}`}>
                         <h2 className={`text-eyebrow ${styles["section-heading"]}`}>Contact</h2>
 
                         <div className={`text-body-small ${styles["contact-details"]}`}>
-                            <p>Phone to be supplied</p>
-                            <p>Email to be supplied</p>
+                            <a href="tel:18647048440" className={`${styles["contact-link"]}`}>864-630-6821</a>
+                            <a href="mailto:PastorJackLBoyer@spectrum.net" className={`${styles["contact-link"]}`}>PastorJackLBoyer@spectrum.net</a>
                         </div>
                     </section>
                 </div>

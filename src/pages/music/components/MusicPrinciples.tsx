@@ -13,17 +13,13 @@ export default function MusicPrinciples() {
 
                     <h2 className={`text-section-title ${styles.heading}`}>The Principles that guide us</h2>
 
-                    <p className={`text-body ${styles.description}`}>The categories below remain provisional. The church’s approved document will determine the final organization and exact language.</p>
+                    <p className={`text-body ${styles.description}`}>Just as God’s Word rightly interpreted is the message we are to preach, it also provides the guiding principles for our church music.</p>
                 </header>
 
                 <div className={styles.list}>
                     {musicPrinciples.map((principle) => (
                         <article className={styles.item} key={principle.id}>
                             <header className={styles["item-heading"]}>
-                                <p className={`text-eyebrow ${styles.eyebrow}`}>
-                                    Principle
-                                </p>
-
                                 <h3 className="text-heading-small">
                                     {principle.title}
                                 </h3>
