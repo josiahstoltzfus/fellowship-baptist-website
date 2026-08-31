@@ -1,6 +1,6 @@
 import VisitExpectations from "./components/VisitExpectations.tsx";
 import ArrivalInformation from "./components/ArrivalInformation.tsx";
-import GatheringInformation from "../../components/church/GatheringInformation/GatheringInformation.tsx";
+import GatheringInformation from "../../components/content/GatheringInformation/GatheringInformation.tsx";
 import PageIntroduction from "../../components/content/PageIntroduction/PageIntroduction.tsx";
 import PageConclusion from "../../components/content/PageConclusion/PageConclusion.tsx";
 

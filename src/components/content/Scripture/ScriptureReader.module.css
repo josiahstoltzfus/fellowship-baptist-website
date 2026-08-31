@@ -1,0 +1,123 @@
+.dialog::backdrop {
+    background: var(--color-surface-emphasis);
+    opacity: 0.5;
+}
+
+.dialog {
+    width: min(calc(100% - 2 * var(--layout-gutter)), 40rem);
+    max-height: calc(100vh - 3rem);
+    margin: auto;
+    padding: var(--space-xl);
+
+    border: 0;
+    background: var(--color-surface-base);
+    border-top: 3px solid var(--gold-500);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+
+    overflow: hidden;
+}
+
+.header {
+    flex: 0 0 auto;
+    position: relative;
+
+    border-bottom: 1px solid var(--color-border-default);
+
+    display: flex;
+    justify-content: space-between;
+    padding-block-end: var(--space-md);
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.eyebrow {
+    color: var(--gold-500);
+}
+
+.reference {
+    color: var(--color-text-primary);
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: var(--space-xs);
+
+    border-radius: 50%;
+
+    color: var(--color-text-primary);
+}
+
+.close-button:hover {
+    background: rgba(0, 0, 0, 0.075);
+}
+
+.passage {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding-block-end: var(--space-lg);
+    padding-inline-end: var(--space-xs);
+
+    border-bottom: 1px solid var(--color-border-default);
+    color: var(--color-text-body);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgb(0 0 0 / 0.15) transparent;
+}
+
+.passage::-webkit-scrollbar {
+    width: 0.375rem;
+}
+
+.passage::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.passage::-webkit-scrollbar-thumb {
+    background: rgb(0 0 0 / 0.15);
+    border-radius: 999px;
+}
+
+.footer {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.version {
+    color: var(--gold-500);
+}
+
+.verse-number {
+    margin-inline-end: var(--space-2xs);
+    color: var(--gold-500);
+    font-size: var(--font-size-12);
+    font-weight: var(--font-weight-semibold);
+}
+
+@media (max-width: 600px) {
+    .dialog {
+        width: calc(100vw - var(--layout-gutter));
+        max-height: calc(100dvh - var(--layout-gutter));
+    }
+
+    .escape {
+        display: none;
+    }
+}
+

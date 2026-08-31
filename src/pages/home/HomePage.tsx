@@ -1,7 +1,7 @@
 import styles from "./HomePage.module.css";
 import HomeHero from "./components/HomeHero.tsx";
 import HomeHighlights from "./components/HomeHighlights.tsx";
-import GatheringInformation from "../../components/church/GatheringInformation/GatheringInformation.tsx";
+import GatheringInformation from "../../components/content/GatheringInformation/GatheringInformation.tsx";
 import ExploreFellowship from "./components/ExploreFellowship.tsx";
 import TextSection from "../../components/content/TextSection/TextSection.tsx";
 

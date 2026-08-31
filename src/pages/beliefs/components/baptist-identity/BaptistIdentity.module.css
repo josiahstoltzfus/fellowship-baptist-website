@@ -1,0 +1,30 @@
+.section {
+    width: 100%;
+    background: var(--color-surface-reflective);
+}
+
+.content {
+    width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-default));
+    margin-inline: auto;
+    padding-block: var(--space-4xl);
+}
+
+.eyebrow {
+    color: var(--gold-500);
+}
+
+.references {
+    color: var(--color-text-body);
+}
+
+.introduction {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.description {
+    max-width: var(--layout-reading-max);
+
+    color: var(--color-text-body);
+}

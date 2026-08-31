@@ -1,8 +1,16 @@
 import styles from "./DoctrineExplorer.module.css";
-import {doctrineArticles} from "../doctrineArticles.ts";
+import {doctrineArticles} from "../../doctrineArticles.ts";
+import {doctrineIntroductionScriptures} from "../../whatWeBelieveContent.ts";
 import {useState} from "react";
+import ScriptureReferenceList from "../../../../components/content/Scripture/ScriptureReferenceList.tsx";
+import type {ScriptureReference} from "../../../../components/content/Scripture/scriptureTypes.ts";
+import SupportingScriptureAccordion from "../../../../components/content/Scripture/SupportingScriptureAccordion.tsx";
 
-export default function DoctrineExplorer() {
+type DoctrineExplorerProps = {
+    onSelect: (reference: ScriptureReference) => void;
+};
+
+export default function DoctrineExplorer({onSelect} : DoctrineExplorerProps) {
     const [selectedId, setSelectedId] = useState(doctrineArticles[0].id);
     const selectedArticle = doctrineArticles.find((article) => article.id === selectedId) ?? doctrineArticles[0];
 
@@ -26,9 +34,10 @@ export default function DoctrineExplorer() {
                         doctrines.
                     </p>
 
-                    <p className={`text-body-small ${styles.references}`}>
-                        2 Corinthians 6:14–18 · 2 Thessalonians 3:6 · Jude 3
-                    </p>
+                    <ScriptureReferenceList
+                        references={doctrineIntroductionScriptures}
+                        onSelect={onSelect}
+                    />
                 </header>
 
                 <div className={`${styles.layout}`}>
@@ -68,21 +77,8 @@ export default function DoctrineExplorer() {
                             ))}
                         </div>
 
-                        {selectedArticle.scriptureReferences && (
-                            <section className={styles["scripture-references"]}>
-                                <h3 className={`text-eyebrow ${styles.eyebrow}`}>
-                                    Supporting Scripture
-                                </h3>
-
-                                <ul className={`${styles["verse-list"]}`}>
-                                    {selectedArticle.scriptureReferences.map(
-                                        (reference) => (
-                                            <li className="text-body" key={reference}>
-                                                {reference}
-                                            </li>
-                                        ))}
-                                </ul>
-                            </section>
+                        {selectedArticle.supportingScriptures && (
+                            <SupportingScriptureAccordion passages={selectedArticle.supportingScriptures}/>
                         )}
                     </article>
                 </div>

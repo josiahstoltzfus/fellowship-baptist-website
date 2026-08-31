@@ -1,0 +1,27 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+}
+
+.item {}
+
+.text {
+    color: var(--color-text-body);
+}
+
+.button {
+    padding-inline-end: var(--space-xs);
+    color: var(--color-text-body);
+}
+
+.item:not(:last-child)::after {
+    content: "·";
+    color: var(--color-text-body);
+}
+
+.button:hover,
+.button:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}

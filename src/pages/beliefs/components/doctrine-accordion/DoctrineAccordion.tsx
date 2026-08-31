@@ -1,9 +1,16 @@
-import {useState} from "react";
-import {doctrineArticles} from "../doctrineArticles.ts";
 import styles from "./DoctrineAccordion.module.css";
+import {useState} from "react";
+import {doctrineArticles} from "../../doctrineArticles.ts";
+import {doctrineIntroductionScriptures} from "../../whatWeBelieveContent.ts";
 import {Minus, Plus} from 'lucide-react';
+import ScriptureReferenceList from "../../../../components/content/Scripture/ScriptureReferenceList.tsx";
+import type {ScriptureReference} from "../../../../components/content/Scripture/scriptureTypes.ts";
 
-export default function DoctrineAccordion() {
+type DoctrineAccordionProps = {
+    onSelect: (reference: ScriptureReference) => void;
+};
+
+export default function DoctrineAccordion({onSelect} : DoctrineAccordionProps) {
     const [openId, setOpenId] = useState<string | null>(doctrineArticles[0].id);
 
     function toggleArticle(id: string) {
@@ -30,9 +37,11 @@ export default function DoctrineAccordion() {
                         doctrines.
                     </p>
 
-                    <p className={`text-body-small ${styles.references}`}>
-                        2 Corinthians 6:14–18 · 2 Thessalonians 3:6 · Jude 3
-                    </p>
+                    <ScriptureReferenceList
+                        references={doctrineIntroductionScriptures}
+                        onSelect={onSelect}
+                    />
+
                 </header>
 
                 <div className={`${styles.layout}`}>

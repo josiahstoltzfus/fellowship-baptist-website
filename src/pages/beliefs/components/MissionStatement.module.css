@@ -1,6 +1,6 @@
 .mission {
     width: 100%;
-    background: var(--color-surface-reflective);
+    background: var(--color-surface-emphasis);
 }
 
 .content {
@@ -19,6 +19,10 @@
     gap: var(--space-md);
 }
 
+.title {
+    color: var(--color-text-inverse);
+}
+
 .eyebrow {
     color: var(--gold-500);
 }
@@ -34,7 +38,16 @@
 }
 
 .description {
-    color: var(--color-text-body);
+    opacity: 0.8;
+    color: var(--color-text-inverse-muted);
+}
+
+.quotation {
+    color: var(--color-text-inverse-muted);
+}
+
+.link {
+    color: var(--gold-500);
 }
 
 @media (max-width: 768px) {

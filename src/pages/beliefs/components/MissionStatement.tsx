@@ -9,7 +9,7 @@ export default function MissionStatement() {
                         Our Mission
                     </p>
 
-                    <h2 className={`text-section-title`}>Building Lives Focused on Christ</h2>
+                    <h2 className={`text-section-title ${styles.title}`}>Building Lives Focused on Christ</h2>
                 </header>
 
                 <div className={`${styles.message}`}>

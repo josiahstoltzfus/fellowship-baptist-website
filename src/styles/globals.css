@@ -6,3 +6,7 @@ body {
 body.menu-open {
     overflow: hidden;
 }
+
+html {
+    scrollbar-gutter: stable;
+}

@@ -1,9 +1,17 @@
 import PageIntroduction from "../../components/content/PageIntroduction/PageIntroduction.tsx";
 import MissionStatement from "./components/MissionStatement.tsx";
-import DoctrineExplorer from "./components/DoctrineExplorer.tsx";
-import DoctrineAccordion from "./components/DoctrineAccordion.tsx";
+import DoctrineExplorer from "./components/doctrine-explorer/DoctrineExplorer.tsx";
+import DoctrineAccordion from "./components/doctrine-accordion/DoctrineAccordion.tsx";
+import BaptistIdentity from "./components/baptist-identity/BaptistIdentity.tsx";
+import {useState} from "react";
+import type {ScriptureReference} from "../../components/content/Scripture/scriptureTypes.ts";
+import ScriptureReader from "../../components/content/Scripture/ScriptureReader.tsx";
 
 export default function WhatWeBelievePage() {
+    const [selectedScripture, setSelectedScripture] =
+        useState<ScriptureReference | null>(null);
+    const isScriptureReaderOpen = selectedScripture !== null;
+
     return (
         <>
             <PageIntroduction
@@ -16,10 +24,16 @@ export default function WhatWeBelievePage() {
                 correction tells us how to get right, and instruction tells us how to stay right."
             />
 
-            <DoctrineExplorer />
-            <DoctrineAccordion />
-
+            <DoctrineExplorer onSelect={setSelectedScripture}/>
+            <DoctrineAccordion onSelect={setSelectedScripture}/>
+            <BaptistIdentity onSelect={setSelectedScripture}/>
             <MissionStatement />
+
+            {isScriptureReaderOpen &&
+                <ScriptureReader
+                    scripture={selectedScripture}
+                    onClose={() => setSelectedScripture(null)}/>
+            }
         </>
 
 
