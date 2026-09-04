@@ -116,6 +116,10 @@
 .timeline {
     color: var(--color-text-inverse-muted);
     opacity: 0.8;
+
+    flex: 1;
+    display: flex;
+    gap: var(--space-md);
 }
 
 .playback-button {
@@ -144,12 +148,6 @@
     color: var(--gold-500);
     font-weight: var(--font-weight-semibold);
     font-size: var(--font-size-24);
-}
-
-.timeline {
-    flex: 1;
-    display: flex;
-    gap: var(--space-md);
 }
 
 .window-controls {
@@ -262,4 +260,14 @@
 .share-button {
     color: var(--color-text-inverse-muted);
     opacity: 0.8;
+}
+
+.duration {
+    flex-shrink: 0;
+    min-width: 5ch;
+    font-variant-numeric: tabular-nums;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

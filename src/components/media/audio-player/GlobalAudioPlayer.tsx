@@ -102,7 +102,7 @@ export default function GlobalAudioPlayer() {
                 </div>
 
                 <div className={styles.timeline}>
-                    <span className={`text-body ${styles["current-duration"]}`}>{currentDuration}</span>
+                    <span className={`text-body ${styles.duration}`}>{currentDuration}</span>
                     <input
                         className={styles.input}
                         style={{
@@ -120,7 +120,7 @@ export default function GlobalAudioPlayer() {
                             seek(newTime);
                         }}
                     />
-                    <span className={`text-body ${styles["total-duration"]}`}>{totalDuration}</span>
+                    <span className={`text-body ${styles.duration}`}>{totalDuration}</span>
                 </div>
 
                 <div className={`${styles["window-controls"]}`}>
