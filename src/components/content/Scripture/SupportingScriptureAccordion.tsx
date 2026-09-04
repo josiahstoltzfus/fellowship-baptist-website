@@ -2,6 +2,7 @@ import type {ScriptureReference} from "./scriptureTypes.ts";
 import styles from "./SupportingScriptureAccordion.module.css";
 import {useState} from "react";
 import ScriptureReader from "./ScriptureReader.tsx";
+import {Minus, Plus} from "lucide-react";
 
 type ScriptureAccordionProps = {
     passages: ScriptureReference[];
@@ -36,8 +37,8 @@ export default function SupportingScriptureAccordion({passages}: ScriptureAccord
                                 }}
                                 aria-expanded={isExpanded}
                             >
-                                <span className={`text-body ${styles.reference}`}>{passage.reference}</span>
-                                <span aria-hidden="true" className={`${styles.icon}`}>{isExpanded ? "−" : "+"}</span>
+                                <span className={`text-heading-xs ${styles.reference}`}>{passage.reference}</span>
+                                <span aria-hidden="true" className={`${styles.icon}`}>{isExpanded ? <Minus size={16} strokeWidth={2.5} aria-hidden="true"/> : <Plus size={16} strokeWidth={2.5} aria-hidden="true"/>}</span>
                             </button>
 
                             {isExpanded && (
@@ -52,9 +53,10 @@ export default function SupportingScriptureAccordion({passages}: ScriptureAccord
                                     {passage.verses.length > 4 && (
                                         <button
                                             type="button"
+                                            className={`text-action ${styles["full-passage-button"]}`}
                                             onClick={() => setReaderPassage(passage)}
                                         >
-                                            Read full passage
+                                            Read full passage →
                                         </button>
                                     )}
 

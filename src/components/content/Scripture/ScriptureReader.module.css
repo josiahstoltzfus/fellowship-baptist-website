@@ -104,7 +104,7 @@
 }
 
 .verse-number {
-    margin-inline-end: var(--space-2xs);
+    margin-inline-end: var(--space-xs);
     color: var(--gold-500);
     font-size: var(--font-size-12);
     font-weight: var(--font-weight-semibold);

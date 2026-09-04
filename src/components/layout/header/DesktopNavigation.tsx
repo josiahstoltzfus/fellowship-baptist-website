@@ -1,6 +1,7 @@
 import styles from "./DesktopNavigation.module.css";
 import {navigationItems} from "./navigation.ts";
 import DesktopDropdown from "./DesktopDropdown.tsx";
+import {NavLink} from "react-router-dom";
 
 export default function DesktopNavigation() {
     return (
@@ -9,7 +10,7 @@ export default function DesktopNavigation() {
                 <li key={item.label}>
                     {
                         item.type === "dropdown" ? <DesktopDropdown item={item}/> :
-                            <a href={item.href} className={item.emphasis ? styles["giving-link"] : undefined}>{item.label}</a>
+                            <NavLink to={item.href} className={item.emphasis ? styles["giving-link"] : undefined}>{item.label}</NavLink>
                     }
                 </li>
             ))}

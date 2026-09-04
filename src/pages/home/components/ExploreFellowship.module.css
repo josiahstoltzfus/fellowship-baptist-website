@@ -14,15 +14,18 @@
 .items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
 }
 
 .item {
-    padding-inline: var(--space-xl);
-
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: var(--space-md);
+}
+
+.item-text {
+    max-width: 30ch;
+    color: var(--color-text-body);
 }
 
 .item:first-child {
@@ -33,20 +36,22 @@
     padding-right: 0;
 }
 
-.item + .item {
-    border-inline-start: 1px solid var(--color-border-default);
-}
-
 .eyebrow {
     color: var(--gold-500);
 }
 
 .link {
+    margin-block-start: auto;
     color: var(--forest-900);
 
     display: flex;
     align-items: center;
     gap: var(--space-2xs);
+}
+
+.link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 @media (max-width: 768px) {

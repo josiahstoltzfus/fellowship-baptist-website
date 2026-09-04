@@ -1,6 +1,5 @@
 import styles from "./BaptistIdentity.module.css";
-import BaptistIdentityDesktop from "./BaptistIdentityDesktop.tsx";
-import BaptistIdentityMobile from "./BaptistIdentityMobile.tsx";
+import BaptistIdentityList from "./BaptistIdentityList.tsx";
 import {baptistIdentityScriptures} from "../../whatWeBelieveContent.ts";
 import ScriptureReferenceList from "../../../../components/content/Scripture/ScriptureReferenceList.tsx";
 import type {ScriptureReference} from "../../../../components/content/Scripture/scriptureTypes.ts";
@@ -24,7 +23,7 @@ export default function BaptistIdentity({onSelect}: BaptistIdentityProps) {
 
                     <p className={`text-lead ${styles.description}`}>
                         As a Baptist church, we identify with specific New Testament doctrine, consistent with similar
-                        groups of believers who have gone before us, since the time of Christ
+                        groups of believers who have gone before us, since the time of Christ.
                     </p>
 
                     <ScriptureReferenceList references={baptistIdentityScriptures} onSelect={onSelect}/>
@@ -32,12 +31,9 @@ export default function BaptistIdentity({onSelect}: BaptistIdentityProps) {
                 </header>
 
                 <div className={styles.desktop}>
-                    <BaptistIdentityDesktop/>
+                    <BaptistIdentityList onSelect={onSelect}/>
                 </div>
 
-                <div className={styles.mobile}>
-                    <BaptistIdentityMobile/>
-                </div>
             </div>
         </section>
     )

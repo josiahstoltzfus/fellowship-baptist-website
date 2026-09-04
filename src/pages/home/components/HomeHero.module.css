@@ -5,13 +5,6 @@
 .content {
     width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-default));
     margin-inline: auto;
-    /*
-    padding-inline-start: max(
-            var(--layout-gutter),
-            calc((100vw - var(--layout-content-header)) / 2)
-    );
-    padding-inline-end: var(--space-3xl);
-     */
     padding-block: var(--space-xl);
 
     display: flex;

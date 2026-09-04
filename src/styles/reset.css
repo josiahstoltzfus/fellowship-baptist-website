@@ -76,15 +76,16 @@ th, td {
     font: inherit;
 }
 
-/* Quotes */
-blockquote, q {
+blockquote,
+q {
     quotes: none;
 }
+
 blockquote::before,
 blockquote::after,
 q::before,
 q::after {
-    content: "";
+    content: none;
 }
 
 /* Fieldset / legend */

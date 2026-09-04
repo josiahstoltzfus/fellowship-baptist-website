@@ -58,6 +58,10 @@
     justify-content: space-between;
 }
 
+.icon {
+    color: var(--gold-500);
+}
+
 .body {
     color: var(--color-text-body);
 
@@ -83,5 +87,9 @@
 @media (max-width: 768px) {
     .accordion {
         display: block;
+    }
+
+    .layout {
+        gap: 0;
     }
 }

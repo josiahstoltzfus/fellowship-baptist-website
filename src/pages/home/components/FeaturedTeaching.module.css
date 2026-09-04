@@ -1,0 +1,80 @@
+.highlights {
+    width: 100%;
+    padding-block: var(--space-3xl);
+
+    background: var(--color-surface-emphasis);
+    color: var(--color-text-inverse);
+}
+
+.content {
+    width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-default));
+    margin-inline: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4xl);
+}
+
+.featured-teaching {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.title {
+    color: var(--gold-500);
+}
+
+.list {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.item {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: center;
+}
+
+.item:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold-500);
+}
+
+.media {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.button {
+    padding: var(--space-sm) var(--space-md);
+    align-self: flex-start;
+
+    background: var(--color-surface-base);
+    color: var(--forest-900);
+    font-weight: var(--font-weight-semibold);
+
+    display: flex;
+    gap: var(--space-sm);
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .weekly-highlights,
+    .featured-teaching {
+        flex: 1;
+    }
+}
+

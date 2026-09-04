@@ -1,8 +1,16 @@
 import PageIntroduction from "../../components/content/PageIntroduction/PageIntroduction.tsx";
-import MusicPrinciples from "./components/MusicPrinciples.tsx";
 import PageConclusion from "../../components/content/PageConclusion/PageConclusion.tsx";
+import RejoicingPrinciple from "./components/principles/rejoicing/RejoicingPrinciple.tsx";
+import type {ScriptureReference} from "../../components/content/Scripture/scriptureTypes.ts";
+import ScriptureReader from "../../components/content/Scripture/ScriptureReader.tsx";
+import {useState} from "react";
+import RighteousnessPrinciple from "./components/principles/righteousness/RighteousnessPrinciple.tsx";
+import ReplacementPrinciple from "./components/principles/replacement/ReplacementPrinciple.tsx";
 
 export default function ChurchMusicPage() {
+    const [selectedScripture, setSelectedScripture] = useState<ScriptureReference | null>(null);
+    const isScriptureReaderOpen = selectedScripture !== null;
+
     return (
         <>
             <PageIntroduction
@@ -12,7 +20,9 @@ export default function ChurchMusicPage() {
                 scripture="Colossians 3:16"
                 commentary="Psalms are actually Scripture set to music. Hymns are musical praises that glorify the Lord written by believers. Spiritual songs are gospel songs testifying of personal experiences based on true theology. Christ must be exalted and not the artist."
             />
-            <MusicPrinciples/>
+            <RejoicingPrinciple onSelect={setSelectedScripture}/>
+            <RighteousnessPrinciple onSelect={setSelectedScripture}/>
+            <ReplacementPrinciple onSelect={setSelectedScripture}/>
             <PageConclusion
                 eyebrow="Worship With Us"
                 heading="Join us as we worship together."
@@ -20,6 +30,12 @@ export default function ChurchMusicPage() {
                 href="/visit"
                 actionLabel="Plan your visit"
             />
+
+            {isScriptureReaderOpen &&
+                <ScriptureReader
+                    scripture={selectedScripture}
+                    onClose={() => setSelectedScripture(null)}/>
+            }
         </>
     )
 }

@@ -44,6 +44,10 @@
     gap: var(--space-2xs);
 }
 
+.directions {
+    color: var(--color-text-body);
+}
+
 .map {
     grid-area: map;
     width: 100%;

@@ -12,7 +12,7 @@ export default function ArrivalInformation() {
 
                 <div className={styles.layout}>
                     <div className={styles.details}>
-                        <address className={`text-heading-small ${styles.address}`}>
+                        <address className={`text-lead ${styles.address}`}>
                             <p>Fellowship Baptist Church</p>
                             <p>401 Jenkins Bridge Road</p>
                             <p>Fountain Inn, SC 29644</p>

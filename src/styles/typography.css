@@ -20,6 +20,14 @@ FONT DEFINITIONS
 
 @font-face {
     font-family: 'Inter';
+    src: url('../assets/fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
     src: url('../assets/fonts/Inter-SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
@@ -51,6 +59,7 @@ FONT DEFINITIONS
 
     /* font weights */
     --font-weight-regular: 400;
+    --font-weight-medium: 500;
     --font-weight-semibold: 600;
 
     /* line heights */
@@ -72,8 +81,10 @@ FONT DEFINITIONS
     .text-nav {
         font-family: var(--font-family-sans), sans-serif;
         font-size: var(--font-size-14);
-        font-weight: var(--font-weight-regular);
+        text-transform: uppercase;
+        font-weight: var(--font-weight-medium);
         line-height: var(--line-height-compact);
+        letter-spacing: 0.04em;
     }
 
     /* headings */
@@ -109,6 +120,13 @@ FONT DEFINITIONS
     .text-heading-small {
         font-family: var(--font-family-serif), serif;
         font-size: var(--font-size-24);
+        font-weight: var(--font-weight-semibold);
+        line-height: var(--line-height-heading);
+    }
+
+    .text-heading-xs {
+        font-family: var(--font-family-serif), serif;
+        font-size: var(--font-size-19);
         font-weight: var(--font-weight-semibold);
         line-height: var(--line-height-heading);
     }
@@ -163,6 +181,15 @@ FONT DEFINITIONS
     .text-action {
         font-family: var(--font-family-sans), sans-serif;
         font-size: var(--font-size-12);
+        font-weight: var(--font-weight-semibold);
+        line-height: var(--line-height-label);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
+    .text-action-large {
+        font-family: var(--font-family-sans), sans-serif;
+        font-size: var(--font-size-14);
         font-weight: var(--font-weight-semibold);
         line-height: var(--line-height-label);
         letter-spacing: 0.04em;

@@ -1,6 +1,7 @@
 import styles from "./MobileNavigation.module.css";
 import {navigationItems} from "./navigation.ts";
 import MobileDropdown from "./MobileDropdown.tsx";
+import {NavLink} from "react-router-dom";
 
 type MobileNavigationProps = {
     isOpen: boolean;
@@ -16,7 +17,7 @@ export default function MobileNavigation({isOpen} : MobileNavigationProps) {
                             item.type === "dropdown"
                                 ? undefined
                                 : styles.item}>
-                        {item.type === "dropdown" ? <MobileDropdown item={item}/> : <a href={item.href}>{item.label}</a>}
+                        {item.type === "dropdown" ? <MobileDropdown item={item}/> : <NavLink to={item.href}>{item.label}</NavLink>}
                     </li>
                 ))}
             </ul>

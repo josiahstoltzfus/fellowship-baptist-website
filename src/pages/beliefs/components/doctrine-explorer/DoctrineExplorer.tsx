@@ -65,7 +65,7 @@ export default function DoctrineExplorer({onSelect} : DoctrineExplorerProps) {
                             {selectedArticle.articleLabel}
                         </p>
 
-                        <h2 className="text-section-title">
+                        <h2 className="text-subheading">
                             {selectedArticle.title}
                         </h2>
 

@@ -4,9 +4,10 @@ import styles from "./ScriptureReferenceList.module.css";
 type ScriptureReferenceListProps = {
     references: ScriptureReference[];
     onSelect: (reference: ScriptureReference) => void;
+    variant?: "default" | "accent";
 }
 
-export default function ScriptureReferenceList({references, onSelect}: ScriptureReferenceListProps) {
+export default function ScriptureReferenceList({references, onSelect, variant="default"}: ScriptureReferenceListProps) {
     return (
         <ul className={`${styles.list}`}>
             {references.map((reference) => (
@@ -14,7 +15,7 @@ export default function ScriptureReferenceList({references, onSelect}: Scripture
                     <button
                         type="button"
                         onClick={() => onSelect(reference)}
-                        className={`text-body-small ${styles.button}`}
+                        className={`text-body-small ${styles.button} ${styles[`button--${variant}`]}`}
                     >
                         {reference.reference}
                     </button>

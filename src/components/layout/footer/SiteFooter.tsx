@@ -1,4 +1,5 @@
 import styles from "./SiteFooter.module.css";
+import {NavLink, Link} from "react-router-dom";
 
 export default function SiteFooter() {
     return (
@@ -15,10 +16,10 @@ export default function SiteFooter() {
                         {/* SiteFooter links */}
                         <h2 className={`text-eyebrow ${styles["section-heading"]}`}>Explore</h2>
                         <ul className={`text-body-small ${styles["list"]}`}>
-                            <li><a href="/about">About</a></li>
-                            <li><a href="/visit">Visit</a></li>
-                            <li><a href="/sermons">Sermons</a></li>
-                            <li><a href="/contact">Contact</a></li>
+                            <li><NavLink to="/about">About</NavLink></li>
+                            <li><NavLink to="/visit">Visit</NavLink></li>
+                            <li><NavLink to="/sermons">Sermons</NavLink></li>
+                            <li><NavLink to="/contact">Contact</NavLink></li>
                         </ul>
                     </nav>
 
@@ -62,9 +63,9 @@ export default function SiteFooter() {
                     <p className={`text-caption`}>© Fellowship Baptist Church</p>
 
                     <nav aria-label="Legal" className={`text-caption ${styles["legal-links"]}`}>
-                        <a href="/privacy">Privacy</a>
+                        <Link to="/privacy">Privacy</Link>
                         <span>•</span>
-                        <a href="/accessibility">Accessibility</a>
+                        <Link to="/accessibility">Accessibility</Link>
                     </nav>
                 </div>
             </div>

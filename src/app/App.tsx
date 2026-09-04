@@ -10,7 +10,7 @@ import ChurchMusicPage from "../pages/music/ChurchMusicPage.tsx";
 import ContactPage from "../pages/contact/ContactPage.tsx";
 import GivePage from "../pages/giving/GivePage.tsx";
 import SermonsPage from "../pages/sermons/SermonsPage.tsx";
-import RecommendedPage from "../pages/recommended/RecommendedPage.tsx";
+import AudioPlayerProvider from "../components/media/audio-player/AudioPlayerProvider.tsx";
 
 const router = createBrowserRouter(
     [
@@ -53,10 +53,6 @@ const router = createBrowserRouter(
                             path: "sermons",
                             element: <SermonsPage/>
                         },
-                        {
-                            path: "recommended",
-                            element: <RecommendedPage/>
-                        },
                     ]
                 },
                 {
@@ -74,7 +70,9 @@ const router = createBrowserRouter(
 
 function App() {
     return (
-        <RouterProvider router={router}/>
+        <AudioPlayerProvider>
+            <RouterProvider router={router}/>
+        </AudioPlayerProvider>
     );
 }
 

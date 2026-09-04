@@ -4,14 +4,15 @@
     gap: var(--space-xs);
 }
 
-.item {}
-
-.text {
-    color: var(--color-text-body);
-}
-
 .button {
     padding-inline-end: var(--space-xs);
+}
+
+.button--accent {
+    color: var(--gold-500);
+}
+
+.button--default {
     color: var(--color-text-body);
 }
 

@@ -1,0 +1,33 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.item {
+    padding-block-end: var(--space-lg);
+
+    border-bottom: 1px solid var(--color-border-default);
+
+    display: flex;
+    gap: var(--space-xl);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.letter {
+    flex: 0 0 3rem;
+    color: var(--gold-500);
+
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    max-width: var(--layout-reading-max);
+    color: var(--color-text-body);
+}

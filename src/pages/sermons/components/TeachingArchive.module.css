@@ -12,29 +12,70 @@
 
     display: flex;
     flex-direction: column;
-    gap: var(--space-lg);
+    gap: var(--space-2xl);
 }
 
 .header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.eyebrow {
+    color: var(--gold-500);
 }
 
 .list {
-    border-top: 1px solid var(--color-border-default);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
 }
 
-.list > :first-child {
-    padding-block-start: var(--space-lg);
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.filters {}
-.filter {}
-.filter-active {}
+.item {
+    padding-block-end: var(--space-xl);
+    border-bottom: 1px solid var(--color-border-default);
+}
 
-.pagination {}
-.pagination-link {}
-.pagination-current {}
+.sermon-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.sermon-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.sermon-controls .control:not(:last-child) {
+    padding-inline-end: var(--space-md);
+    border-right: 1px solid var(--color-border-default);
+}
+
+.metadata {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.metadata span:first-child {
+}
+
+.metadata span:not(:last-child)::after {
+    content: "·";
+    display: inline-block;
+    margin-inline-start: var(--space-sm);
+    color: var(--gold-500);
+    font-size: var(--font-size-19);
+    line-height: 0;
+    vertical-align: middle;
+}
 
 @media (max-width: 768px) {
     .header {

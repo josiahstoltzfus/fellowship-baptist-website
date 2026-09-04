@@ -5,6 +5,7 @@ import {doctrineIntroductionScriptures} from "../../whatWeBelieveContent.ts";
 import {Minus, Plus} from 'lucide-react';
 import ScriptureReferenceList from "../../../../components/content/Scripture/ScriptureReferenceList.tsx";
 import type {ScriptureReference} from "../../../../components/content/Scripture/scriptureTypes.ts";
+import SupportingScriptureAccordion from "../../../../components/content/Scripture/SupportingScriptureAccordion.tsx";
 
 type DoctrineAccordionProps = {
     onSelect: (reference: ScriptureReference) => void;
@@ -12,6 +13,7 @@ type DoctrineAccordionProps = {
 
 export default function DoctrineAccordion({onSelect} : DoctrineAccordionProps) {
     const [openId, setOpenId] = useState<string | null>(doctrineArticles[0].id);
+    const selectedArticle = doctrineArticles.find((article) => article.id === openId) ?? doctrineArticles[0];
 
     function toggleArticle(id: string) {
         setOpenId((currentlyOpen) => currentlyOpen === id ? null : id)
@@ -57,7 +59,7 @@ export default function DoctrineAccordion({onSelect} : DoctrineAccordionProps) {
                                     onClick={() => toggleArticle(article.id)}
                                 >
                                     <span className={`text-heading-small`}>{article.title}</span>
-                                    <span aria-hidden="true">{isOpen ? <Minus size={16} aria-hidden="true"/> : <Plus size={16} aria-hidden="true"/>}</span>
+                                    <span aria-hidden="true" className={`${styles.icon}`}>{isOpen ? <Minus size={16} strokeWidth={2.5} aria-hidden="true"/> : <Plus size={16} strokeWidth={2.5} aria-hidden="true"/>}</span>
                                 </button>
 
                                 {isOpen && (
@@ -68,21 +70,8 @@ export default function DoctrineAccordion({onSelect} : DoctrineAccordionProps) {
                                             <p key={index}>{paragraph}</p>
                                         ))}
 
-                                        {article.scriptureReferences && (
-                                            <section className={styles["scripture-references"]}>
-                                                <h3 className={`text-eyebrow ${styles.eyebrow}`}>
-                                                    Supporting Scripture
-                                                </h3>
-
-                                                <ul className={`${styles["verse-list"]}`}>
-                                                    {article.scriptureReferences.map(
-                                                        (reference) => (
-                                                            <li className="text-body" key={reference}>
-                                                                {reference}
-                                                            </li>
-                                                        ))}
-                                                </ul>
-                                            </section>
+                                        {selectedArticle.supportingScriptures && (
+                                            <SupportingScriptureAccordion passages={selectedArticle.supportingScriptures}/>
                                         )}
 
                                     </div>
