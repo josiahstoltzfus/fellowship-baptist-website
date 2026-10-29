@@ -11,7 +11,8 @@ export default function MeetThePastorPage() {
             <PageIntroduction
                 eyebrow="About Fellowship"
                 title="Meet the pastor."
-                description="Meet the pastor who serves Fellowship Baptist through the faithful teaching of God’s Word and care for its congregation."/>
+                spacing="connected"
+            />
 
             <ImageTextSection
                 eyebrow="Pastor of Fellowship Baptist"
@@ -19,10 +20,10 @@ export default function MeetThePastorPage() {
                 imageAlt="Pastor Portrait"
                 imageSrc={pastor_image}
                 imagePosition="left">
-                <p className="text-body">I would like to share my story to help you know me. My selfishness and sin choices were destroying my life and my marriage with a very sweet wife. She told my sister, “I don’t know what I am going to do with him."</p>
-                <p className="text-body">My sister sent her Pastor to visit us. I tried to get rid of him, but my wife had questions. God kept the pressure on, and I finally admitted I was lost and needed to be saved. I got a second chance. Really it was my last chance.</p>
-                <p className="text-body">Patty and I both received Jesus as our personal Savior and it surprised everyone, including me, when eight years later God called me to preach.</p>
-                <p className="text-body">So, when I say, we need Jesus and the truths of God’s Word to make life work, I know firsthand what that looks like. That is my ministry.</p>
+                <p className="text-prose">I would like to share my story to help you know me. My selfishness and sin choices were destroying my life and my marriage with a very sweet wife. She told my sister, “I don’t know what I am going to do with him."</p>
+                <p className="text-prose">My sister sent her Pastor to visit us. I tried to get rid of him, but my wife had questions. God kept the pressure on, and I finally admitted I was lost and needed to be saved. I got a second chance. Really it was my last chance.</p>
+                <p className="text-prose">Patty and I both received Jesus as our personal Savior and it surprised everyone, including me, when eight years later God called me to preach.</p>
+                <p className="text-prose">So, when I say, we need Jesus and the truths of God’s Word to make life work, I know firsthand what that looks like. That is my ministry.</p>
             </ImageTextSection>
 
             <TextSection
@@ -40,7 +41,7 @@ export default function MeetThePastorPage() {
                 eyebrow="continue"
                 heading="Hear the teaching of God's Word."
                 description="Become familiar with the pastor's ministry through sermons and teaching from Fellowship Baptist."
-                href="/sermons"
+                href="/resources/sermons"
                 actionLabel="Explore Sermons"/>
 
         </>

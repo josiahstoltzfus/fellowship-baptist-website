@@ -113,11 +113,6 @@ nav, section, main {
     display: block;
 }
 
-/* Remove default focus outlines, you will add custom later */
-:focus {
-    outline: none;
-}
-
 /* Reduced motion respect */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {

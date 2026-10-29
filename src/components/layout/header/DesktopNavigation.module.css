@@ -1,18 +1,29 @@
 .nav-items {
-    color: var(--color-text-primary);
-
     display: flex;
     gap: var(--space-xl);
 }
 
-.giving-link {
-    padding: var(--space-xs) var(--space-lg);
-    border: 1px solid var(--gold-500);
+.link {
+    position: relative;
 }
 
-.giving-link:hover,
-.giving-link:focus-visible {
+.link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+
+    height: 2px;
     background: var(--gold-500);
+
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.link:hover::after,
+.link[aria-current="page"]::after {
+    opacity: 1;
 }
 
 @media (max-width: 768px) {

@@ -1,4 +1,5 @@
 import styles from "./MissionStatement.module.css";
+import {Link} from "react-router-dom";
 
 export default function MissionStatement() {
     return (
@@ -23,14 +24,14 @@ export default function MissionStatement() {
                         which is Jesus Christ.”
                     </blockquote>
 
-                    <p className={`text-body ${styles.description}`}>
+                    <p className={`text-prose ${styles.description}`}>
                         The pastor’s approved mission explanation can connect the church’s doctrine with its
                         preaching, worship, fellowship, and desire to help believers grow.
                     </p>
 
-                    <a className={`text-action ${styles.link}`} href="/about/church-music">
+                    <Link to="/about/church-music" className={`text-action ${styles.link}`}>
                         Explore our principles of church music →
-                    </a>
+                    </Link>
 
                 </div>
 

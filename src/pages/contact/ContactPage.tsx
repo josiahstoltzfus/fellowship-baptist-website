@@ -1,7 +1,6 @@
 import ContactMessageSection from "./components/ContactMessageSection.tsx";
-import ContactLocation from "./components/ContactLocation.tsx";
-import ContactMethods from "./components/ContactMethods.tsx";
 import PageIntroduction from "../../components/content/PageIntroduction/PageIntroduction.tsx";
+import styles from "./ContactPage.module.css";
 
 export default function ContactPage() {
     return (
@@ -9,11 +8,31 @@ export default function ContactPage() {
             <PageIntroduction
                 eyebrow="Contact"
                 title="We would be glad to hear from you."
-                description="Contact Fellowship Baptist directly or send a general message using the form below."
-            />
-            <ContactMethods/>
+                spacing="connected"
+                description="Contact Fellowship Baptist directly or send a general message using the form below.">
+                <div className={`${styles.content}`}>
+                    <article className={styles.method}>
+                        <p className={`text-eyebrow ${styles.eyebrow}`}>
+                            Phone
+                        </p>
+
+                        <a className={`text-body ${styles.link}`} href="tel:...">
+                            864-630-6821
+                        </a>
+                    </article>
+
+                    <article className={styles.method}>
+                        <p className={`text-eyebrow ${styles.eyebrow}`}>
+                            Email
+                        </p>
+
+                        <a className={`text-body ${styles.link}`} href="mailto:...">
+                            PastorJackLBoyer@spectrum.net
+                        </a>
+                    </article>
+                </div>
+            </PageIntroduction>
             <ContactMessageSection/>
-            <ContactLocation/>
         </>
     )
 }

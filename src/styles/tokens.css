@@ -83,7 +83,7 @@
     --color-text-footer: var(--parchment-muted);
 
     /* border */
-    --color-border-default: var(--neutral-divider);
+    --color-border-default: rgb(0 0 0 / 0.1); /* Previous: --neutral-divider */
     --color-border-footer: var(--ink-divider);
 
     /* action primary */

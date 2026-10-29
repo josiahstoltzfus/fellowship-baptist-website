@@ -14,7 +14,7 @@ export default function ContactMessageSection() {
                     </h2>
 
                     <p className={`text-body ${styles.description}`}>
-                        Use this form for ordinary questions about the church or an upcoming visit. Direct phone and email remain available above.
+                        Use this form for ordinary questions about the church or an upcoming visit.
                     </p>
                 </header>
 

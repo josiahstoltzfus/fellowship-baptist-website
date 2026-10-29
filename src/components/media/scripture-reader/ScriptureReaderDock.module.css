@@ -1,0 +1,48 @@
+.dock {
+    position: fixed;
+    right: 0;
+    top: var(--header-height-desktop);
+    width: min(30rem, 100vw);
+
+    overflow: hidden;
+
+    background: var(--color-surface-base);
+
+    display: flex;
+
+    border-bottom: 2px solid var(--color-border-default);
+    border-left: 2px solid var(--color-border-default);
+}
+
+.restore {
+    flex: 1;
+    padding-inline: var(--space-sm);
+
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.close {
+    flex: 0 0 auto;
+    height: var(--layout-touch-min);
+    width: var(--layout-touch-min);
+    border-left: 1px solid var(--color-border-default);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eyebrow {
+    color: var(--gold-500);
+}
+
+@media (max-width: 768px) {
+    .dock {
+        top: var(--header-height-mobile);
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+}

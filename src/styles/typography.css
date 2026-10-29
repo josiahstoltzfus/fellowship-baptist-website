@@ -11,6 +11,30 @@ FONT DEFINITIONS
 }
 
 @font-face {
+    font-family: 'EB Garamond';
+    src: url('../assets/fonts/eb-garamond-latin-400-normal.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../assets/fonts/eb-garamond-latin-500-normal.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../assets/fonts/eb-garamond-latin-600-normal.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'Inter';
     src: url('../assets/fonts/Inter-Regular.woff2') format('woff2');
     font-weight: 400;
@@ -41,7 +65,7 @@ FONT DEFINITIONS
    ======================================== */
 
     /* font families */
-    --font-family-serif: "Cormorant Garamond";
+    --font-family-serif: "EB Garamond";
     --font-family-sans: "Inter";
 
     /* font sizes */
@@ -49,6 +73,7 @@ FONT DEFINITIONS
     --font-size-14: 0.875rem;
     --font-size-17: 1.0625rem;
     --font-size-19: 1.1875rem;
+    --font-size-21: 1.3125rem;
     --font-size-24: 1.5rem;
     --font-size-32: 2rem;
     --font-size-40: 2.5rem;
@@ -70,11 +95,13 @@ FONT DEFINITIONS
     --line-height-compact: 1.4;
     --line-height-label: 1.333;
 
+}
+
     /* brand and nav */
     .text-brand {
         font-family: var(--font-family-serif), serif;
         font-size: var(--font-size-19);
-        font-weight: var(--font-weight-semibold);
+        font-weight: var(--font-weight-medium);
         line-height: var(--line-height-compact);
     }
 
@@ -82,7 +109,7 @@ FONT DEFINITIONS
         font-family: var(--font-family-sans), sans-serif;
         font-size: var(--font-size-14);
         text-transform: uppercase;
-        font-weight: var(--font-weight-medium);
+        font-weight: var(--font-weight-semibold);
         line-height: var(--line-height-compact);
         letter-spacing: 0.04em;
     }
@@ -91,7 +118,7 @@ FONT DEFINITIONS
     .text-display {
         font-family: var(--font-family-serif), serif;
         font-size: var(--font-size-64);
-        font-weight: var(--font-weight-semibold);
+        font-weight: var(--font-weight-medium);
         line-height: var(--line-height-display);
         letter-spacing: -0.005em;
     }
@@ -99,35 +126,35 @@ FONT DEFINITIONS
     .text-page-title {
         font-family: var(--font-family-serif), serif;
         font-size: var(--font-size-56);
-        font-weight: var(--font-weight-semibold);
+        font-weight: var(--font-weight-regular);
         line-height: var(--line-height-display);
     }
 
     .text-section-title {
         font-family: var(--font-family-serif), serif;
-        font-size: var(--font-size-48);
-        font-weight: var(--font-weight-semibold);
+        font-size: var(--font-size-40);
+        font-weight: var(--font-weight-regular);
         line-height: var(--line-height-section);
     }
 
     .text-subheading {
         font-family: var(--font-family-serif), serif;
         font-size: var(--font-size-32);
-        font-weight: var(--font-weight-semibold);
+        font-weight: var(--font-weight-regular);
         line-height: var(--line-height-heading);
     }
 
     .text-heading-small {
         font-family: var(--font-family-serif), serif;
         font-size: var(--font-size-24);
-        font-weight: var(--font-weight-semibold);
+        font-weight: var(--font-weight-regular);
         line-height: var(--line-height-heading);
     }
 
     .text-heading-xs {
         font-family: var(--font-family-serif), serif;
         font-size: var(--font-size-19);
-        font-weight: var(--font-weight-semibold);
+        font-weight: var(--font-weight-regular);
         line-height: var(--line-height-heading);
     }
 
@@ -146,6 +173,27 @@ FONT DEFINITIONS
         line-height: var(--line-height-body);
     }
 
+    .text-prose {
+        font-family: var(--font-family-serif), serif;
+        font-size: var(--font-size-19);
+        font-weight: var(--font-weight-regular);
+        line-height: 1.7;
+    }
+
+    .text-prose-lead {
+        font-family: var(--font-family-serif), serif;
+        font-size: var(--font-size-21);
+        font-weight: var(--font-weight-regular);
+        line-height: 1.7;
+    }
+
+    .text-prose-small {
+        font-family: var(--font-family-serif), serif;
+        font-size: var(--font-size-17);
+        font-weight: var(--font-weight-regular);
+        line-height: 1.7;
+    }
+
     .text-body-bold {
         font-family: var(--font-family-sans), sans-serif;
         font-size: var(--font-size-17);
@@ -158,6 +206,8 @@ FONT DEFINITIONS
         font-size: var(--font-size-14);
         font-weight: var(--font-weight-regular);
         line-height: var(--line-height-body);
+        text-transform: none;
+        letter-spacing: normal;
     }
 
     /* labels and supporting info */
@@ -195,7 +245,6 @@ FONT DEFINITIONS
         letter-spacing: 0.04em;
         text-transform: uppercase;
     }
-}
 
 
 

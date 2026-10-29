@@ -1,5 +1,5 @@
 import {type AudioMessage} from "../../../pages/sermons/sermons.ts";
-import {type ReactNode, useRef, useState, useEffect} from "react";
+import {type ReactNode, useRef, useState} from "react";
 import { AudioPlayerContext } from "./AudioPlayerContext.ts";
 
 type AudioPlayerProviderProps = {
@@ -15,6 +15,7 @@ export default function AudioPlayerProvider({children} : AudioPlayerProviderProp
     const [volume, setVolume] = useState(1);
     const [isMuted, setIsMuted] = useState(false);
     const [playbackRate, setPlaybackRate] = useState(1);
+    const [isExpanded, setIsExpanded] = useState(false);
 
     function changePlaybackRate(newRate: number) {
         const audio = audioRef.current;
@@ -26,6 +27,10 @@ export default function AudioPlayerProvider({children} : AudioPlayerProviderProp
         audio.playbackRate = newRate;
 
         setPlaybackRate(newRate);
+    }
+
+    function toggleExpanded() {
+        setIsExpanded((currentlyExpanded) => !currentlyExpanded);
     }
 
     function toggleMute() {
@@ -70,6 +75,7 @@ export default function AudioPlayerProvider({children} : AudioPlayerProviderProp
         setActiveMessage(null);
         setCurrentTime(0);
         setIsPlaying(false);
+        setIsExpanded(false);
     }
 
     function togglePlayback() {
@@ -86,14 +92,6 @@ export default function AudioPlayerProvider({children} : AudioPlayerProviderProp
         }
     }
 
-    useEffect(() => {
-        console.log("AudioPlayerProvider mounted");
-
-        return () => {
-            console.log("AudioPlayerProvider unmounted");
-        };
-    }, []);
-
     return (
         <AudioPlayerContext.Provider
             value ={{
@@ -104,6 +102,8 @@ export default function AudioPlayerProvider({children} : AudioPlayerProviderProp
                 volume,
                 isMuted,
                 playbackRate,
+                isExpanded,
+                toggleExpanded,
                 changePlaybackRate,
                 toggleMute,
                 changeVolume,

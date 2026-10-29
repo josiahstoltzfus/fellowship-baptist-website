@@ -10,7 +10,11 @@ export default function DesktopNavigation() {
                 <li key={item.label}>
                     {
                         item.type === "dropdown" ? <DesktopDropdown item={item}/> :
-                            <NavLink to={item.href} className={item.emphasis ? styles["giving-link"] : undefined}>{item.label}</NavLink>
+                            <NavLink
+                                to={item.href}
+                                className={styles.link}>
+                                {item.label}
+                            </NavLink>
                     }
                 </li>
             ))}

@@ -12,9 +12,9 @@ export default function VisitExpectations() {
                         A simple picture of Sunday.
                     </h2>
 
-                    <p className={`text-body ${styles.description}`}>
+                    <p className={`text-prose-lead ${styles.description}`}>
                         Here are a few practical details to help you know
-                        what to expect when you worship with us.
+                        what to expect.
                     </p>
                 </header>
 
@@ -25,13 +25,13 @@ export default function VisitExpectations() {
                         </h3>
 
                         <div className={styles["item-text"]}>
-                            <p className={`text-body ${styles["item-description"]}`}>
+                            <p className={`text-prose ${styles["item-description"]}`}>
                                 Our verse by verse exposition of Scripture is always Biblical, Christ-centered, understandable,
                                 alive and practical in covering every important subject and doctrine in the Bible.  Our preaching
                                 feeds believers the milk, meat, and honey of God’s Word to meet people’s spiritual needs.
                             </p>
 
-                            <p className={`text-body ${styles["item-description"]}`}>
+                            <p className={`text-prose ${styles["item-description"]}`}>
                                 We use the King James Version of the Bible because it is the most literal (word-for-word) and absolutely reliable translation of Scripture.
                             </p>
                         </div>
@@ -43,11 +43,11 @@ export default function VisitExpectations() {
                         </h3>
 
                         <div className={`${styles["item-text"]}`}>
-                            <p className={`text-body ${styles["item-description"]}`}>
+                            <p className={`text-prose ${styles["item-description"]}`}>
                                 Our worship declares the Lord’s worth. True worship must be in spirit and in truth. Through our singing, we seek to glorify the Lord, edify believers, and rest in Christ’s all-sufficiency for our insufficiency.
                             </p>
 
-                            <p className={`text-body ${styles["item-description"]}`}>
+                            <p className={`text-prose ${styles["item-description"]}`}>
                                 According to Psalm 96, worship includes preaching (verses 3–6), offerings (verses 7–9), and testimony (verses 10–13).
                             </p>
                         </div>
@@ -58,7 +58,7 @@ export default function VisitExpectations() {
                             What to wear
                         </h3>
 
-                        <p className={`text-body ${styles["item-description"]}`}>
+                        <p className={`text-prose ${styles["item-description"]}`}>
                             You are welcome to attend without fear of judgement.  We simply request modesty.
                         </p>
                     </li>

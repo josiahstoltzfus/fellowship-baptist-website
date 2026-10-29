@@ -5,9 +5,10 @@ import {NavLink} from "react-router-dom";
 
 type MobileNavigationProps = {
     isOpen: boolean;
+    onClose: () => void;
 }
 
-export default function MobileNavigation({isOpen} : MobileNavigationProps) {
+export default function MobileNavigation({isOpen, onClose} : MobileNavigationProps) {
     return (
         <nav className={`${styles["mobile-nav"]} ${isOpen ? styles.visible : ""}`}>
             <ul className={`text-nav ${styles["nav-content"]}`}>
@@ -17,7 +18,9 @@ export default function MobileNavigation({isOpen} : MobileNavigationProps) {
                             item.type === "dropdown"
                                 ? undefined
                                 : styles.item}>
-                        {item.type === "dropdown" ? <MobileDropdown item={item}/> : <NavLink to={item.href}>{item.label}</NavLink>}
+                        {item.type === "dropdown"
+                            ? (isOpen && <MobileDropdown item={item} onClose={onClose}/>)
+                            : <NavLink to={item.href} onClick={onClose}>{item.label}</NavLink>}
                     </li>
                 ))}
             </ul>

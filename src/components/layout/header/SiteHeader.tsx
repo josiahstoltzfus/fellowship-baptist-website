@@ -3,15 +3,26 @@ import BrandLink from "./BrandLink.tsx";
 import DesktopNavigation from "./DesktopNavigation.tsx";
 import MobileMenuButton from "./MobileMenuButton.tsx";
 import MobileNavigation from "./MobileNavigation.tsx";
-import {useEffect, useState} from "react";
+import {useEffect, useRef} from "react";
 
-export default function SiteHeader() {
-    const [isMobileOpen, setIsMobileOpen] = useState(false);
+type SiteHeaderProps = {
+    isMobileOpen: boolean;
+    onClose: () => void;
+    onToggle: () => void;
+}
+
+export default function SiteHeader({
+                                       isMobileOpen,
+                                       onClose,
+                                       onToggle
+                                   }: SiteHeaderProps) {
+    const menuButtonRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
         function handleKeyDown(event: KeyboardEvent) {
-            if (event.key === "Escape") {
-                setIsMobileOpen(false);
+            if (event.key === "Escape" && isMobileOpen) {
+                onClose();
+                menuButtonRef.current?.focus();
             }
         }
 
@@ -20,15 +31,7 @@ export default function SiteHeader() {
         return () => {
             document.removeEventListener("keydown", handleKeyDown);
         };
-    }, []);
-
-    useEffect(() => {
-        document.body.classList.toggle("menu-open", isMobileOpen);
-
-        return () => {
-            document.body.classList.remove("menu-open");
-        };
-    }, [isMobileOpen]);
+    }, [isMobileOpen, onClose]);
 
     return (
         <header className={styles.header}>
@@ -36,10 +39,11 @@ export default function SiteHeader() {
                 <BrandLink/>
                 <DesktopNavigation/>
                 <MobileMenuButton
+                    menuButtonRef={menuButtonRef}
                     isOpen={isMobileOpen}
-                    onClick={() => setIsMobileOpen(!isMobileOpen)}
+                    onClick={onToggle}
                 />
-                <MobileNavigation isOpen={isMobileOpen}/>
+                <MobileNavigation isOpen={isMobileOpen} onClose={onClose}/>
             </nav>
         </header>
     )

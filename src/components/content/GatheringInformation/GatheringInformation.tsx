@@ -43,7 +43,7 @@ export default function GatheringInformation() {
                     <div className={`${styles["contact-details"]}`}>
                         <p className={`${styles["contact-item"]}`}>
                             <span className={`text-body-bold ${styles.label}`}>Phone:</span>
-                            <a href="tel:18647048440" className={`text-body ${styles["contact-link"]}`}>864-630-6821</a>
+                            <a href="tel:18646306821" className={`text-body ${styles["contact-link"]}`}>864-630-6821</a>
                         </p>
 
                         <p className={`${styles["contact-item"]}`}>
@@ -51,7 +51,12 @@ export default function GatheringInformation() {
                             <a href="mailto:PastorJackLBoyer@spectrum.net" className={`text-body ${styles["contact-link"]}`}>PastorJackLBoyer@spectrum.net</a>
                         </p>
                     </div>
-                    <ActionLink href="/contact">Get Directions</ActionLink>
+                    <ActionLink
+                        href="https://www.google.com/maps/dir/?api=1&destination=401+Jenkins+Bridge+Road%2C+Fountain+Inn%2C+SC"
+                        external={true}
+                    >
+                        Get Directions
+                    </ActionLink>
                 </div>
 
             </div>

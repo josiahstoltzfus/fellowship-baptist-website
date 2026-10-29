@@ -1,8 +1,8 @@
 import type {ScriptureReference} from "./scriptureTypes.ts";
 import styles from "./SupportingScriptureAccordion.module.css";
 import {useState} from "react";
-import ScriptureReader from "./ScriptureReader.tsx";
 import {Minus, Plus} from "lucide-react";
+import {useScriptureReader} from "../../media/scripture-reader/useScriptureReader.ts";
 
 type ScriptureAccordionProps = {
     passages: ScriptureReference[];
@@ -10,8 +10,7 @@ type ScriptureAccordionProps = {
 
 export default function SupportingScriptureAccordion({passages}: ScriptureAccordionProps) {
     const [expandedReference, setExpandedReference] = useState<string | null>(null);
-    const [readerPassage, setReaderPassage] =
-        useState<ScriptureReference | null>(null);
+    const {openReference} = useScriptureReader();
 
     return (
         <section className={`${styles.section}`}>
@@ -44,7 +43,7 @@ export default function SupportingScriptureAccordion({passages}: ScriptureAccord
                             {isExpanded && (
                                 <blockquote className={styles.passage}>
                                     {passage.verses.slice(0, 4).map((verse) => (
-                                        <p key={verse.number} className={`text-body-small ${styles["verse-text"]}`}>
+                                        <p key={verse.number} className={`text-prose-small ${styles["verse-text"]}`}>
                                             <sup className={`${styles["verse-number"]}`}>{verse.number}</sup>
                                             {verse.text}
                                         </p>
@@ -54,16 +53,11 @@ export default function SupportingScriptureAccordion({passages}: ScriptureAccord
                                         <button
                                             type="button"
                                             className={`text-action ${styles["full-passage-button"]}`}
-                                            onClick={() => setReaderPassage(passage)}
+                                            onClick={() => openReference(passage)}
                                         >
                                             Read full passage →
                                         </button>
                                     )}
-
-                                    {readerPassage &&
-                                        <ScriptureReader
-                                            scripture={readerPassage}
-                                            onClose={() => setReaderPassage(null)}/>}
                                 </blockquote>
                             )}
                         </li>

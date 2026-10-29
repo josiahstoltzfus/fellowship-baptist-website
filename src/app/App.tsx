@@ -11,6 +11,7 @@ import ContactPage from "../pages/contact/ContactPage.tsx";
 import GivePage from "../pages/giving/GivePage.tsx";
 import SermonsPage from "../pages/sermons/SermonsPage.tsx";
 import AudioPlayerProvider from "../components/media/audio-player/AudioPlayerProvider.tsx";
+import ScriptureReaderProvider from "../components/media/scripture-reader/ScriptureReaderProvider.tsx";
 
 const router = createBrowserRouter(
     [
@@ -71,7 +72,9 @@ const router = createBrowserRouter(
 function App() {
     return (
         <AudioPlayerProvider>
-            <RouterProvider router={router}/>
+            <ScriptureReaderProvider>
+                <RouterProvider router={router}/>
+            </ScriptureReaderProvider>
         </AudioPlayerProvider>
     );
 }

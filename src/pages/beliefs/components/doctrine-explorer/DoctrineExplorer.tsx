@@ -3,14 +3,9 @@ import {doctrineArticles} from "../../doctrineArticles.ts";
 import {doctrineIntroductionScriptures} from "../../whatWeBelieveContent.ts";
 import {useState} from "react";
 import ScriptureReferenceList from "../../../../components/content/Scripture/ScriptureReferenceList.tsx";
-import type {ScriptureReference} from "../../../../components/content/Scripture/scriptureTypes.ts";
 import SupportingScriptureAccordion from "../../../../components/content/Scripture/SupportingScriptureAccordion.tsx";
 
-type DoctrineExplorerProps = {
-    onSelect: (reference: ScriptureReference) => void;
-};
-
-export default function DoctrineExplorer({onSelect} : DoctrineExplorerProps) {
+export default function DoctrineExplorer() {
     const [selectedId, setSelectedId] = useState(doctrineArticles[0].id);
     const selectedArticle = doctrineArticles.find((article) => article.id === selectedId) ?? doctrineArticles[0];
 
@@ -22,11 +17,7 @@ export default function DoctrineExplorer({onSelect} : DoctrineExplorerProps) {
                         Core Doctrines
                     </p>
 
-                    <h2 className="text-section-title">
-                        What does our church believe?
-                    </h2>
-
-                    <p className={`text-lead ${styles.description}`}>
+                    <p className={`text-prose-lead ${styles.description}`}>
                         As a Bible-believing church, we believe in the basic,
                         traditional doctrines of the Christian faith, including
                         a literal interpretation of the Scriptures. We seek to
@@ -36,7 +27,6 @@ export default function DoctrineExplorer({onSelect} : DoctrineExplorerProps) {
 
                     <ScriptureReferenceList
                         references={doctrineIntroductionScriptures}
-                        onSelect={onSelect}
                     />
                 </header>
 
@@ -71,7 +61,7 @@ export default function DoctrineExplorer({onSelect} : DoctrineExplorerProps) {
 
                         <div className={styles.body}>
                             {selectedArticle.paragraphs.map((paragraph, index) => (
-                                <p className={`text-body`} key={index}>
+                                <p className={`text-prose`} key={index}>
                                     {paragraph}
                                 </p>
                             ))}

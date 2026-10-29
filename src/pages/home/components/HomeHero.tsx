@@ -5,21 +5,23 @@ import home_hero_image from "../../../assets/images/home-hero-image.jpg";
 export default function HomeHero() {
     return (
         <section className={`${styles.hero}`}>
-            <div className={`${styles.media}`}>
-                <img src={home_hero_image} className={`${styles.image}`}/>
-            </div>
-
             <div className={`${styles.content}`}>
-                <p className={`text-eyebrow ${styles.eyebrow}`}>1 Corinthians 3:11</p>
-                <h1 className={`text-page-title ${styles.title}`}>Jesus Christ, our foundation.</h1>
-                <blockquote className={`text-lead ${styles.scripture}`}>For other foundation can no man lay than that is
-                    laid, which is Jesus Christ.
-                </blockquote>
-                <blockquote className={`text-body-small ${styles.quote}`}>— "How firm a foundation ye saints of the Lord
-                    is laid for your faith in His excellent Word, What more can He say to you than He hath said,
-                    To you, who for refuge to Jesus has fled?"
-                </blockquote>
-                <ActionLink href="/visit">Plan your visit</ActionLink>
+                <div className={`${styles.text}`}>
+                    <p className={`text-eyebrow ${styles.eyebrow}`}>1 Corinthians 3:11</p>
+                    <h1 className={`text-page-title ${styles.title}`}>Jesus Christ, our foundation.</h1>
+                    <blockquote className={`text-heading-small ${styles.scripture}`}>For other foundation can no man lay than that is
+                        laid, which is Jesus Christ.
+                    </blockquote>
+                    <blockquote className={`text-prose ${styles.quote}`}>— "How firm a foundation ye saints of the Lord
+                        is laid for your faith in His excellent Word, What more can He say to you than He hath said,
+                        To you, who for refuge to Jesus has fled?"
+                    </blockquote>
+                    <ActionLink href="/visit">Plan your visit</ActionLink>
+                </div>
+
+                <figure className={`${styles.media}`}>
+                    <img src={home_hero_image} className={`${styles.image}`}/>
+                </figure>
             </div>
 
         </section>

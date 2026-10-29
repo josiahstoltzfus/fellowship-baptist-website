@@ -13,6 +13,16 @@ export type ReplacementPrinciple = {
     putOn: string;
 }
 
+export const newCreationScripture: ScriptureReference = {
+    reference: "2 Corinthians 5:17",
+    verses: [
+        {
+            number: 17,
+            text: "Old things are passed away; behold, all things are become new."
+        }
+    ]
+};
+
 export const rejoicingPrinciple: ScriptureReference[] = [
     {
         reference: "Psalm 96:1-2",

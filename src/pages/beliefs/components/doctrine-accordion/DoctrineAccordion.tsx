@@ -4,14 +4,9 @@ import {doctrineArticles} from "../../doctrineArticles.ts";
 import {doctrineIntroductionScriptures} from "../../whatWeBelieveContent.ts";
 import {Minus, Plus} from 'lucide-react';
 import ScriptureReferenceList from "../../../../components/content/Scripture/ScriptureReferenceList.tsx";
-import type {ScriptureReference} from "../../../../components/content/Scripture/scriptureTypes.ts";
 import SupportingScriptureAccordion from "../../../../components/content/Scripture/SupportingScriptureAccordion.tsx";
 
-type DoctrineAccordionProps = {
-    onSelect: (reference: ScriptureReference) => void;
-};
-
-export default function DoctrineAccordion({onSelect} : DoctrineAccordionProps) {
+export default function DoctrineAccordion() {
     const [openId, setOpenId] = useState<string | null>(doctrineArticles[0].id);
     const selectedArticle = doctrineArticles.find((article) => article.id === openId) ?? doctrineArticles[0];
 
@@ -27,11 +22,7 @@ export default function DoctrineAccordion({onSelect} : DoctrineAccordionProps) {
                         Core Doctrines
                     </p>
 
-                    <h2 className="text-section-title">
-                        What does our church believe?
-                    </h2>
-
-                    <p className={`text-lead ${styles.description}`}>
+                    <p className={`text-prose-lead ${styles.description}`}>
                         As a Bible-believing church, we believe in the basic,
                         traditional doctrines of the Christian faith, including
                         a literal interpretation of the Scriptures. We seek to
@@ -41,7 +32,6 @@ export default function DoctrineAccordion({onSelect} : DoctrineAccordionProps) {
 
                     <ScriptureReferenceList
                         references={doctrineIntroductionScriptures}
-                        onSelect={onSelect}
                     />
 
                 </header>
@@ -63,7 +53,7 @@ export default function DoctrineAccordion({onSelect} : DoctrineAccordionProps) {
                                 </button>
 
                                 {isOpen && (
-                                    <div className={`text-body ${styles.body}`}>
+                                    <div className={`text-prose ${styles.body}`}>
                                         <p className={`text-eyebrow ${styles.eyebrow}`}>{article.articleLabel}</p>
 
                                         {article.paragraphs.map((paragraph, index) => (

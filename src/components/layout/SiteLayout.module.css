@@ -1,3 +1,3 @@
-.player-open {
-    padding-bottom: var(--audio-player-height);
+.site {
+    padding-block-end: var(--audio-player-height);
 }

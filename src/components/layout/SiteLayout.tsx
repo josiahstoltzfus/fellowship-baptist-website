@@ -1,24 +1,53 @@
 import SiteHeader from "./header/SiteHeader.tsx";
-import {Outlet} from "react-router-dom";
+import {Outlet, ScrollRestoration} from "react-router-dom";
 import SiteFooter from "./footer/SiteFooter.tsx";
 import GlobalAudioPlayer from "../media/audio-player/GlobalAudioPlayer.tsx";
-import {useAudioPlayer} from "../media/audio-player/useAudioPlayer.ts";
+import GlobalScriptureReader from "../media/scripture-reader/GlobalScriptureReader.tsx";
 import styles from "./SiteLayout.module.css";
+import {useEffect, useState} from "react";
 
 export default function SiteLayout() {
-    const audioPlayer = useAudioPlayer();
+    const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+    function closeMenu() {
+        setIsMobileOpen(false);
+    }
+
+    function toggleMenu() {
+        console.log("Mobile menu toggled");
+        setIsMobileOpen(currentlyOpen => !currentlyOpen);
+    }
+
+    useEffect(() => {
+        document.body.classList.toggle("menu-open", isMobileOpen);
+
+        return () => {
+            document.body.classList.remove("menu-open");
+        };
+    }, [isMobileOpen]);
 
     return (
-        <div className={audioPlayer.activeMessage ? styles["player-open"] : undefined}>
-            <SiteHeader />
+        <div className={styles.site}>
+            <ScrollRestoration/>
 
-            <main>
-                <Outlet />
+            <SiteHeader
+                isMobileOpen={isMobileOpen}
+                onClose={closeMenu}
+                onToggle={toggleMenu}
+            />
+
+            <main inert={isMobileOpen}>
+                <Outlet/>
             </main>
 
-            <SiteFooter />
+            <div inert={isMobileOpen}>
+                <SiteFooter/>
+            </div>
 
-            <GlobalAudioPlayer/>
+            <div inert={isMobileOpen}>
+                <GlobalScriptureReader/>
+                <GlobalAudioPlayer/>
+            </div>
         </div>
     )
 }

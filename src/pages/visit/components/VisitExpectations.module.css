@@ -25,6 +25,7 @@
 }
 
 .description {
+    max-width: var(--layout-reading-max);
     color: var(--color-text-body);
 }
 

@@ -1,16 +1,21 @@
 .introduction {
     width: 100%;
-    background: var(--color-surface-emphasis);
+    background: var(--color-surface-base);
 }
 
 .content {
     width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-default));
     margin-inline: auto;
-    padding-block: var(--space-4xl);
+    padding-block-start: var(--space-4xl);
+    padding-block-end: var(--space-4xl);
 
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
+}
+
+.connected {
+    padding-block-end: 0;
 }
 
 .eyebrow {
@@ -18,31 +23,47 @@
 }
 
 .heading {
-    color: var(--color-text-inverse);
+    color: var(--color-text-primary);
 }
 
 .description {
     max-width: var(--layout-reading-max);
-    color: var(--color-text-inverse-muted);
+    color: var(--color-text-body);
 }
 
 .commentary {
     margin-block-start: var(--space-lg);
 
-    opacity: 0.8;
+    opacity: 0.6;
 
     max-width: var(--layout-reading-max);
-    color: var(--color-text-inverse-muted);
+    color: var(--color-text-primary);
 }
 
-.left .content {
-    align-items: flex-start;
-    text-align: left;
+.heading::after {
+    content: "";
+    display: block;
+
+    width: 4rem;
+    height: 2px;
+    margin-block-start: var(--space-lg);
+
+    background: var(--gold-500);
 }
 
-.center .content {
-    align-items: center;
-    text-align: center;
+.children {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.children::before {
+    content: "";
+    display: block;
+    margin-block-end: var(--space-md);
+    width: 100%;
+    height: 1px;
+    background: var(--color-border-default);
 }
 
 @media (max-width: 768px) {

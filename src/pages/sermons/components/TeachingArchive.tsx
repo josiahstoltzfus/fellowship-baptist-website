@@ -49,12 +49,6 @@ export default function TeachingArchive() {
     return (
         <section className={`${styles.archive}`}>
             <div className={`${styles.content}`}>
-                <header className={styles.header}>
-                    <p className={`text-eyebrow ${styles.eyebrow}`}>Sermons & Teachings</p>
-                    <h2 className={`text-subheading ${styles.heading}`}>
-                        Listen and grow in God's Word.
-                    </h2>
-                </header>
 
                 <ul className={styles.list}>
                     {sermons.map((sermon) => {

@@ -10,3 +10,8 @@ body.menu-open {
 html {
     scrollbar-gutter: stable;
 }
+
+:focus-visible {
+    outline: 2px solid var(--color-text-primary);
+    outline-offset: 4px;
+}

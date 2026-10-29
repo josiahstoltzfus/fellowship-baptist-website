@@ -22,13 +22,22 @@
 }
 
 .link {
-    min-height: var(--space-2xl);
+    min-height: var(--layout-touch-min);
     padding-left: var(--space-lg);
 
     display: flex;
     align-items: center;
 }
 
+.link[aria-current="page"] {
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-semibold);
+}
+
 .menu {
     border-bottom: 1px solid var(--color-border-default);
+}
+
+.active {
+    color: var(--gold-500);
 }

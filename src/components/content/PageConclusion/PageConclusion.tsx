@@ -16,9 +16,9 @@ export default function PageConclusion({eyebrow = "", heading, description, href
                 <div className={`${styles.message}`}>
                     {eyebrow && <p className={`text-eyebrow ${styles.eyebrow}`}>{eyebrow}</p>}
 
-                    <h2 className={`text-section-title ${styles.heading}`}>{heading}</h2>
+                    <h2 className={`text-subheading ${styles.heading}`}>{heading}</h2>
 
-                    <p className={`text-body ${styles.description}`}>{description}</p>
+                    <p className={`text-prose ${styles.description}`}>{description}</p>
                 </div>
 
                 <ActionLink href={href} variant="inverse">{actionLabel}</ActionLink>

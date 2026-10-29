@@ -1,9 +1,8 @@
 import styles from "./GlobalAudioPlayer.module.css";
-import {type CSSProperties, useEffect} from "react";
+import {type CSSProperties, useState, useEffect, useRef} from "react";
 import {Pause, Play, ChevronDown, ChevronUp, X, Volume2, VolumeX, Gauge, Download, Share} from "lucide-react";
 import {useAudioPlayer} from "./useAudioPlayer.ts";
 import {formatTime} from "../../../pages/sermons/sermons.ts";
-import {useState} from "react";
 
 type ProgressStyle = CSSProperties & {
     "--progress": string;
@@ -19,6 +18,8 @@ export default function GlobalAudioPlayer() {
         volume,
         isMuted,
         playbackRate,
+        isExpanded,
+        toggleExpanded,
         changePlaybackRate,
         seek,
         closePlayer,
@@ -28,13 +29,41 @@ export default function GlobalAudioPlayer() {
     } = audioPlayer;
     const currentDuration = formatTime(currentTime);
     const totalDuration = formatTime(duration);
-    const [isExpanded, setIsExpanded] = useState(false);
     const [isSpeedMenuOpen, setIsSpeedMenuOpen] = useState(false);
     const progressPercentage =
         duration > 0 ? (currentTime / duration) * 100 : 0;
     const volumePercentage = volume * 100;
     const playbackRates = [0.75, 1, 1.25, 1.5, 2];
     const [isLinkCopied, setIsLinkCopied] = useState(false);
+    const playerRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const player = playerRef.current;
+        const root = document.documentElement;
+
+        if (!activeMessage || !player) {
+            root.style.setProperty("--audio-player-height", "0px");
+            return;
+        }
+
+        function updatePlayerHeight() {
+            const height = player?.getBoundingClientRect().height;
+
+            root.style.setProperty(
+                "--audio-player-height",
+                `${height}px`
+            );
+        }
+
+        updatePlayerHeight();
+
+        const resizeObserver = new ResizeObserver(updatePlayerHeight);
+        resizeObserver.observe(player);
+
+        return () => {
+            resizeObserver.disconnect();
+        };
+    }, [activeMessage]);
 
     useEffect(() => {
         if (!isLinkCopied) {
@@ -79,7 +108,7 @@ export default function GlobalAudioPlayer() {
     }
 
     return (
-        <aside className={`${styles.player} ${isExpanded ? styles.expanded : styles.compact}`}
+        <aside ref={playerRef} className={`${styles.player} ${isExpanded ? styles.expanded : styles.compact}`}
                aria-label="Audio player">
             <div className={styles.content}>
                 <button
@@ -126,7 +155,7 @@ export default function GlobalAudioPlayer() {
                 <div className={`${styles["window-controls"]}`}>
                     <button
                         className={`${styles["expand-button"]}`}
-                        onClick={() => setIsExpanded(() => !isExpanded)}
+                        onClick={toggleExpanded}
                         aria-label={isExpanded ? "Collapse audio player" : "Expand audio player"}>
                         {isExpanded
                             ? <ChevronDown className={`${styles["control-icon"]}`} aria-hidden="true"/>

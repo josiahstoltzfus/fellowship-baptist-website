@@ -3,14 +3,11 @@ import {createContext} from "react";
 
 export type ScriptureReaderContextValue = {
     activeReference: ScriptureReference | null;
-    openReferences: ScriptureReference[];
+    openReference: (reference: ScriptureReference) => void;
     isReaderOpen: boolean;
     isMinimized: boolean;
     minimizeReader: () => void;
     restoreReader: () => void;
-    openReference: (reference: ScriptureReference) => void;
-    selectReference: (reference: ScriptureReference) => void;
-    closeReference: (reference: ScriptureReference) => void;
     closeReader: () => void;
 }
 

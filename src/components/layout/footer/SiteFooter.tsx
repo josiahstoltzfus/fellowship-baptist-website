@@ -16,9 +16,9 @@ export default function SiteFooter() {
                         {/* SiteFooter links */}
                         <h2 className={`text-eyebrow ${styles["section-heading"]}`}>Explore</h2>
                         <ul className={`text-body-small ${styles["list"]}`}>
-                            <li><NavLink to="/about">About</NavLink></li>
+                            <li><NavLink to="/">Home</NavLink></li>
                             <li><NavLink to="/visit">Visit</NavLink></li>
-                            <li><NavLink to="/sermons">Sermons</NavLink></li>
+                            <li><NavLink to="/resources/sermons">Sermons</NavLink></li>
                             <li><NavLink to="/contact">Contact</NavLink></li>
                         </ul>
                     </nav>
@@ -43,7 +43,13 @@ export default function SiteFooter() {
                             <p className={`text-body-small`}>Fountain Inn, SC</p>
                         </address>
 
-                        <a href="#" className={`text-action ${styles.directions}`}>Get Directions →</a>
+                        <a
+                            href="https://www.google.com/maps/dir/?api=1&destination=401+Jenkins+Bridge+Road%2C+Fountain+Inn%2C+SC"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`text-action ${styles.directions}`}>
+                            Get Directions →
+                        </a>
                     </section>
 
                     <section className={`text-body-small ${styles["section"]}`}>

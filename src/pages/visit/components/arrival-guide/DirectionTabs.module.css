@@ -1,0 +1,36 @@
+.tabs {
+    display: flex;
+    gap: var(--space-xl);
+    border-bottom: 2px solid var(--color-border-default);
+}
+
+.tab {
+    position: relative;
+    padding-block: var(--space-sm);
+    cursor: pointer;
+}
+
+.tab::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+
+    height: 2px;
+    background: var(--gold-500);
+
+    opacity: 0;
+}
+
+.tab[aria-selected="true"],
+.tab[aria-selected="true"]::after {
+    font-weight: var(--font-weight-semibold);
+    opacity: 1;
+}
+
+@media (max-width: 480px) {
+    .tab {
+        font-size: var(--font-size-14);
+    }
+}

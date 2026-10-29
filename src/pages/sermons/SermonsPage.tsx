@@ -7,7 +7,8 @@ export default function SermonsPage() {
             <PageIntroduction
                 eyebrow="Sermons and Teaching"
                 title="Teaching from God's Word."
-                description="Expore sermons and resources intended to point people to Christ and help believers grow through Scripture."
+                spacing="connected"
+                description="Explore sermons and teachings intended to point people to Christ and help believers grow through Scripture."
             />
             <TeachingArchive/>
         </>

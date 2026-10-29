@@ -32,7 +32,7 @@ export default function TextSection({
 
                 <p className={`text-eyebrow ${styles.eyebrow}`}>{eyebrow}</p>
                 <h2 className={`text-section-title`}>{heading}</h2>
-                <p className={`text-lead ${styles.description}`}>{description}</p>
+                <p className={`text-prose-lead ${styles.description}`}>{description}</p>
 
                 {scripture && (
                     <blockquote className={styles.scripture}>
