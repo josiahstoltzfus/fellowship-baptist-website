@@ -9,6 +9,8 @@ export type ScriptureReaderContextValue = {
     minimizeReader: () => void;
     restoreReader: () => void;
     closeReader: () => void;
+    focusRequest: number;
+    focusTrigger: () => void;
 }
 
 export const ScriptureReaderContext =

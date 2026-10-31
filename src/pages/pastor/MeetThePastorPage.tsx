@@ -43,14 +43,6 @@ export default function MeetThePastorPage() {
                 description="Become familiar with the pastor's ministry through sermons and teaching from Fellowship Baptist."
                 href="/resources/sermons"
                 actionLabel="Explore Sermons"/>
-
         </>
     )
 }
-/*
-    eyebrow?: string;
-    heading: string;
-    description: string;
-    href: string;
-    actionLabel: string;
- */

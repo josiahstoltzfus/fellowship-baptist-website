@@ -2,6 +2,7 @@ import styles from "./GlobalScriptureReader.module.css";
 import {useScriptureReader} from "./useScriptureReader.ts";
 import ScriptureReaderDock from "./ScriptureReaderDock.tsx";
 import {ChevronUp, X} from "lucide-react";
+import {useEffect, useRef} from "react";
 
 export default function GlobalScriptureReader() {
     const scriptureReader = useScriptureReader();
@@ -10,8 +11,22 @@ export default function GlobalScriptureReader() {
         isMinimized,
         isReaderOpen,
         minimizeReader,
-        closeReader
+        closeReader,
+        focusRequest,
+        focusTrigger,
     } = scriptureReader;
+    const minimizeButtonRef = useRef<HTMLButtonElement>(null);
+    const previousFocusRequest = useRef(focusRequest);
+
+    useEffect(() => {
+        if (focusRequest !== previousFocusRequest.current) {
+            previousFocusRequest.current = focusRequest;
+
+            if (isReaderOpen && !isMinimized) {
+                minimizeButtonRef.current?.focus();
+            }
+        }
+    }, [focusRequest, isReaderOpen, isMinimized]);
 
     if (!isReaderOpen || !activeReference) {
         return null;
@@ -25,14 +40,21 @@ export default function GlobalScriptureReader() {
     }
 
     return (
-        <aside className={`${styles.reader}`}>
 
+        <aside className={`${styles.reader}`}>
             <header className={styles.header}>
                 <button
+                    ref={minimizeButtonRef}
                     type="button"
                     onClick={minimizeReader}
                     className={styles.minimize}
-                    aria-label={`Restore Scripture Reader: ${activeReference?.reference}`}
+                    onKeyDown={(event) => {
+                        if (event.key === "Tab" && event.shiftKey) {
+                            event.preventDefault();
+                            focusTrigger();
+                        }
+                    }}
+                    aria-label={`Minimize Scripture Reader: ${activeReference?.reference}`}
                 >
                     <ChevronUp size={18} aria-hidden="true"/>
                     <span className={`${styles.eyebrow} text-eyebrow`}>Scripture Reader</span>
@@ -47,8 +69,20 @@ export default function GlobalScriptureReader() {
                 </button>
             </header>
 
-            <div className={styles.body}>
-                <h2 className={`${styles.reference} text-heading-small`}>{activeReference?.reference}</h2>
+            <h2 className={`${styles.reference} text-heading-small`}>{activeReference?.reference}</h2>
+
+            <div
+                tabIndex={0}
+                role="region"
+                aria-label="Scripture passage"
+                className={styles.body}
+                onKeyDown={(event) => {
+                    if (event.key === "Tab" && !event.shiftKey) {
+                        event.preventDefault();
+                        focusTrigger();
+                    }
+                }}
+            >
                 <div className={`${styles.passage} text-prose`}>
                     {activeReference.verses.map((verse) => (
                         <p

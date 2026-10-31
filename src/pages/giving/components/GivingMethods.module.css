@@ -6,15 +6,15 @@
 .content {
     width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-default));
     margin-inline: auto;
-
     padding-block: var(--space-4xl);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+
 }
 
 .introduction {
-    padding-block-end: var(--space-xl);
-
-    border-bottom: 1px solid var(--color-border-default);
-
     display: flex;
     flex-direction: column;
     gap: var(--space-lg);
@@ -31,8 +31,6 @@
 }
 
 .method {
-    padding-block-start: var(--space-xl);
-
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
@@ -48,8 +46,12 @@
     }
 
     .list > :first-child {
-        padding-block-end: var(--space-xl);
+        padding-block-end: var(--space-lg);
 
         border-bottom: 1px solid var(--color-border-default);
+    }
+
+    .list > :not(:first-child) {
+        padding-block-start: var(--space-lg);
     }
 }

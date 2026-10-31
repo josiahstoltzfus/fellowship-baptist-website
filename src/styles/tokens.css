@@ -81,6 +81,7 @@
     --color-text-inverse-muted: var(--parchment-muted);
     --color-text-accent: var(--gold-500);
     --color-text-footer: var(--parchment-muted);
+    --color-audio-control: rgb(209 204 184 / 0.8);
 
     /* border */
     --color-border-default: rgb(0 0 0 / 0.1); /* Previous: --neutral-divider */

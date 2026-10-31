@@ -13,8 +13,6 @@
 .introduction {
     padding-block-end: var(--space-xl);
 
-    border-bottom: 1px solid var(--color-border-default);
-
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
@@ -37,10 +35,12 @@
 .item {
     padding-block: var(--space-xl);
 
-    border-bottom: 1px solid var(--color-border-default);
-
     display: flex;
     gap: var(--space-lg);
+}
+
+.item:not(:last-child) {
+    border-bottom: 1px solid var(--color-border-default);
 }
 
 .item-heading {

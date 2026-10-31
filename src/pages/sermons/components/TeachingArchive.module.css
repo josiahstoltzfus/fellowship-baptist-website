@@ -27,11 +27,14 @@
 
 .item {
     padding-block-end: var(--space-xl);
-    border-bottom: 1px solid var(--color-border-default);
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.item:not(:last-child) {
+    border-bottom: 1px solid var(--color-border-default);
 }
 
 .sermon-details {

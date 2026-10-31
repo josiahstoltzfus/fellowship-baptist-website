@@ -1,11 +1,14 @@
 .step {
     padding-block-end: var(--space-xl);
-    border-bottom: 1px solid var(--color-border-default);
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-2xl);
     align-items: center;
+}
+
+.step:not(:last-child) {
+    border-bottom: 1px solid var(--color-border-default);
 }
 
 .number {

@@ -3,7 +3,6 @@ import {Outlet, ScrollRestoration} from "react-router-dom";
 import SiteFooter from "./footer/SiteFooter.tsx";
 import GlobalAudioPlayer from "../media/audio-player/GlobalAudioPlayer.tsx";
 import GlobalScriptureReader from "../media/scripture-reader/GlobalScriptureReader.tsx";
-import styles from "./SiteLayout.module.css";
 import {useEffect, useState} from "react";
 
 export default function SiteLayout() {
@@ -27,7 +26,7 @@ export default function SiteLayout() {
     }, [isMobileOpen]);
 
     return (
-        <div className={styles.site}>
+        <div>
             <ScrollRestoration/>
 
             <SiteHeader

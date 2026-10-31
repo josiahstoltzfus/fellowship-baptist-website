@@ -1,6 +1,7 @@
 .footer {
     width: 100%;
     padding-block-start: var(--space-3xl);
+    padding-block-end: var(--audio-player-height);
 
     background: var(--color-surface-footer);
     color: var(--color-text-footer);
@@ -90,4 +91,8 @@
 .legal-links {
     display: flex;
     gap: var(--space-2xs);
+}
+
+.footer :focus-visible {
+    outline-color: var(--color-text-inverse);
 }

@@ -29,11 +29,12 @@ export default function GlobalAudioPlayer() {
     } = audioPlayer;
     const currentDuration = formatTime(currentTime);
     const totalDuration = formatTime(duration);
+
     const [isSpeedMenuOpen, setIsSpeedMenuOpen] = useState(false);
     const progressPercentage =
         duration > 0 ? (currentTime / duration) * 100 : 0;
     const volumePercentage = volume * 100;
-    const playbackRates = [0.75, 1, 1.25, 1.5, 2];
+    const playbackRates = [1, 1.25, 1.5];
     const [isLinkCopied, setIsLinkCopied] = useState(false);
     const playerRef = useRef<HTMLElement>(null);
 
@@ -122,34 +123,8 @@ export default function GlobalAudioPlayer() {
                 </button>
 
                 <div className={styles["message-info"]}>
-                    <p className={`text-heading-small ${styles.title}`}>{activeMessage.title}</p>
-                    <div className={styles.metadata}>
-                        <span className={`text-eyebrow ${styles.speaker}`}>{activeMessage.speaker}</span>
-                        <span aria-hidden="true" className={styles.separator}>·</span>
-                        <span className={`text-eyebrow ${styles.kind}`}>{activeMessage.kind}</span>
-                    </div>
-                </div>
-
-                <div className={styles.timeline}>
-                    <span className={`text-body ${styles.duration}`}>{currentDuration}</span>
-                    <input
-                        className={styles.input}
-                        style={{
-                            "--progress": `${progressPercentage}%`,
-                        } as ProgressStyle}
-                        type="range"
-                        min="0"
-                        max={duration}
-                        value={currentTime}
-                        step="1"
-                        aria-label="Audio progress"
-                        onChange={(event) => {
-                            const newTime = Number(event.currentTarget.value);
-
-                            seek(newTime);
-                        }}
-                    />
-                    <span className={`text-body ${styles.duration}`}>{totalDuration}</span>
+                    <p className={`text-heading-xs ${styles.title}`}>{activeMessage.title}</p>
+                    <span className={`text-eyebrow ${styles.speaker}`}>{activeMessage.speaker}</span>
                 </div>
 
                 <div className={`${styles["window-controls"]}`}>
@@ -158,8 +133,8 @@ export default function GlobalAudioPlayer() {
                         onClick={toggleExpanded}
                         aria-label={isExpanded ? "Collapse audio player" : "Expand audio player"}>
                         {isExpanded
-                            ? <ChevronDown className={`${styles["control-icon"]}`} aria-hidden="true"/>
-                            : <ChevronUp className={`${styles["control-icon"]}`} aria-hidden="true"/>
+                            ? <ChevronDown size={20} className={`${styles["control-icon"]}`} aria-hidden="true"/>
+                            : <ChevronUp size={20} className={`${styles["control-icon"]}`} aria-hidden="true"/>
                         }
                     </button>
 
@@ -169,9 +144,34 @@ export default function GlobalAudioPlayer() {
                         onClick={closePlayer}
                         aria-label="Close audio player"
                     >
-                        <X className={`${styles["control-icon"]}`} aria-hidden="true"/>
+                        <X size={20} className={`${styles["control-icon"]}`} aria-hidden="true"/>
                     </button>
+                </div>
+            </div>
 
+            <div className={styles.timeline}>
+                <input
+                    className={styles.input}
+                    style={{
+                        "--progress": `${progressPercentage}%`,
+                    } as ProgressStyle}
+                    type="range"
+                    min="0"
+                    max={duration}
+                    value={currentTime}
+                    step="1"
+                    aria-label="Audio progress"
+                    onChange={(event) => {
+                        const newTime = Number(event.currentTarget.value);
+
+                        seek(newTime);
+                    }}
+                />
+
+                <div className={styles.timestamps}>
+                    <span className={`text-eyebrow ${styles.duration}`}>{currentDuration}</span>
+                    <span aria-hidden="true">/</span>
+                    <span className={`text-eyebrow ${styles.duration}`}>{totalDuration}</span>
                 </div>
             </div>
 
@@ -215,19 +215,19 @@ export default function GlobalAudioPlayer() {
                         >
                             <Gauge className={`${styles["control-icon"]}`} aria-hidden="true"/>
 
-                            <span className={`text-action-large ${styles["speed-label"]}`}>{playbackRate}× Speed</span>
+                            <span className={`text-action ${styles["speed-label"]}`}>{playbackRate}×</span>
                         </button>
 
                         {isSpeedMenuOpen && (
                             <div className={styles["speed-options"]}>
-                                <p className={`text-action-large`}>Playback Speed</p>
+                                <p className={`text-action`}>Playback Speed</p>
 
                                 <div className={styles["speed-list"]}>
                                     {playbackRates.map((rate) => (
                                         <button
                                             type="button"
                                             key={rate}
-                                            className={`text-action-large ${styles["speed-option"]}`}
+                                            className={`text-action ${styles["speed-option"]}`}
                                             onClick={() => {
                                                 changePlaybackRate(rate);
                                                 setIsSpeedMenuOpen(false);
@@ -246,7 +246,7 @@ export default function GlobalAudioPlayer() {
                         <Download className={styles["control-icon"]} aria-hidden="true"/>
                         <a
                             href={activeMessage.audioUrl}
-                            className={`text-action-large ${styles["download-link"]}`}
+                            className={`text-action ${styles["download-link"]}`}
                             download={activeMessage.downloadFileName}
                         >
                             Download
@@ -258,7 +258,7 @@ export default function GlobalAudioPlayer() {
                         <button
                             type="button"
                             onClick={shareMessage}
-                            className={`text-action-large ${styles["share-button"]}`}
+                            className={`text-action ${styles["share-button"]}`}
                         >
                             Share
                         </button>

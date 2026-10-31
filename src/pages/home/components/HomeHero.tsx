@@ -19,9 +19,14 @@ export default function HomeHero() {
                     <ActionLink href="/visit">Plan your visit</ActionLink>
                 </div>
 
-                <figure className={`${styles.media}`}>
-                    <img src={home_hero_image} className={`${styles.image}`}/>
-                </figure>
+                <div className={styles["media-frame"]}>
+                    <figure className={`${styles.media}`}>
+                        <img
+                            src={home_hero_image}
+                            className={`${styles.image}`}
+                            alt="Exterior of Fellowship Baptist Church in Fountain Inn, South Carolina"/>
+                    </figure>
+                </div>
             </div>
 
         </section>

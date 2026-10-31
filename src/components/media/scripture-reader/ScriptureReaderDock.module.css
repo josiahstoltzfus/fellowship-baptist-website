@@ -27,7 +27,7 @@
     flex: 0 0 auto;
     height: var(--layout-touch-min);
     width: var(--layout-touch-min);
-    border-left: 1px solid var(--color-border-default);
+    border-left: 2px solid var(--color-border-default);
 
     display: flex;
     align-items: center;
@@ -36,6 +36,11 @@
 
 .eyebrow {
     color: var(--gold-500);
+}
+
+.close:focus-visible,
+.restore:focus-visible {
+    outline-offset: -3px;
 }
 
 @media (max-width: 768px) {

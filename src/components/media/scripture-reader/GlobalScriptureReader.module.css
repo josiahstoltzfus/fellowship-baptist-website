@@ -13,16 +13,19 @@
 
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
 }
 
 .eyebrow {
     color: var(--gold-500);
 }
 
-.header {
-    flex: 0;
+.header,
+.reference,
+.footer {
+    flex-shrink: 0;
+}
 
+.header {
     border-bottom: 2px solid var(--color-border-default);
 
     display: flex;
@@ -42,11 +45,17 @@
     flex: 0 0 auto;
     height: var(--layout-touch-min);
     width: var(--layout-touch-min);
-    border-left: 1px solid var(--color-border-default);
+    border-left: 2px solid var(--color-border-default);
 
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.reference {
+    padding-inline: var(--space-lg);
+    padding-block: var(--space-md);
+    border-bottom: 2px solid var(--color-border-default);
 }
 
 .body {
@@ -54,8 +63,8 @@
     min-height: 0;
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding-block: var(--space-sm);
     padding-inline: var(--space-lg);
+    padding-block: var(--space-xs);
 
     display: flex;
     flex-direction: column;
@@ -116,6 +125,12 @@
 
 .footer-text {
     color: var(--gold-500);
+}
+
+.minimize:focus-visible,
+.close:focus-visible,
+.body:focus-visible {
+    outline-offset: -3px;
 }
 
 @media (max-width: 768px) {
