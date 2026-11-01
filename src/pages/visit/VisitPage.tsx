@@ -2,7 +2,6 @@ import VisitExpectations from "./components/VisitExpectations.tsx";
 import GatheringInformation from "../../components/content/GatheringInformation/GatheringInformation.tsx";
 import PageIntroduction from "../../components/content/PageIntroduction/PageIntroduction.tsx";
 import PageConclusion from "../../components/content/PageConclusion/PageConclusion.tsx";
-import VisitDirections from "./components/VisitDirections.tsx";
 
 export default function VisitPage() {
     return (
@@ -15,7 +14,6 @@ export default function VisitPage() {
             />
             <GatheringInformation />
             <VisitExpectations />
-            <VisitDirections/>
             <PageConclusion
                 heading="Still have a question?"
                 description="Have questions about your visit? We'd be glad to hear from you."
