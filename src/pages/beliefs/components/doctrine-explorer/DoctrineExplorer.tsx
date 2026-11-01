@@ -36,11 +36,12 @@ export default function DoctrineExplorer() {
 
                         <ul className={`${styles.list}`}>
                             {doctrineArticles.map((article) => (
-                                <li>
+                                <li key={article.id}>
                                     <button
                                         type="button"
                                         className={`text-heading-small ${styles.item}`}
                                         aria-pressed={selectedId === article.id}
+                                        aria-controls={"selected-doctrine"}
                                         onClick={() => setSelectedId(article.id)}
                                     >
                                         {article.title}
@@ -50,7 +51,9 @@ export default function DoctrineExplorer() {
                         </ul>
                     </nav>
 
-                    <article className={styles.article}>
+                    <article
+                        id={"selected-doctrine"}
+                        className={styles.article}>
                         <p className={`text-eyebrow ${styles["article-label"]}`}>
                             {selectedArticle.articleLabel}
                         </p>

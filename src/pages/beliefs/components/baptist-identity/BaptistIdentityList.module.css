@@ -21,7 +21,7 @@
 
 .letter {
     flex: 0 0 3rem;
-    color: var(--gold-500);
+    color: var(--color-text-accent);
 
     display: flex;
     justify-content: center;

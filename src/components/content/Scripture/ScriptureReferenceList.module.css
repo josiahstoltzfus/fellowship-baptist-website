@@ -9,7 +9,7 @@
 }
 
 .button--accent {
-    color: var(--gold-500);
+    color: var(--color-text-accent);
 }
 
 .button--default {
@@ -25,4 +25,15 @@
 .button:focus-visible {
     text-decoration: underline;
     text-underline-offset: 0.2em;
+}
+
+@media (max-width: 480px) {
+    .list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .item:not(:last-child)::after {
+        display: none;
+    }
 }

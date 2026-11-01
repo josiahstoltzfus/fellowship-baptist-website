@@ -1,7 +1,5 @@
 import styles from "./ReplacementPrinciple.module.css";
-import ReplacementComparisonTable from "./ReplacementComparisonTable.tsx";
-import ReplacementComparisonList from "./ReplacementComparisonList.tsx";
-import {replacementPrinciple, newCreationScripture} from "../../../musicPrinciples.ts";
+import {newCreationScripture} from "../../../musicPrinciples.ts";
 import {useScriptureReader} from "../../../../../components/media/scripture-reader/useScriptureReader.ts";
 
 export default function ReplacementPrinciple() {
@@ -25,8 +23,6 @@ export default function ReplacementPrinciple() {
                     </button>
                 </div>
 
-                <ReplacementComparisonTable rows={replacementPrinciple}/>
-                <ReplacementComparisonList rows={replacementPrinciple}/>
             </div>
         </section>
     )

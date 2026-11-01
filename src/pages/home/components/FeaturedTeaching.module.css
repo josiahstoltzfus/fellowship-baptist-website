@@ -23,8 +23,8 @@
     gap: var(--space-lg);
 }
 
-.title {
-    color: var(--gold-500);
+.eyebrow {
+    color: var(--color-text-accent-inverse);
 }
 
 .list {
@@ -36,6 +36,9 @@
     display: flex;
     gap: var(--space-sm);
     align-items: center;
+    white-space: nowrap;
+
+    color: var(--color-text-inverse-muted);
 }
 
 .item:not(:last-child)::after {
@@ -44,7 +47,7 @@
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background: var(--gold-500);
+    background: var(--color-border-accent);
 }
 
 .media {
@@ -75,6 +78,18 @@
     .weekly-highlights,
     .featured-teaching {
         flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-xs);
+    }
+
+    .item:not(:last-child)::after {
+        display: none;
     }
 }
 

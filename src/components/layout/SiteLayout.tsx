@@ -13,7 +13,6 @@ export default function SiteLayout() {
     }
 
     function toggleMenu() {
-        console.log("Mobile menu toggled");
         setIsMobileOpen(currentlyOpen => !currentlyOpen);
     }
 

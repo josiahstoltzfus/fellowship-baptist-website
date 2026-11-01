@@ -2,6 +2,7 @@ import VisitExpectations from "./components/VisitExpectations.tsx";
 import GatheringInformation from "../../components/content/GatheringInformation/GatheringInformation.tsx";
 import PageIntroduction from "../../components/content/PageIntroduction/PageIntroduction.tsx";
 import PageConclusion from "../../components/content/PageConclusion/PageConclusion.tsx";
+import VisitDirections from "./components/VisitDirections.tsx";
 
 export default function VisitPage() {
     return (
@@ -14,9 +15,10 @@ export default function VisitPage() {
             />
             <GatheringInformation />
             <VisitExpectations />
+            <VisitDirections/>
             <PageConclusion
                 heading="Still have a question?"
-                description="We’ll make it easy to contact the church before your visit. Public phone and email details will be added once supplied."
+                description="Have questions about your visit? We'd be glad to hear from you."
                 actionLabel="Contact Us"
                 href="/contact"
             />

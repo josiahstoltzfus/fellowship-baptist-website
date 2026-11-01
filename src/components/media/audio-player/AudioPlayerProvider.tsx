@@ -16,6 +16,8 @@ export default function AudioPlayerProvider({children} : AudioPlayerProviderProp
     const [isMuted, setIsMuted] = useState(false);
     const [playbackRate, setPlaybackRate] = useState(1);
     const [isExpanded, setIsExpanded] = useState(false);
+    const triggerRef = useRef<HTMLElement | null>(null);
+    const [focusRequest, setFocusRequest] = useState(0);
 
     function changePlaybackRate(newRate: number) {
         const audio = audioRef.current;
@@ -51,7 +53,12 @@ export default function AudioPlayerProvider({children} : AudioPlayerProviderProp
     }
 
     function playMessage(message: AudioMessage) {
+        if (document.activeElement instanceof HTMLElement) {
+            triggerRef.current = document.activeElement;
+        }
+
         setActiveMessage(message);
+        setFocusRequest((current) => current + 1);
     }
 
     function seek(newTime: number) {
@@ -76,6 +83,7 @@ export default function AudioPlayerProvider({children} : AudioPlayerProviderProp
         setCurrentTime(0);
         setIsPlaying(false);
         setIsExpanded(false);
+        triggerRef.current?.focus();
     }
 
     function togglePlayback() {
@@ -92,6 +100,10 @@ export default function AudioPlayerProvider({children} : AudioPlayerProviderProp
         }
     }
 
+    function focusTrigger() {
+        triggerRef.current?.focus();
+    }
+
     return (
         <AudioPlayerContext.Provider
             value ={{
@@ -103,6 +115,8 @@ export default function AudioPlayerProvider({children} : AudioPlayerProviderProp
                 isMuted,
                 playbackRate,
                 isExpanded,
+                focusRequest,
+                focusTrigger,
                 toggleExpanded,
                 changePlaybackRate,
                 toggleMute,

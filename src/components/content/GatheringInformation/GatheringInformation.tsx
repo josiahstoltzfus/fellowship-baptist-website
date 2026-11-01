@@ -8,7 +8,7 @@ export default function GatheringInformation() {
 
                 <div className={`${styles["service-schedule"]}`}>
                     <p className={`text-eyebrow ${styles.eyebrow}`}>Gather with us</p>
-                    <p className={`text-section-title`}>Weekly Services</p>
+                    <h2 className={`text-section-title`}>Weekly Services</h2>
 
                     <ul className={`text-body ${styles["service-list"]}`}>
                         <li className={`${styles["service-item"]}`}>
@@ -32,7 +32,7 @@ export default function GatheringInformation() {
 
                 <div className={`${styles["location-details"]}`}>
                     <p className={`text-eyebrow ${styles.eyebrow}`}>Location & Contact</p>
-                    <p className={`text-section-title`}>Fountain Inn, South Carolina</p>
+                    <h2 className={`text-section-title`}>Fountain Inn, South Carolina</h2>
 
                     <address className={`text-body ${styles["address"]}`}>
                         <p>Fellowship Baptist Church</p>
@@ -48,7 +48,8 @@ export default function GatheringInformation() {
 
                         <p className={`${styles["contact-item"]}`}>
                             <span className={`text-body-bold ${styles.label}`}>Email:</span>
-                            <a href="mailto:PastorJackLBoyer@spectrum.net" className={`text-body ${styles["contact-link"]}`}>PastorJackLBoyer@spectrum.net</a>
+                            <a href="mailto:PastorJackLBoyer@spectrum.net"
+                               className={`text-body ${styles["contact-link"]}`}>PastorJackLBoyer@spectrum.net</a>
                         </p>
                     </div>
                     <ActionLink
@@ -58,8 +59,8 @@ export default function GatheringInformation() {
                         Get Directions
                     </ActionLink>
                 </div>
-
             </div>
+
         </section>
     )
 }

@@ -37,7 +37,7 @@
 }
 
 .eyebrow {
-    color: var(--gold-500);
+    color: var(--color-text-accent);
 }
 
 .heading {
@@ -49,7 +49,7 @@
 }
 
 .status {
-    color: var(--gold-500);
+    color: var(--color-text-accent);
 }
 
 .link {

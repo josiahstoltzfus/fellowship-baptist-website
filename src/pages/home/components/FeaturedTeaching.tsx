@@ -4,27 +4,24 @@ import {useAudioPlayer} from "../../../components/media/audio-player/useAudioPla
 
 export default function FeaturedTeaching() {
     const audioPlayer = useAudioPlayer();
-    const {isPlaying} = audioPlayer;
     const durationMinutes = Math.round(featuredTeaching.durationSeconds / 60);
 
     return (
         <section className={`${styles.highlights}`}>
             <div className={`${styles.content}`}>
                 <div className={`${styles["featured-teaching"]}`}>
-                    <p className={`text-eyebrow ${styles.title}`}>Featured Teaching</p>
-                    <p className={`text-section-title`}>{featuredTeaching.title}</p>
+                    <h2 className={`text-eyebrow ${styles.eyebrow}`}>Featured Teaching</h2>
+                    <h3 className={`text-section-title`}>{featuredTeaching.title}</h3>
                     <ul className={`${styles.list}`}>
-                        <li className={`${styles.item}`}>
-                            <p className={`text-eyebrow ${styles["item-text"]}`}>{featuredTeaching.kind}</p>
+                        <li className={`text-eyebrow ${styles.item}`}>
+                            {featuredTeaching.kind}
                         </li>
-                        <li className={`${styles.item}`}>
-                            <p className={`text-eyebrow ${styles["item-text"]}`}>{featuredTeaching.speaker}</p>
+                        <li className={`text-eyebrow ${styles.item}`}>
+                            {featuredTeaching.speaker}
                         </li>
                         {featuredTeaching.scripture &&
                             <li className={`text-eyebrow ${styles.item}`}>
-                                <p className={`${styles["item-text"]}`}>
-                                    {featuredTeaching.scripture.reference}
-                                </p>
+                                {featuredTeaching.scripture.reference}
                             </li>
                         }
                         <li className={`text-eyebrow ${styles.item}`}>
@@ -35,8 +32,8 @@ export default function FeaturedTeaching() {
                     <button
                         className={`text-action-large ${styles.button}`}
                         type="button"
-                        onClick={()=> audioPlayer.playMessage(featuredTeaching)}
-                        aria-label={isPlaying ? "Pause audio" : "Play audio"}
+                        onClick={() => audioPlayer.playMessage(featuredTeaching)}
+                        aria-label={`Listen to ${featuredTeaching.title}`}
                     >
                         Listen
                     </button>

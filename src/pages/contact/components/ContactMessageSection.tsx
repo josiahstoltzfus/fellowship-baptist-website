@@ -30,6 +30,7 @@ export default function ContactMessageSection() {
                                 id="name"
                                 name="name"
                                 type="text"
+                                autoComplete="name"
                                 placeholder="Enter name"
                             />
                         </div>
@@ -44,6 +45,7 @@ export default function ContactMessageSection() {
                                 id="email"
                                 name="email"
                                 type="email"
+                                autoComplete="email"
                                 placeholder="Enter email"
                             />
                         </div>

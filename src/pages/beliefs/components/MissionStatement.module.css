@@ -24,7 +24,7 @@
 }
 
 .eyebrow {
-    color: var(--gold-500);
+    color: var(--color-text-accent-inverse);
 }
 
 .reference {
@@ -47,7 +47,7 @@
 }
 
 .link {
-    color: var(--gold-500);
+    color: var(--color-text-accent-inverse);
 }
 
 @media (max-width: 768px) {

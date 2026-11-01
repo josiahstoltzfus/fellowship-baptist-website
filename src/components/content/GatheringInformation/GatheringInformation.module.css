@@ -37,13 +37,17 @@
 }
 
 .eyebrow {
-    color: var(--gold-500);
+    color: var(--color-text-accent);
 }
 
 .location-details {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
+}
+
+.visit-details {
+    grid-column: span 2;
 }
 
 .address {
@@ -74,6 +78,10 @@
     text-decoration: underline;
 }
 
+.contact-link {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
 
 @media (max-width: 768px) {
     .content {
@@ -84,6 +92,14 @@
         padding-block-end: var(--space-2xl);
 
         border-bottom: 1px solid var(--color-border-default);
+    }
+}
+
+@media (max-width: 360px) {
+    .service-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2xs);
     }
 }
 

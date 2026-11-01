@@ -16,7 +16,7 @@
 }
 
 .eyebrow {
-    color: var(--gold-500);
+    color: var(--color-text-accent);
 }
 
 .header,
@@ -90,7 +90,7 @@
 }
 
 .body::-webkit-scrollbar-thumb:hover {
-    background: var(--gold-500);
+    background: var(--color-border-accent);
 }
 
 .passage {
@@ -102,19 +102,8 @@
 .verse-number {
     margin-inline-end: var(--space-xs);
 
-    color: var(--gold-500);
+    color: var(--color-text-accent);
     font-weight: var(--font-weight-semibold);
-}
-
-.button {
-    height: var(--layout-touch-min);
-    width: var(--layout-touch-min);
-    border: 1px solid var(--gold-500);
-    color: var(--gold-500);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .footer {
@@ -124,7 +113,7 @@
 }
 
 .footer-text {
-    color: var(--gold-500);
+    color: var(--color-text-accent);
 }
 
 .minimize:focus-visible,

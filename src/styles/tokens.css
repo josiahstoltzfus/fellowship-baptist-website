@@ -58,9 +58,8 @@
     --ink-900: #131210;
     --ink-divider: #333029;
     --gold-500: #b29657;
+    --gold-700: #7B6030;
     --neutral-body: #47443b;
-    --neutral-placeholder: #7d8073;
-    --neutral-divider: #beb49f;
 
     --color-placeholder: #7D8073;
 
@@ -79,13 +78,14 @@
     --color-text-body: var(--neutral-body);
     --color-text-inverse: var(--parchment-base);
     --color-text-inverse-muted: var(--parchment-muted);
-    --color-text-accent: var(--gold-500);
+    --color-text-accent: var(--gold-700);
+    --color-text-accent-inverse: var(--gold-500);
     --color-text-footer: var(--parchment-muted);
-    --color-audio-control: rgb(209 204 184 / 0.8);
 
     /* border */
-    --color-border-default: rgb(0 0 0 / 0.1); /* Previous: --neutral-divider */
+    --color-border-default: rgb(0 0 0 / 0.1);
     --color-border-footer: var(--ink-divider);
+    --color-border-accent: var(--gold-500);
 
     /* action primary */
     --color-action-primary-background: var(--forest-900);

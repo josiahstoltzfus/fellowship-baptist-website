@@ -20,7 +20,7 @@
 }
 
 .eyebrow {
-    color: var(--gold-500);
+    color: var(--color-text-accent);
 }
 
 .scripture-button {
@@ -38,7 +38,7 @@
 
 .featured-scripture {
     padding-inline-start: var(--space-lg);
-    border-left: 2px solid var(--gold-500);
+    border-left: 2px solid var(--color-border-accent);
 
     display: flex;
     flex-direction: column;
@@ -49,8 +49,4 @@
     max-width: var(--layout-reading-max);
 
     color: var(--color-text-body);
-}
-
-.featured-scripture-verse {
-    color: var(--gold-500);
 }

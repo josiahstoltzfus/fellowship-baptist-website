@@ -7,12 +7,17 @@
     background: var(--color-surface-emphasis);
     width: min(30rem, 100vw);
     color: var(--color-text-inverse);
-    border-top: 3px solid var(--gold-500);
+    border-top: 3px solid var(--color-border-accent);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: var(--space-sm);
+}
+
+.player :focus-visible {
+    outline: 2px solid var(--parchment-base);
+    outline-offset: 3px;
 }
 
 .expanded-details {
@@ -57,7 +62,7 @@
 }
 
 .speaker {
-    color: var(--color-audio-control);
+    color: var(--color-text-inverse-muted);
 }
 
 .input {
@@ -74,8 +79,8 @@
     border-radius: 999px;
     background: linear-gradient(
             to right,
-            var(--gold-500) 0%,
-            var(--gold-500) var(--progress),
+            var(--color-border-accent) 0%,
+            var(--color-border-accent) var(--progress),
             gray var(--progress),
             gray 100%
     );
@@ -89,7 +94,7 @@
     appearance: none;
     border: 0;
     border-radius: 50%;
-    background: var(--gold-500);
+    background: var(--color-border-accent);
     opacity: 0;
     transition: opacity 300ms ease, margin-top 300ms ease;
 }
@@ -97,13 +102,13 @@
 .input::-moz-range-track {
     height: 4px;
     border-radius: 999px;
-    background: var(--color-audio-control);
+    background: gray;
 }
 
 .input::-moz-range-progress {
     height: 4px;
     border-radius: 999px;
-    background: var(--gold-500);
+    background: var(--color-border-accent);
 }
 
 .input::-moz-range-thumb {
@@ -111,7 +116,7 @@
     height: 16px;
     border: 0;
     border-radius: 50%;
-    background: var(--gold-500);
+    background: var(--color-border-accent);
 }
 
 .playback-button {
@@ -125,7 +130,20 @@
 .window-controls {
     flex: 0;
     display: flex;
+    align-items: center;
     gap: var(--space-xs);
+}
+
+.expand-button,
+.close-button {
+    flex: 0 0 auto;
+    padding: var(--space-xs);
+
+    border: 1px solid var(--parchment-muted);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .icon {
@@ -135,19 +153,9 @@
 }
 
 .separator {
-    color: var(--gold-500);
+    color: var(--color-border-accent);
     font-weight: var(--font-weight-semibold);
     font-size: var(--font-size-24);
-}
-
-.expand-button,
-.close-button {
-    flex: 0 0 auto;
-    height: var(--layout-touch-min);
-
-    display: flex;
-    align-items: start;
-    justify-content: center;
 }
 
 .volume-control {
@@ -168,7 +176,7 @@
 
 .playback-speed,
 .download {
-    border-right: 1px solid var(--color-audio-control);
+    border-right: 1px solid var(--color-text-inverse-muted);
     padding-inline-end: var(--space-xl);
 }
 
@@ -177,11 +185,7 @@
     align-items: center;
     gap: var(--space-sm);
 
-    font-weight: var(--font-weight-medium);
-    font-size: var(--font-size-17);
-    font-family: var(--font-family-sans), serif;
-
-    opacity: 0.8
+    color: var(--color-text-inverse-muted);
 }
 
 .speed-options {
@@ -193,11 +197,11 @@
 
     background: var(--color-surface-emphasis);
     border-radius: var(--space-xs);
-    color: var(--color-audio-control);
+    color: var(--color-text-inverse-muted);
 
     transform: translateX(-50%);
     z-index: 10;
-    border: 1px solid var(--gold-500);
+    border: 1px solid var(--color-border-accent);
 
     display: flex;
     flex-direction: column;
@@ -221,8 +225,8 @@
     height: 12px;
 
     background: var(--color-surface-emphasis);
-    border-right: 1px solid var(--gold-500);
-    border-bottom: 1px solid var(--gold-500);
+    border-right: 1px solid var(--color-border-accent);
+    border-bottom: 1px solid var(--color-border-accent);
 
     transform: translateX(-50%) rotate(45deg);
 }
@@ -238,8 +242,8 @@
 }
 
 .speed-option[aria-pressed="true"] {
-    color: var(--gold-500);
-    border-bottom: 1px solid var(--gold-500);
+    color: var(--color-text-accent-inverse);
+    border-bottom: 1px solid var(--color-border-accent);
 }
 
 .download,
@@ -249,23 +253,17 @@
     gap: var(--space-sm);
 }
 
-.download-link,
-.control-icon,
-.share-button {
-    color: var(--color-audio-control);
-}
-
 .control-icon {
     width: 20px;
     height: 20px;
-    color: var(--color-audio-control);
+    color: var(--color-text-inverse-muted);
 }
 
 .timeline {
     flex: 1;
     position: relative;
 
-    color: var(--color-audio-control);
+    color: var(--color-text-inverse-muted);
 
     display: flex;
     flex-direction: column;
@@ -333,5 +331,9 @@
     .download {
         border-right: none;
         padding-inline-end: 0;
+    }
+
+    .content {
+        gap: var(--space-xs);
     }
 }

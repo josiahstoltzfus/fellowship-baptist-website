@@ -1,5 +1,5 @@
 import styles from "./GlobalAudioPlayer.module.css";
-import {type CSSProperties, useState, useEffect, useRef} from "react";
+import {type CSSProperties, type KeyboardEvent, type FocusEvent, useState, useEffect, useRef} from "react";
 import {Pause, Play, ChevronDown, ChevronUp, X, Volume2, VolumeX, Gauge, Download, Share} from "lucide-react";
 import {useAudioPlayer} from "./useAudioPlayer.ts";
 import {formatTime} from "../../../pages/sermons/sermons.ts";
@@ -19,6 +19,8 @@ export default function GlobalAudioPlayer() {
         isMuted,
         playbackRate,
         isExpanded,
+        focusRequest,
+        focusTrigger,
         toggleExpanded,
         changePlaybackRate,
         seek,
@@ -37,6 +39,20 @@ export default function GlobalAudioPlayer() {
     const playbackRates = [1, 1.25, 1.5];
     const [isLinkCopied, setIsLinkCopied] = useState(false);
     const playerRef = useRef<HTMLElement>(null);
+    const playButtonRef = useRef<HTMLButtonElement>(null);
+    const previousFocusRequest = useRef(focusRequest);
+    const speedButtonRef = useRef<HTMLButtonElement>(null);
+    const speedControlRef = useRef<HTMLLIElement>(null);
+
+    useEffect(() => {
+        if (focusRequest !== previousFocusRequest.current) {
+            previousFocusRequest.current = focusRequest;
+
+            if (activeMessage) {
+                playButtonRef.current?.focus();
+            }
+        }
+    }, [focusRequest, activeMessage]);
 
     useEffect(() => {
         const player = playerRef.current;
@@ -80,6 +96,71 @@ export default function GlobalAudioPlayer() {
         };
     }, [isLinkCopied]);
 
+    function handlePlayKeydown(event: KeyboardEvent<HTMLButtonElement>) {
+        if (event.key === "Tab" && event.shiftKey) {
+            event.preventDefault();
+            focusTrigger();
+        }
+    }
+
+    function handlePlayerKeyDown(event: KeyboardEvent<HTMLElement>) {
+        if (event.key !== "Tab" || event.shiftKey) {
+            return;
+        }
+
+        const player = playerRef.current;
+
+        if (!player) {
+            return;
+        }
+
+        const focusableElements = Array.from(
+            player.querySelectorAll<HTMLElement>(
+                'button:not(:disabled), a[href], input:not(:disabled)'
+            )
+        ).filter((element) => element.getClientRects().length > 0);
+
+        const lastElement = focusableElements.at(-1);
+
+        if (document.activeElement === lastElement) {
+            event.preventDefault();
+            focusTrigger();
+        }
+    }
+
+    useEffect(() => {
+        if (!isSpeedMenuOpen) return;
+
+        function handlePointerDown(event: PointerEvent) {
+            if (
+                event.target instanceof Node &&
+                !speedControlRef.current?.contains(event.target)
+            ) {
+                setIsSpeedMenuOpen(false);
+            }
+        }
+
+        document.addEventListener("pointerdown", handlePointerDown);
+
+        return () => {
+            document.removeEventListener("pointerdown", handlePointerDown);
+        };
+    }, [isSpeedMenuOpen]);
+
+    function handleSpeedBlur(event: FocusEvent<HTMLLIElement>) {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+            setIsSpeedMenuOpen(false);
+        }
+    }
+
+    function handleSpeedKeyDown(event: KeyboardEvent<HTMLLIElement>) {
+        if (event.key === "Escape" && isSpeedMenuOpen) {
+            event.stopPropagation();
+            setIsSpeedMenuOpen(false);
+            speedButtonRef.current?.focus();
+        }
+    }
+
     if (!activeMessage) {
         return null;
     }
@@ -109,13 +190,19 @@ export default function GlobalAudioPlayer() {
     }
 
     return (
-        <aside ref={playerRef} className={`${styles.player} ${isExpanded ? styles.expanded : styles.compact}`}
-               aria-label="Audio player">
+        <aside
+            ref={playerRef}
+            onKeyDown={handlePlayerKeyDown}
+            className={`${styles.player} ${isExpanded ? styles.expanded : styles.compact}`}
+            aria-label="Audio player"
+        >
             <div className={styles.content}>
                 <button
+                    ref={playButtonRef}
                     className={`${styles["playback-button"]}`}
                     type="button"
                     onClick={togglePlayback}
+                    onKeyDown={handlePlayKeydown}
                     aria-label={isPlaying ? "Pause audio" : "Play audio"}
                 >
                     {isPlaying ? <Pause className={styles.icon} aria-hidden="true"/> :
@@ -161,6 +248,7 @@ export default function GlobalAudioPlayer() {
                     value={currentTime}
                     step="1"
                     aria-label="Audio progress"
+                    aria-valuetext={`${Math.floor(currentTime/60)} minutes, ${Math.floor(currentTime%60)} seconds of ${Math.floor(duration / 60)} minutes, ${Math.floor(duration % 60)} seconds`}
                     onChange={(event) => {
                         const newTime = Number(event.currentTarget.value);
 
@@ -200,22 +288,30 @@ export default function GlobalAudioPlayer() {
                             max="1"
                             step="0.01"
                             value={volume}
+                            aria-label="Volume"
+                            aria-valuetext={`${Math.floor(volume * 100)}%`}
                             onChange={(event) => {
                                 changeVolume(Number(event.currentTarget.value));
                             }}
                         />
                     </li>
 
-                    <li className={`${styles.item} ${styles["playback-speed"]}`}>
+                    <li
+                        ref={speedControlRef}
+                        onBlur={handleSpeedBlur}
+                        onKeyDown={handleSpeedKeyDown}
+                        className={`${styles.item} ${styles["playback-speed"]}`}
+                    >
                         <button
+                            ref={speedButtonRef}
                             type="button"
-                            className={`${styles["control-button"]}`}
+                            className={`text-action ${styles["control-button"]}`}
                             onClick={() => setIsSpeedMenuOpen((open) => !open)}
+                            aria-label={`Playback speed: ${playbackRate}x`}
                             aria-expanded={isSpeedMenuOpen}
                         >
                             <Gauge className={`${styles["control-icon"]}`} aria-hidden="true"/>
-
-                            <span className={`text-action ${styles["speed-label"]}`}>{playbackRate}×</span>
+                            {playbackRate}×
                         </button>
 
                         {isSpeedMenuOpen && (
@@ -231,6 +327,7 @@ export default function GlobalAudioPlayer() {
                                             onClick={() => {
                                                 changePlaybackRate(rate);
                                                 setIsSpeedMenuOpen(false);
+                                                speedButtonRef.current?.focus();
                                             }}
                                             aria-pressed={playbackRate === rate}
                                         >
@@ -243,23 +340,23 @@ export default function GlobalAudioPlayer() {
                     </li>
 
                     <li className={`${styles.item} ${styles.download}`}>
-                        <Download className={styles["control-icon"]} aria-hidden="true"/>
                         <a
                             href={activeMessage.audioUrl}
-                            className={`text-action ${styles["download-link"]}`}
+                            className={`text-action ${styles["control-button"]}`}
                             download={activeMessage.downloadFileName}
                         >
+                            <Download className={styles["control-icon"]} aria-hidden="true"/>
                             Download
                         </a>
                     </li>
 
                     <li className={`${styles.item} ${styles.share}`}>
-                        <Share className={`${styles["control-icon"]}`} aria-hidden="true"/>
                         <button
                             type="button"
                             onClick={shareMessage}
-                            className={`text-action ${styles["share-button"]}`}
+                            className={`text-action ${styles["control-button"]}`}
                         >
+                            <Share className={`${styles["control-icon"]}`} aria-hidden="true"/>
                             Share
                         </button>
 

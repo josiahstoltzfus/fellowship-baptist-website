@@ -48,18 +48,19 @@
 }
 
 .eyebrow {
-    color: var(--gold-500);
+    color: var(--color-text-accent);
 }
 
 .button {
     width: 100%;
+    text-align: left;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .icon {
-    color: var(--gold-500);
+    color: var(--color-border-accent);
 }
 
 .body {

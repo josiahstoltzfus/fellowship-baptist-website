@@ -15,7 +15,7 @@
     bottom: -6px;
 
     height: 2px;
-    background: var(--gold-500);
+    background: var(--color-border-accent);
 
     opacity: 0;
     transition: opacity 0.2s ease;

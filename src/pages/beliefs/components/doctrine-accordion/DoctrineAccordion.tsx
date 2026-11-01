@@ -42,15 +42,17 @@ export default function DoctrineAccordion() {
 
                         return (
                             <article key={article.id} className={`${styles.article}`}>
-                                <button
-                                    type="button"
-                                    className={`${styles.button}`}
-                                    aria-expanded={isOpen}
-                                    onClick={() => toggleArticle(article.id)}
-                                >
-                                    <span className={`text-heading-small`}>{article.title}</span>
-                                    <span aria-hidden="true" className={`${styles.icon}`}>{isOpen ? <Minus size={16} strokeWidth={2.5} aria-hidden="true"/> : <Plus size={16} strokeWidth={2.5} aria-hidden="true"/>}</span>
-                                </button>
+                                <h2>
+                                    <button
+                                        type="button"
+                                        className={`${styles.button}`}
+                                        aria-expanded={isOpen}
+                                        onClick={() => toggleArticle(article.id)}
+                                    >
+                                        <span className={`text-heading-small`}>{article.title}</span>
+                                        <span aria-hidden="true" className={`${styles.icon}`}>{isOpen ? <Minus size={16} strokeWidth={2.5} aria-hidden="true"/> : <Plus size={16} strokeWidth={2.5} aria-hidden="true"/>}</span>
+                                    </button>
+                                </h2>
 
                                 {isOpen && (
                                     <div className={`text-prose ${styles.body}`}>

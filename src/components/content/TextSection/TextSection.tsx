@@ -30,8 +30,11 @@ export default function TextSection({
         <section className={`section ${styles.section} ${styles[surface]}`}>
             <div className={`content ${styles.content} ${styles[alignment]}`}>
 
-                <p className={`text-eyebrow ${styles.eyebrow}`}>{eyebrow}</p>
-                <h2 className={`text-section-title`}>{heading}</h2>
+                <div className={styles.header}>
+                    <p className={`text-eyebrow ${styles.eyebrow}`}>{eyebrow}</p>
+                    <h2 className={`text-section-title`}>{heading}</h2>
+                </div>
+
                 <p className={`text-prose-lead ${styles.description}`}>{description}</p>
 
                 {scripture && (

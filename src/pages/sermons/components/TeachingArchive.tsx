@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 
 export default function TeachingArchive() {
     const audioPlayer = useAudioPlayer();
-    const {isPlaying, activeMessage} = audioPlayer;
+    const {activeMessage} = audioPlayer;
     const [isLinkCopied, setIsLinkCopied] = useState(false);
 
     useEffect(() => {
@@ -55,10 +55,10 @@ export default function TeachingArchive() {
                         const durationMinutes = Math.round(sermon.durationSeconds / 60);
 
                         return (
-                            <li className={styles.item}>
+                            <li key={sermon.id} className={styles.item}>
                                 <div className={styles["sermon-details"]}>
                                     <span className={`text-eyebrow`}>{sermon.kind}</span>
-                                    <h3 className={`text-heading-small`}>{sermon.title}</h3>
+                                    <h2 className={`text-heading-small`}>{sermon.title}</h2>
                                     <div className={`text-eyebrow ${styles.metadata}`}>
                                         <span>{sermon.speaker}</span>
                                         {sermon.scripture && <span>{sermon.scripture.reference}</span>}
@@ -71,7 +71,7 @@ export default function TeachingArchive() {
                                             className={`text-action-large ${styles["play-button"]}`}
                                             type="button"
                                             onClick={() => audioPlayer.playMessage(sermon)}
-                                            aria-label={isPlaying ? "Pause audio" : "Play audio"}
+                                            aria-label={`Listen to ${sermon.title}`}
                                         >
                                             Listen
                                         </button>

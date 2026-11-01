@@ -13,12 +13,16 @@
 }
 
 .eyebrow {
-    color: var(--gold-500);
+    color: var(--color-text-accent);
 }
 
 .link,
 .description {
     color: var(--color-text-body);
+}
+
+.link {
+    overflow-wrap: anywhere;
 }
 
 @media (max-width: 768px) {

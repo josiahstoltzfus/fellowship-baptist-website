@@ -10,7 +10,9 @@ export type AudioPlayerContextValue = {
     isMuted: boolean;
     playbackRate: number;
     isExpanded: boolean;
+    focusRequest: number;
 
+    focusTrigger: () => void;
     changePlaybackRate: (newRate: number) => void;
     playMessage: (message: AudioMessage) => void;
     toggleMute: () => void;

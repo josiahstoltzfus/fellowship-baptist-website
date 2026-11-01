@@ -17,7 +17,7 @@ export default function MeetThePastorPage() {
             <ImageTextSection
                 eyebrow="Pastor of Fellowship Baptist"
                 heading="Pastor Jack Boyer"
-                imageAlt="Pastor Portrait"
+                imageAlt="Pastor Jack Boyer of Fellowship Baptist Church"
                 imageSrc={pastor_image}
                 imagePosition="left">
                 <p className="text-prose">I would like to share my story to help you know me. My selfishness and sin choices were destroying my life and my marriage with a very sweet wife. She told my sister, “I don’t know what I am going to do with him."</p>

@@ -21,7 +21,7 @@
 }
 
 .eyebrow {
-    color: var(--gold-500);
+    color: var(--color-text-accent);
 }
 
 .description {
@@ -39,7 +39,7 @@
 }
 
 .category-heading {
-    color: var(--gold-500);
+    color: var(--color-text-accent);
 }
 
 .category-list {
