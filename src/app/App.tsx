@@ -13,6 +13,7 @@ import SermonsPage from "../pages/sermons/SermonsPage.tsx";
 import AudioPlayerProvider from "../components/media/audio-player/AudioPlayerProvider.tsx";
 import ScriptureReaderProvider from "../components/media/scripture-reader/ScriptureReaderProvider.tsx";
 import PrivacyPage from "../pages/privacy/PrivacyPage.tsx";
+import AccessibilityPage from "../pages/accessibility/AccessibilityPage.tsx";
 
 const router = createBrowserRouter(
     [
@@ -68,6 +69,10 @@ const router = createBrowserRouter(
                 {
                     path: "/privacy",
                     element: <PrivacyPage/>
+                },
+                {
+                    path: "/accessibility",
+                    element: <AccessibilityPage/>
                 }
             ]
         }

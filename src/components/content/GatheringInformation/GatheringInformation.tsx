@@ -42,12 +42,12 @@ export default function GatheringInformation() {
 
                     <div className={`${styles["contact-details"]}`}>
                         <p className={`${styles["contact-item"]}`}>
-                            <span className={`text-action ${styles.label}`}>Phone</span>
+                            <span className={`text-action-large ${styles.label}`}>Phone</span>
                             <a href="tel:18646306821" className={`text-body ${styles["contact-link"]}`}>864-630-6821</a>
                         </p>
 
                         <p className={`${styles["contact-item"]}`}>
-                            <span className={`text-action ${styles.label}`}>Email</span>
+                            <span className={`text-action-large ${styles.label}`}>Email</span>
                             <a href="mailto:PastorJackLBoyer@spectrum.net"
                                className={`text-body ${styles["contact-link"]}`}>PastorJackLBoyer@spectrum.net</a>
                         </p>
