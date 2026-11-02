@@ -32,7 +32,7 @@ export default function GatheringInformation() {
 
                 <div className={`${styles["location-details"]}`}>
                     <p className={`text-eyebrow ${styles.eyebrow}`}>Location & Contact</p>
-                    <h2 className={`text-section-title`}>Fountain Inn, South Carolina</h2>
+                    <h2 className={`text-section-title`}>Visit Fellowship Baptist</h2>
 
                     <address className={`text-body ${styles["address"]}`}>
                         <p>Fellowship Baptist Church</p>
@@ -42,12 +42,12 @@ export default function GatheringInformation() {
 
                     <div className={`${styles["contact-details"]}`}>
                         <p className={`${styles["contact-item"]}`}>
-                            <span className={`text-body-bold ${styles.label}`}>Phone:</span>
+                            <span className={`text-action ${styles.label}`}>Phone</span>
                             <a href="tel:18646306821" className={`text-body ${styles["contact-link"]}`}>864-630-6821</a>
                         </p>
 
                         <p className={`${styles["contact-item"]}`}>
-                            <span className={`text-body-bold ${styles.label}`}>Email:</span>
+                            <span className={`text-action ${styles.label}`}>Email</span>
                             <a href="mailto:PastorJackLBoyer@spectrum.net"
                                className={`text-body ${styles["contact-link"]}`}>PastorJackLBoyer@spectrum.net</a>
                         </p>

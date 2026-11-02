@@ -24,6 +24,26 @@ export default function SiteLayout() {
         };
     }, [isMobileOpen]);
 
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(min-width: 769px)");
+
+        function handleBreakpointChange(event: MediaQueryListEvent) {
+            if (event.matches) {
+                setIsMobileOpen(false);
+            }
+        }
+
+        mediaQuery.addEventListener("change", handleBreakpointChange);
+
+        if (mediaQuery.matches) {
+            setIsMobileOpen(false);
+        }
+
+        return () => {
+            mediaQuery.removeEventListener("change", handleBreakpointChange);
+        };
+    }, []);
+
     return (
         <div>
             <ScrollRestoration/>

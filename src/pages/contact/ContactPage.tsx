@@ -9,7 +9,7 @@ export default function ContactPage() {
                 eyebrow="Contact"
                 title="We would be glad to hear from you."
                 spacing="connected"
-                description="Contact Fellowship Baptist directly or send a general message using the form below.">
+                description="Have a question about the church, planning a visit, or simply want to reach out? Send us a message using the form below.">
                 <div className={`${styles.content}`}>
                     <article className={styles.method}>
                         <p className={`text-eyebrow ${styles.eyebrow}`}>

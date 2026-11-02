@@ -61,16 +61,17 @@
 .contact-details {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2xs);
+    gap: var(--space-md);
 }
 
 .contact-item {
     display: flex;
-    gap: var(--space-xs);
+    flex-direction: column;
+    gap: var(--space-2xs);
 }
 
 .label {
-    flex: 0 0 4rem;
+    color: var(--color-text-accent);
 }
 
 .contact-link:hover,

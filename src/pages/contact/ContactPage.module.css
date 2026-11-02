@@ -1,6 +1,6 @@
 .content {
     width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-default));
-    padding-block-end: var(--space-4xl);
+    padding-block-end: var(--space-2xl);
 
     display: flex;
     gap: var(--space-4xl);
@@ -33,7 +33,9 @@
 
     .method {
         padding-block-end: var(--space-lg);
+    }
 
+    .method:not(:last-child) {
         border-bottom: 1px solid var(--color-border-default);
     }
 

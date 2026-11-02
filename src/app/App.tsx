@@ -12,6 +12,7 @@ import GivePage from "../pages/giving/GivePage.tsx";
 import SermonsPage from "../pages/sermons/SermonsPage.tsx";
 import AudioPlayerProvider from "../components/media/audio-player/AudioPlayerProvider.tsx";
 import ScriptureReaderProvider from "../components/media/scripture-reader/ScriptureReaderProvider.tsx";
+import PrivacyPage from "../pages/privacy/PrivacyPage.tsx";
 
 const router = createBrowserRouter(
     [
@@ -63,6 +64,10 @@ const router = createBrowserRouter(
                 {
                     path: "/give",
                     element: <GivePage/>
+                },
+                {
+                    path: "/privacy",
+                    element: <PrivacyPage/>
                 }
             ]
         }

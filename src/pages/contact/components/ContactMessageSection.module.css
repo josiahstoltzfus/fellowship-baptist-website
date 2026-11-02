@@ -1,17 +1,17 @@
 .message {
     width: 100%;
-    background: var(--color-surface-reflective);
+    background: var(--color-surface-base);
 }
 
 .content {
     width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-default));
     margin-inline: auto;
-    padding-block: var(--space-4xl);
+    padding-block-end: var(--space-4xl);
 
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-    gap: var(--space-4xl);
-    align-items: start;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
 }
 
 .introduction {
@@ -21,6 +21,7 @@
 }
 
 .description {
+    max-width: var(--layout-reading-max);
     color: var(--color-text-body);
 }
 
@@ -31,10 +32,19 @@
 
 .form {
     min-width: 0;
+    max-width: var(--layout-reading-max);
 
     display: flex;
     flex-direction: column;
     gap: var(--space-lg);
+}
+
+.result {
+    color: var(--color-text-body);
+}
+
+.result-error {
+    color: #a12b2b;
 }
 
 .label {
@@ -42,19 +52,31 @@
 }
 
 .field-row {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
 }
 
 .field {
-    padding-block-end: var(--space-md);
-
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
+}
 
-    border-bottom: 1px solid var(--color-border-default);
+.input,
+.textarea {
+    border: 2px solid var(--color-border-default);
+    padding: var(--space-xs);
+}
+
+.input:focus-visible,
+.textarea:focus-visible {
+    outline: none;
+}
+
+.input:focus-within,
+.textarea:focus-within {
+    border-color: var(--color-text-primary);
 }
 
 .textarea {
@@ -67,7 +89,7 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    gap: var(--space-lg);
+    gap: var(--space-md);
 }
 
 .submit {
@@ -88,11 +110,6 @@
 
 @media (max-width: 768px) {
     .content {
-        grid-template-columns: 1fr;
-        gap: var(--space-lg);
-    }
-
-    .field-row {
         grid-template-columns: 1fr;
         gap: var(--space-lg);
     }
