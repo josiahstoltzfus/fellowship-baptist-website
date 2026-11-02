@@ -9,7 +9,7 @@
 
 .content {
     width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-footer));
-    padding-block-end: var(--space-3xl); /* space before divider */
+    padding-block-end: var(--space-3xl);
     margin-inline: auto;
 
     display: flex;

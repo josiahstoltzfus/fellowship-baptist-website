@@ -30,7 +30,6 @@ export default function PageIntroduction({
                 {description && <p className={`text-prose-lead ${styles.description}`}>{description}</p>}
                 {scripture && <p className={`text-eyebrow ${styles.eyebrow}`}>— {scripture}</p>}
                 {commentary && <p className={`text-prose ${styles.commentary}`}>{commentary}</p>}
-                <div className={styles.spacer}></div>
                 {children && (
                     <div className={styles.children}>{children}</div>
                 )}
