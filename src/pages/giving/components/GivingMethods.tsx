@@ -1,13 +1,15 @@
 import styles from "./GivingMethods.module.css";
+import ActionLink from "../../../components/actions/ActionLink.tsx";
 
 export default function GivingMethods() {
     return (
         <section className={`${styles.methods}`}>
             <div className={`${styles.content}`}>
-                <header className={`${styles.introduction}`}>
-                    <p className={`text-eyebrow ${styles.eyebrow}`}>Other ways to give</p>
-                    <h2 className={`text-section-title`}>Giving in person or by mail.</h2>
-                </header>
+                <div className={styles.header}>
+                    <p className={`text-eyebrow ${styles.number}`}>Give Online</p>
+                    <ActionLink href="..." external={true}>Continue to secure giving</ActionLink>
+                    <p className={`${styles.disclaimer} text-body-small`}>Giving is handled by the church's approved provider.</p>
+                </div>
 
                 <div className={`${styles.list}`}>
                     <article className={`${styles.method}`}>
