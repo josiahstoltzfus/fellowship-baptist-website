@@ -7,16 +7,17 @@ type ActionLinkProps = {
     children: ReactNode;
     variant?: "primary" | "secondary" | "inverse";
     external?: boolean;
+    className?: string;
 };
 
-export default function ActionLink({href, children, variant = "primary", external = false}: ActionLinkProps) {
-    const className = `text-action ${styles.action} ${styles[variant]}`;
+export default function ActionLink({href, children, variant = "primary", external = false, className= ""}: ActionLinkProps) {
+    const classes = `text-action ${styles.action} ${styles[variant]} ${className}`;
 
     if (external) {
         return (
             <a
                 href={href}
-                className={className}
+                className={classes}
                 target="_blank"
                 rel="noopener noreferrer">
                 {children}
@@ -25,7 +26,7 @@ export default function ActionLink({href, children, variant = "primary", externa
     }
 
     return (
-        <Link to={href} className={className}>
+        <Link to={href} className={classes}>
             {children}
         </Link>
     )

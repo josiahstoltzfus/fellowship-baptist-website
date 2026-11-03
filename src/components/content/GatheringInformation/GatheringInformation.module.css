@@ -11,6 +11,12 @@
     gap: var(--space-2xl);
 }
 
+.service-schedule,
+.location-details,
+.contact-details {
+    color: var(--color-text-body);
+}
+
 .service-schedule {
     display: flex;
     flex-direction: column;

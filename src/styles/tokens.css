@@ -34,6 +34,9 @@
     /* reading width */
     --layout-reading-max: 45rem; /* 720px */
 
+    /* image max width */
+    --layout-image-max: 50rem; /* 800px */
+
     /* touch targets */
     --layout-touch-min: 2.75rem; /* 44px */
 

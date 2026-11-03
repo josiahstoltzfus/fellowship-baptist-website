@@ -32,12 +32,11 @@
 }
 
 .commentary {
+    max-width: var(--layout-reading-max);
     margin-block-start: var(--space-md);
 
-    opacity: 0.6;
-
-    max-width: var(--layout-reading-max);
-    color: var(--color-text-primary);
+    color: var(--color-text-body);
+    opacity: 0.8;
 }
 
 .heading::after {

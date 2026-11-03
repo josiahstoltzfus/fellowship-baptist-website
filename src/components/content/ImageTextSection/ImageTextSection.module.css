@@ -46,6 +46,7 @@
 
 .stacked .media {
     width: 100%;
+    max-width: var(--layout-image-max);
     flex: none;
     aspect-ratio: 16 / 9;
 }

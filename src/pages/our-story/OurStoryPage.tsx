@@ -1,6 +1,7 @@
 import PageIntroduction from "../../components/content/PageIntroduction/PageIntroduction.tsx";
 import PageConclusion from "../../components/content/PageConclusion/PageConclusion.tsx";
 import ImageTextSection from "../../components/content/ImageTextSection/ImageTextSection.tsx";
+import exteriorChurchImage from "../../assets/images/exterior-church-image.jpg"
 
 export default function OurStoryPage() {
     return (
@@ -12,7 +13,8 @@ export default function OurStoryPage() {
             />
 
             <ImageTextSection
-                imageAlt="Historical Photograph"
+                imageAlt="Exterior of Fellowship Baptist Church in Fountain Inn, South Carolina"
+                imageSrc={exteriorChurchImage}
                 layout="stacked"
                 surface="base">
                 <p className="text-prose">Fellowship Baptist began as a daughter church of Calvary Baptist Church of Simpsonville. Pastor Guy Altizer asked me to pastor the new work. He is with the Lord now, but he was a great man and a great friend.</p>

@@ -20,7 +20,7 @@ export default function ImageTextSection({
                                              imageSrc,
                                              imagePosition = "right",
                                              layout = "split",
-                                             surface = "base"
+                                             surface = "base",
                                          }: ImageTextSectionProps) {
     return (
         <section className={`${styles.section} ${styles[surface]}`}>
