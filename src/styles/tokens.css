@@ -55,6 +55,7 @@
     --parchment-reflective: #ece5d5;
     --parchment-muted: #d1ccb8;
     --forest-900: #1a3026;
+    --forest-800: #294638;
     --ink-900: #131210;
     --ink-divider: #333029;
     --gold-500: #b29657;
@@ -91,14 +92,18 @@
     --color-action-primary-background: var(--forest-900);
     --color-action-primary-text: var(--parchment-base);
 
+    /* action hover */
+    --color-action-primary-hover: var(--forest-800);
+    --color-action-inverse-hover: var(--parchment-base);
+
     /* action secondary */
     --color-action-secondary-background: transparent;
     --color-action-secondary-text: var(--ink-900);
     --color-action-secondary-border: var(--ink-900);
 
     /* action inverse */
-    --color-action-inverse-background: var(--color-surface-base);
-    --color-action-inverse-text: var(--forest-900);
+    --color-action-inverse-background: var(--color-surface-reflective);
+    --color-action-inverse-text: var(--color-surface-emphasis);
 }
 
 .section {

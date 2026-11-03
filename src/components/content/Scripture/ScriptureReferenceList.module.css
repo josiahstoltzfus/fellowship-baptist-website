@@ -24,7 +24,8 @@
 .button:hover,
 .button:focus-visible {
     text-decoration: underline;
-    text-underline-offset: 0.2em;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 1px;
 }
 
 @media (max-width: 480px) {

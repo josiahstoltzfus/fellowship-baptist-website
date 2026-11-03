@@ -69,13 +69,6 @@
     vertical-align: middle;
 }
 
-.play-button:hover,
-.share-button:hover,
-.download-button:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-}
-
 @media (max-width: 768px) {
     .item {
         flex-direction: column;

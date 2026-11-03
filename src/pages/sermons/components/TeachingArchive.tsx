@@ -68,7 +68,7 @@ export default function TeachingArchive() {
                                 <ul className={styles["sermon-controls"]}>
                                     <li className={styles.control}>
                                         <button
-                                            className={`text-action-large ${styles["play-button"]}`}
+                                            className={`text-action-large link-hover`}
                                             type="button"
                                             onClick={() => audioPlayer.playMessage(sermon)}
                                             aria-label={`Listen to ${sermon.title}`}
@@ -80,7 +80,7 @@ export default function TeachingArchive() {
                                     <li className={styles.control}>
                                         <a
                                             href={sermon.audioUrl}
-                                            className={`text-action-large ${styles["download-button"]}`}
+                                            className={`text-action-large link-hover`}
                                             download={sermon.downloadFileName}
                                         >
                                             Download
@@ -91,7 +91,7 @@ export default function TeachingArchive() {
                                         <button
                                             type="button"
                                             onClick={() => shareMessage(sermon)}
-                                            className={`text-action-large ${styles["share-button"]}`}
+                                            className={`text-action-large link-hover`}
                                         >
                                             Share
                                         </button>

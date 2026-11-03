@@ -52,10 +52,10 @@ export default function SupportingScriptureAccordion({passages}: ScriptureAccord
                                     {passage.verses.length > 4 && (
                                         <button
                                             type="button"
-                                            className={`text-action ${styles["full-passage-button"]}`}
+                                            className={`text-action link-hover ${styles["full-passage-button"]}`}
                                             onClick={() => openReference(passage)}
                                         >
-                                            Read full passage →
+                                            Read full passage
                                         </button>
                                     )}
                                 </blockquote>

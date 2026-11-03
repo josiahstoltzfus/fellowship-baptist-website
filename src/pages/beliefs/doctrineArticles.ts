@@ -20,7 +20,7 @@ export const doctrineArticles: DoctrineArticle[] = [
         title: "The Inspiration of the Scriptures",
         articleLabel: "Article I",
         paragraphs: [
-            "The Bible is the inerrant, inspired Word of God.  We take a literal approach to our interpretation of the Scriptures. For reasons of unity with the Church and because of its textual reliability, we choose use the King James Version of the Bible."
+            "The Bible is the inerrant, inspired Word of God.  We take a literal approach to our interpretation of the Scriptures. For reasons of unity with the Church and because of its textual reliability, we use the King James Version of the Bible."
         ],
         scripturePassages: [
             {

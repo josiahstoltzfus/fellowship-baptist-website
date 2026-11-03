@@ -28,6 +28,13 @@
     scroll-margin-top: calc(var(--header-height-desktop) + var(--space-md));
 }
 
+.policy-heading:focus-visible {
+    outline: none;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.3em;
+}
+
 .metadata {
     display: flex;
     flex-direction: column;

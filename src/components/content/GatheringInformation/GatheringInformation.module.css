@@ -74,13 +74,9 @@
     color: var(--color-text-accent);
 }
 
-.contact-link:hover,
-.contact-link:focus-visible {
-    text-decoration: underline;
-}
-
 .contact-link {
     min-width: 0;
+    width: fit-content;
     overflow-wrap: anywhere;
 }
 

@@ -42,6 +42,7 @@
     min-width: 0;
 }
 
+/*
 .media-frame::before {
     content: "";
     position: absolute;
@@ -49,6 +50,7 @@
     background: var(--color-surface-emphasis);
     z-index: -1;
 }
+ */
 
 .image {
     width: max(100%, 52rem);

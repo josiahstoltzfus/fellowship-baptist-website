@@ -59,14 +59,18 @@
     padding: var(--space-sm) var(--space-md);
     align-self: flex-start;
 
-    background: var(--color-surface-base);
-    color: var(--forest-900);
+    background: var(--color-action-inverse-background);
+    color: var(--color-action-inverse-text);
     font-weight: var(--font-weight-semibold);
 
     display: flex;
     gap: var(--space-sm);
     align-items: center;
     justify-content: center;
+}
+
+.button:hover {
+    background: var(--color-action-inverse-hover);
 }
 
 

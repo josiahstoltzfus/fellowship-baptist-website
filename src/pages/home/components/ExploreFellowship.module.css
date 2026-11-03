@@ -47,17 +47,13 @@
 }
 
 .link {
+    width: fit-content;
     margin-block-start: auto;
     color: var(--forest-900);
 
     display: flex;
     align-items: center;
     gap: var(--space-2xs);
-}
-
-.link:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
 }
 
 @media (max-width: 768px) {

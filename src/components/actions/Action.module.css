@@ -21,3 +21,11 @@
     background: var(--color-action-inverse-background);
     color: var(--color-action-inverse-text);
 }
+
+.inverse:hover {
+    background: var(--color-action-inverse-hover);
+}
+
+.primary:hover {
+    background: var(--color-action-primary-hover);
+}

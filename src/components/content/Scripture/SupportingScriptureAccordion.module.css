@@ -62,11 +62,6 @@
     color: var(--color-text-accent);
 }
 
-.full-passage-button:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-}
-
 @media (max-width: 768px) {
     .item {
         padding-block-end: 0;
