@@ -3,6 +3,7 @@
     padding: 18px 24px;
     width: fit-content;
 
+    border: 1px solid transparent;
     white-space: nowrap;
 }
 
@@ -28,4 +29,8 @@
 
 .primary:hover {
     background: var(--color-action-primary-hover);
+}
+
+.secondary:hover {
+    background: var(--color-action-secondary-hover);
 }

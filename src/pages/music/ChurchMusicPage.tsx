@@ -12,7 +12,7 @@ export default function ChurchMusicPage() {
                 title="Music in our worship."
                 description="Let the word of Christ dwell in you richly in all wisdom; teaching and admonishing one another in psalms and hymns and spiritual songs, singing with grace in your hearts to the Lord."
                 scripture="Colossians 3:16"
-                commentary="Psalms are actually Scripture set to music. Hymns are musical praises that glorify the Lord written by believers. Spiritual songs are gospel songs testifying of personal experiences based on true theology. Christ must be exalted and not the artist."
+                commentary="Psalms are Scripture set to music. Hymns are musical praises that glorify the Lord written by believers. Spiritual songs are gospel songs testifying of personal experiences based on true theology. Christ must be exalted and not the artist."
             />
             <RejoicingPrinciple />
             <RighteousnessPrinciple />

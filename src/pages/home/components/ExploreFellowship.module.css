@@ -29,6 +29,12 @@
     gap: var(--space-md);
 }
 
+.itemHeading {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
 .item-text {
     max-width: 30ch;
     color: var(--color-text-body);

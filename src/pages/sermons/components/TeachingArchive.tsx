@@ -1,11 +1,14 @@
 import styles from "./TeachingArchive.module.css";
-import {type AudioMessage, sermons} from "../sermons.ts";
+import {type AudioMessage} from "../../../lib/sanityTypes.ts";
 import {useAudioPlayer} from "../../../components/media/audio-player/useAudioPlayer.ts";
 import {useEffect, useState} from "react";
 
-export default function TeachingArchive() {
+type TeachingArchiveProps = {
+    messages: AudioMessage[];
+};
+
+export default function TeachingArchive({messages} : TeachingArchiveProps) {
     const audioPlayer = useAudioPlayer();
-    const {activeMessage} = audioPlayer;
     const [isLinkCopied, setIsLinkCopied] = useState(false);
 
     useEffect(() => {
@@ -25,7 +28,7 @@ export default function TeachingArchive() {
     async function shareMessage(message: AudioMessage) {
         const shareData = {
             title: message.title,
-            text: `Listen to ${activeMessage?.title} by ${activeMessage?.speaker}.`,
+            text: `Listen to ${message.title} by ${message.speakerName}.`,
             url: `${window.location.origin}/resources/sermons`,
         };
 
@@ -51,18 +54,23 @@ export default function TeachingArchive() {
             <div className={`${styles.content}`}>
 
                 <ul className={styles.list}>
-                    {sermons.map((sermon) => {
-                        const durationMinutes = Math.round(sermon.durationSeconds / 60);
+                    {messages.map((sermon) => {
+                        const durationMinutes =
+                            sermon.durationSeconds != null
+                                ? Math.round(sermon.durationSeconds / 60)
+                                : null;
 
                         return (
-                            <li key={sermon.id} className={styles.item}>
+                            <li key={sermon._id} className={styles.item}>
                                 <div className={styles["sermon-details"]}>
                                     <span className={`text-eyebrow`}>{sermon.kind}</span>
                                     <h2 className={`text-heading-small`}>{sermon.title}</h2>
                                     <div className={`text-eyebrow ${styles.metadata}`}>
-                                        <span>{sermon.speaker}</span>
-                                        {sermon.scripture && <span>{sermon.scripture.reference}</span>}
-                                        <span>{`${durationMinutes} min`}</span>
+                                        <span>{sermon.speakerName}</span>
+                                        {/*sermon.scripture && <span>{sermon.scripture.reference}</span>*/}
+                                        {durationMinutes !== null && (
+                                            <span>{durationMinutes} min</span>
+                                        )}
                                     </div>
                                 </div>
                                 <ul className={styles["sermon-controls"]}>
@@ -79,7 +87,7 @@ export default function TeachingArchive() {
 
                                     <li className={styles.control}>
                                         <a
-                                            href={sermon.audioUrl}
+                                            href={`${sermon.audioUrl}?dl`}
                                             className={`text-action-large link-hover`}
                                             download={sermon.downloadFileName}
                                         >

@@ -17,7 +17,14 @@
     color: var(--color-text-body);
 }
 
-.service-schedule {
+.service-schedule,
+.location-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.heading {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
@@ -44,16 +51,6 @@
 
 .eyebrow {
     color: var(--color-text-accent);
-}
-
-.location-details {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-}
-
-.visit-details {
-    grid-column: span 2;
 }
 
 .address {

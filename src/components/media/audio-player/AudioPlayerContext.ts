@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import type {AudioMessage} from "../../../pages/sermons/sermons.ts";
+import type {AudioMessage} from "../../../lib/sanityTypes.ts";
 
 export type AudioPlayerContextValue = {
     activeMessage: AudioMessage | null;

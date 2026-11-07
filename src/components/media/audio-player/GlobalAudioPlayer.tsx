@@ -2,7 +2,7 @@ import styles from "./GlobalAudioPlayer.module.css";
 import {type CSSProperties, type KeyboardEvent, type FocusEvent, useState, useEffect, useRef} from "react";
 import {Pause, Play, ChevronDown, ChevronUp, X, Volume2, VolumeX, Gauge, Download, Share} from "lucide-react";
 import {useAudioPlayer} from "./useAudioPlayer.ts";
-import {formatTime} from "../../../pages/sermons/sermons.ts";
+import {formatTime} from "./formatTime.ts";
 
 type ProgressStyle = CSSProperties & {
     "--progress": string;
@@ -168,7 +168,7 @@ export default function GlobalAudioPlayer() {
     async function shareMessage() {
         const shareData = {
             title: activeMessage?.title,
-            text: `Listen to ${activeMessage?.title} by ${activeMessage?.speaker}.`,
+            text: `Listen to ${activeMessage?.title} by ${activeMessage?.speakerName}.`,
             url: `${window.location.origin}/resources/sermons`,
         };
 
@@ -211,7 +211,7 @@ export default function GlobalAudioPlayer() {
 
                 <div className={styles["message-info"]}>
                     <p className={`text-heading-xs ${styles.title}`}>{activeMessage.title}</p>
-                    <span className={`text-eyebrow ${styles.speaker}`}>{activeMessage.speaker}</span>
+                    <span className={`text-eyebrow ${styles.speaker}`}>{activeMessage.speakerName}</span>
                 </div>
 
                 <div className={`${styles["window-controls"]}`}>
@@ -341,7 +341,7 @@ export default function GlobalAudioPlayer() {
 
                     <li className={`${styles.item} ${styles.download}`}>
                         <a
-                            href={activeMessage.audioUrl}
+                            href={`${activeMessage.audioUrl}?dl`}
                             className={`text-action ${styles["control-button"]}`}
                             download={activeMessage.downloadFileName}
                         >

@@ -12,7 +12,6 @@
 
     display: flex;
     flex-direction: column;
-    gap: var(--space-4xl);
 }
 
 .featured-teaching {
@@ -25,6 +24,12 @@
 
 .eyebrow {
     color: var(--color-text-accent-inverse);
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
 }
 
 .list {
@@ -50,11 +55,6 @@
     background: var(--color-border-accent);
 }
 
-.media {
-    display: flex;
-    gap: var(--space-md);
-}
-
 .button {
     padding: var(--space-sm) var(--space-md);
     align-self: flex-start;
@@ -73,16 +73,17 @@
     background: var(--color-action-inverse-hover);
 }
 
+.video {
+    width: 100%;
+    max-width: var(--layout-image-max);
+    aspect-ratio: 16 / 9;
+}
 
-@media (max-width: 768px) {
-    .content {
-        flex-direction: column;
-    }
-
-    .weekly-highlights,
-    .featured-teaching {
-        flex: 1;
-    }
+.video iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 @media (max-width: 480px) {

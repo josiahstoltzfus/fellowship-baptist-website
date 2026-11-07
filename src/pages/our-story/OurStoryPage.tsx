@@ -1,9 +1,33 @@
+import exteriorChurchImage from "../../assets/images/exterior-church-image.jpg"
 import PageIntroduction from "../../components/content/PageIntroduction/PageIntroduction.tsx";
 import PageConclusion from "../../components/content/PageConclusion/PageConclusion.tsx";
-import ImageTextSection from "../../components/content/ImageTextSection/ImageTextSection.tsx";
-import exteriorChurchImage from "../../assets/images/exterior-church-image.jpg"
+import MediaTextSection from "../../components/content/MediaTextSection/MediaTextSection.tsx";
+import { getOurStory } from "../../lib/sanityQueries.ts";
+import { getYouTubeEmbedUrl } from "../../lib/getYouTubeEmbedUrl.ts";
+import { useEffect, useState } from "react";
 
 export default function OurStoryPage() {
+    const [churchImageUrl, setChurchImageUrl] = useState<string | null>(null);
+    const [videoUrl, setVideoUrl] = useState<string | null>(null);
+
+    useEffect(() => {
+        async function loadOurStory() {
+            try {
+                const data = await getOurStory();
+                setChurchImageUrl(data?.churchImageUrl ?? null);
+                setVideoUrl(data?.videoUrl ?? null)
+            } catch (error) {
+                console.error("Failed to load Our Story:", error);
+            }
+        }
+
+        void loadOurStory();
+    }, []);
+
+    const videoEmbedUrl = videoUrl
+        ? getYouTubeEmbedUrl(videoUrl)
+        : null;
+
     return (
         <>
             <PageIntroduction
@@ -12,23 +36,24 @@ export default function OurStoryPage() {
                 spacing="connected"
             />
 
-            <ImageTextSection
+            <MediaTextSection
                 imageAlt="Exterior of Fellowship Baptist Church in Fountain Inn, South Carolina"
-                imageSrc={exteriorChurchImage}
+                imageSrc={churchImageUrl ?? exteriorChurchImage}
                 layout="stacked"
                 surface="base">
                 <p className="text-prose">Fellowship Baptist began as a daughter church of Calvary Baptist Church of Simpsonville. Pastor Guy Altizer asked me to pastor the new work. He is with the Lord now, but he was a great man and a great friend.</p>
                 <p className="text-prose">Today, Fellowship Baptist is a Fundamental Independent Baptist church that has been blessed with thirteen and a half acres of beautiful property.</p>
-            </ImageTextSection>
+            </MediaTextSection>
 
-            <ImageTextSection
+            <MediaTextSection
                 eyebrow="The Church's Origin"
                 heading="Hear the Story Firsthand"
+                videoUrl={videoEmbedUrl ?? undefined}
                 imageAlt="Origin Recording / Poster Image"
                 layout="stacked"
                 surface="reflective">
                 <p className="text-prose">The story of Fellowship Baptist is also a story of God’s provision. This video shares how the church began and how the Lord provided along the way.</p>
-            </ImageTextSection>
+            </MediaTextSection>
 
             <PageConclusion
                 eyebrow="Our Foundation"

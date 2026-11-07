@@ -1,4 +1,4 @@
-import {type AudioMessage} from "../../../pages/sermons/sermons.ts";
+import {type AudioMessage} from "../../../lib/sanityTypes.ts";
 import {type ReactNode, useRef, useState} from "react";
 import { AudioPlayerContext } from "./AudioPlayerContext.ts";
 

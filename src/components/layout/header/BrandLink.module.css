@@ -1,6 +1,8 @@
 .brand {
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.062em;
+
+    font-size: var(--font-size-24);
 
     display: flex;
     flex-direction: column;
@@ -10,6 +12,21 @@
     font-size: var(--font-size-17);
 }
 
+.fellowship {
+    letter-spacing: 0.1em;
+}
+
 .baptist, .fellowship {
     line-height: 1.1;
+}
+
+@media (max-width: 360px) {
+    .brand {
+        font-size: var(--font-size-21);
+    }
+
+    .baptist {
+        font-size: var(--font-size-14);
+        letter-spacing: 0.13em;
+    }
 }

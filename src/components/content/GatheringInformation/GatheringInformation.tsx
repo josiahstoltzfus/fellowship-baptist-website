@@ -7,8 +7,12 @@ export default function GatheringInformation() {
             <div className={`${styles.content}`}>
 
                 <div className={`${styles["service-schedule"]}`}>
-                    <p className={`text-eyebrow ${styles.eyebrow}`}>Gather with us</p>
-                    <h2 className={`text-section-title`}>Weekly Services</h2>
+                    <div className={styles.heading}>
+                        <p className={`text-eyebrow ${styles.eyebrow}`}>
+                            Gather with us
+                        </p>
+                        <h2 className="text-section-title">Weekly Services</h2>
+                    </div>
 
                     <ul className={`text-body ${styles["service-list"]}`}>
                         <li className={`${styles["service-item"]}`}>
@@ -31,8 +35,10 @@ export default function GatheringInformation() {
                 </div>
 
                 <div className={`${styles["location-details"]}`}>
-                    <p className={`text-eyebrow ${styles.eyebrow}`}>Location & Contact</p>
-                    <h2 className={`text-section-title`}>Visit Fellowship Baptist</h2>
+                    <div className={styles.heading}>
+                        <p className={`text-eyebrow ${styles.eyebrow}`}>Location & Contact</p>
+                        <h2 className={`text-section-title`}>Visit Fellowship Baptist</h2>
+                    </div>
 
                     <address className={`text-body ${styles["address"]}`}>
                         <p>Fellowship Baptist Church</p>

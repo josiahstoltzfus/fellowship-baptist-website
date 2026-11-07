@@ -2,6 +2,30 @@ import styles from "./ExploreFellowship.module.css";
 import {ArrowRight} from "lucide-react";
 import {Link} from "react-router-dom";
 
+const items = [
+    {
+        eyebrow: "Our Story",
+        heading: "How Fellowship began",
+        description: "Read about the church's origin, history, and purpose.",
+        href: "/about/our-story",
+        actionLabel: "Read Our Story",
+    },
+    {
+        eyebrow: "Meet the Pastor",
+        heading: "A personal welcome",
+        description: "Meet the pastor and learn about his ministry and desire for the church.",
+        href: "/about/meet-the-pastor",
+        actionLabel: "Meet the Pastor",
+    },
+    {
+        eyebrow: "What We Believe",
+        heading: "Truth that shapes the church",
+        description: "Explore the doctrines and biblical convictions that guide Fellowship Baptist.",
+        href: "/about/what-we-believe",
+        actionLabel: "Read Our Beliefs",
+    },
+];
+
 export default function ExploreFellowship() {
     return (
         <section className={`section ${styles.explore}`}>
@@ -11,37 +35,31 @@ export default function ExploreFellowship() {
                     <h2 className={`text-section-title`}>Get to know us.</h2>
                 </div>
 
-                <div className={`${styles.items}`}>
-                    <article className={`${styles.item}`}>
-                        <p className={`text-eyebrow ${styles.eyebrow}`}>Our Story</p>
-                        <h3 className={`text-heading-small`}>How Fellowship began</h3>
-                        <p className={`text-prose ${styles["item-text"]}`}>Read about the church's origin, history, and purpose.</p>
-                        <Link to="/about/our-story" className={`text-action link-hover ${styles.link}`}>
-                            <span>Read Our Story</span>
-                            <ArrowRight size={16} aria-hidden={"true"}/>
-                        </Link>
-                    </article>
+                <div className={styles.items}>
+                    {items.map((item) => (
+                        <article key={item.href} className={styles.item}>
+                            <div className={styles.itemHeading}>
+                                <p className={`text-eyebrow ${styles.eyebrow}`}>
+                                    {item.eyebrow}
+                                </p>
+                                <h3 className="text-heading-small">
+                                    {item.heading}
+                                </h3>
+                            </div>
 
-                    <article className={`${styles.item}`}>
-                        <p className={`text-eyebrow ${styles.eyebrow}`}>Meet the Pastor</p>
-                        <h3 className={`text-heading-small`}>A personal welcome</h3>
-                        <p className={`text-prose ${styles["item-text"]}`}>Meet the pastor and learn about his ministry and desire for the church.</p>
-                        <Link to="/about/meet-the-pastor" className={`text-action link-hover ${styles.link}`}>
-                            <span>Meet the Pastor</span>
-                            <ArrowRight size={16} aria-hidden={"true"}/>
-                        </Link>
-                    </article>
+                            <p className={`text-prose ${styles["item-text"]}`}>
+                                {item.description}
+                            </p>
 
-                    <article className={`${styles.item}`}>
-                        <p className={`text-eyebrow ${styles.eyebrow}`}>What We Believe</p>
-                        <h3 className={`text-heading-small`}>Truth that shapes the church</h3>
-                        <p className={`text-prose ${styles["item-text"]}`}>Explore the doctrines and biblical convictions that guide Fellowship Baptist.</p>
-                        <Link to="/about/what-we-believe" className={`text-action link-hover ${styles.link}`}>
-                            <span>Read Our Beliefs</span>
-                            <ArrowRight size={16} aria-hidden={"true"}/>
-                        </Link>
-                    </article>
-
+                            <Link
+                                to={item.href}
+                                className={`text-action link-hover ${styles.link}`}
+                            >
+                                <span>{item.actionLabel}</span>
+                                <ArrowRight size={16} aria-hidden="true" />
+                            </Link>
+                        </article>
+                    ))}
                 </div>
 
             </div>

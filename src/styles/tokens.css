@@ -98,11 +98,12 @@
     /* action hover */
     --color-action-primary-hover: var(--forest-800);
     --color-action-inverse-hover: var(--parchment-base);
+    --color-action-secondary-hover: var(--color-surface-reflective);
 
     /* action secondary */
     --color-action-secondary-background: transparent;
-    --color-action-secondary-text: var(--ink-900);
-    --color-action-secondary-border: var(--ink-900);
+    --color-action-secondary-text: var(--forest-900);
+    --color-action-secondary-border: var(--forest-900);
 
     /* action inverse */
     --color-action-inverse-background: var(--color-surface-reflective);

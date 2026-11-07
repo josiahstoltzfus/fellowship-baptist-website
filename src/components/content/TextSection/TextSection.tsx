@@ -11,7 +11,6 @@ type TextSectionProps = {
     heading: string,
     description: string,
     scripture?: Scripture,
-    verse?: string,
     alignment?: "left" | "center",
     surface?: "base" | "reflective",
     children?: ReactNode,
@@ -39,7 +38,7 @@ export default function TextSection({
 
                 {scripture && (
                     <blockquote className={styles.scripture}>
-                        <p className={`text-heading-small ${styles["scripture-text"]}`}>{scripture.text}</p>
+                        <p className={`text-heading-small`}>{scripture.text}</p>
 
                         <cite className={`text-eyebrow ${styles.reference}`}>
                             — {scripture.reference}
